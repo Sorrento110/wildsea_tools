@@ -1,0 +1,181 @@
+---
+import GeneratorShell from './GeneratorShell.astro';
+import { loadShipCollections } from '../lib/ship-data';
+import { generateShip, SHIP_RATING_KEYS, SHIP_RATING_LABELS } from '../lib/ship-generator';
+import { renderShipHtml } from '../lib/ship-render';
+
+const collections = loadShipCollections();
+const initialShip = generateShip(collections);
+const initialHtml = renderShipHtml(initialShip);
+
+const collectionsJson = JSON.stringify(collections);
+const initialShipJson = JSON.stringify(initialShip);
+
+const sizeOptions = collections['sizes']?.options ?? [];
+---
+
+<GeneratorShell
+  title="Ship Generator"
+  description="Generate a random NPC ship from the Wildsea Core Rules shipbuilding section. Set optional targets before rolling, reroll the whole vessel, or tweak a single section."
+>
+  <div class="constraint-bar" aria-label="Generation options">
+    <label class="constraint-field">
+      <span>Size</span>
+      <select id="constraint-size">
+        <option value="">Any size</option>
+        {sizeOptions.map((option) => <option value={option.id}>{option.name}</option>)}
+      </select>
+    </label>
+
+    <label class="constraint-field">
+      <span>Target rating</span>
+      <select id="constraint-rating">
+        <option value="">Any rating</option>
+        {SHIP_RATING_KEYS.map((key) => (
+          <option value={key}>{SHIP_RATING_LABELS[key]}</option>
+        ))}
+      </select>
+    </label>
+
+    <label class="constraint-field">
+      <span>Rating value</span>
+      <input id="constraint-rating-value" type="number" min="0" max="12" step="1" placeholder="—" disabled />
+    </label>
+
+    <label class="constraint-field">
+      <span>Stake budget</span>
+      <input id="constraint-stakes" type="number" min="0" step="1" placeholder="—" />
+    </label>
+  </div>
+
+  <div class="generator-controls">
+    <button type="button" id="reroll-all" class="primary-button">Generate new ship</button>
+    <button type="button" id="copy-ship" class="secondary-button">Copy result</button>
+  </div>
+
+  <div id="ship-root" class="ship-root" set:html={initialHtml}></div>
+</GeneratorShell>
+
+<div
+  id="ship-data"
+  hidden
+  data-collections={collectionsJson}
+  data-initial={initialShipJson}
+></div>
+
+<script>
+  import { generateShip, regenerateSection, shipFromSelections } from '../lib/ship-generator';
+  import type { ShipConstraints } from '../lib/types';
+  import { renderShipHtml, formatShipText } from '../lib/ship-render';
+  import type { GeneratedShip } from '../lib/types';
+
+  const data = document.getElementById('ship-data');
+  const collections = JSON.parse(data?.dataset.collections ?? '{}');
+  const initialShip = JSON.parse(data?.dataset.initial ?? '{}') as GeneratedShip;
+
+  const root = document.getElementById('ship-root');
+  const sizeSelect = document.getElementById('constraint-size') as HTMLSelectElement | null;
+  const ratingSelect = document.getElementById('constraint-rating') as HTMLSelectElement | null;
+  const ratingValueInput = document.getElementById('constraint-rating-value') as HTMLInputElement | null;
+  const stakesInput = document.getElementById('constraint-stakes') as HTMLInputElement | null;
+
+  let ship: GeneratedShip = initialShip;
+  let constraints: ShipConstraints = {};
+
+  function readConstraints(): ShipConstraints {
+    const next: ShipConstraints = {};
+
+    const sizeId = sizeSelect?.value;
+    if (sizeId) next.sizeId = sizeId;
+
+    const ratingKey = ratingSelect?.value;
+    const ratingValue = Number.parseInt(ratingValueInput?.value ?? '', 10);
+    if (ratingKey && Number.isFinite(ratingValue)) {
+      next.targetRating = { key: ratingKey, value: ratingValue };
+    }
+
+    const stakes = Number.parseInt(stakesInput?.value ?? '', 10);
+    if (Number.isFinite(stakes)) next.targetStakes = stakes;
+
+    return next;
+  }
+
+  function render() {
+    if (root) {
+      root.innerHTML = renderShipHtml(ship, {
+        pinnedSections: constraints.sizeId ? ['sizes'] : [],
+      });
+    }
+  }
+
+  // Deep links carry a compact selection map (collection -> option ids) and
+  // an option anchor, so landing-page summaries can open the exact ship here.
+  const params = new URLSearchParams(window.location.search);
+  const selectionParam = params.get('selection');
+  const optionParam = params.get('option');
+
+  if (selectionParam) {
+    try {
+      ship = shipFromSelections(collections, JSON.parse(selectionParam));
+      render();
+    } catch {
+      // Invalid deep link; keep the server-rendered ship.
+    }
+  }
+
+  if (optionParam) {
+    requestAnimationFrame(() => {
+      const target = document.getElementById(optionParam);
+      if (target) {
+        target.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        target.classList.add('option-card-highlight');
+        setTimeout(() => target.classList.remove('option-card-highlight'), 1600);
+      }
+    });
+  }
+
+  function syncRatingInput() {
+    if (ratingValueInput && ratingSelect) {
+      ratingValueInput.disabled = !ratingSelect.value;
+    }
+  }
+
+  syncRatingInput();
+  ratingSelect?.addEventListener('change', syncRatingInput);
+
+  if (root) {
+    root.addEventListener('click', (event) => {
+      const target = event.target;
+      if (!(target instanceof Element)) return;
+      const button = target.closest('button[data-action="reroll-section"]');
+      if (!(button instanceof HTMLButtonElement)) return;
+      const sectionKey = button.dataset.section ?? '';
+      if (!sectionKey) return;
+      ship = regenerateSection(ship, collections, sectionKey);
+      render();
+    });
+  }
+
+  const rerollAll = document.getElementById('reroll-all');
+  rerollAll?.addEventListener('click', () => {
+    constraints = readConstraints();
+    ship = generateShip(collections, constraints);
+    render();
+  });
+
+  const copyButton = document.getElementById('copy-ship');
+  copyButton?.addEventListener('click', async () => {
+    try {
+      await navigator.clipboard.writeText(formatShipText(ship));
+      if (copyButton) {
+        const previous = copyButton.textContent;
+        copyButton.textContent = 'Copied!';
+        setTimeout(() => {
+          copyButton.textContent = previous;
+        }, 1400);
+      }
+    } catch {
+      // Clipboard is unavailable; ignore.
+    }
+  });
+</script>

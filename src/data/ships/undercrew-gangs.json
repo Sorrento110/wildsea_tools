@@ -1,0 +1,122 @@
+{
+  "$schema": "../../schemas/option-collection.schema.json",
+  "tool": "ship-generator",
+  "collection": "undercrew-gangs",
+  "title": "Gangs",
+  "description": "Optional undercrew choice. Small groups of unnamed NPCs that perform basic tasks during journeys.",
+  "selection": { "min": 0, "max": 2, "allowMultiple": true },
+  "ratingKeys": [],
+  "order": 12,
+  "options": [
+    {
+      "id": "spear-fishers",
+      "name": "Spear-Fishers",
+      "category": "gang",
+      "stakes": 2,
+      "description": "Tasked with plucking insects and small mammals from the sea as the ship travels.",
+      "ratings": {},
+      "tags": ["specimens"],
+      "source": "Core Rules p.183",
+      "special": "Automatically acquire one normal specimen when you drop anchor."
+    },
+    {
+      "id": "magnet-fishers",
+      "name": "Magnet-Fishers",
+      "category": "gang",
+      "stakes": 2,
+      "description": "Laconic scavengers that prefer the comfort of the deckside to the embrace of the waves.",
+      "ratings": {},
+      "tags": ["salvage"],
+      "source": "Core Rules p.183",
+      "special": "Automatically acquire one normal piece of salvage when you drop anchor."
+    },
+    {
+      "id": "stargazers",
+      "name": "Stargazers",
+      "category": "gang",
+      "stakes": 2,
+      "description": "Sky-watching tale-spinners.",
+      "ratings": {},
+      "tags": ["whispers"],
+      "source": "Core Rules p.183",
+      "special": "Automatically acquire one normal whisper when you drop anchor."
+    },
+    {
+      "id": "cartographers",
+      "name": "Cartographers",
+      "category": "gang",
+      "stakes": 2,
+      "description": "Navigator-adjuncts tasked with keeping a record of the ship's journeys and surroundings.",
+      "ratings": {},
+      "tags": ["navigation"],
+      "source": "Core Rules p.183",
+      "special": "Automatically acquire one normal chart when you drop anchor."
+    },
+    {
+      "id": "deck-engineers",
+      "name": "Deck Engineers",
+      "category": "gang",
+      "stakes": 2,
+      "description": "Tasked with keeping the ship in working condition.",
+      "ratings": {},
+      "tags": ["repair"],
+      "source": "Core Rules p.183",
+      "special": "Automatically clear one mark from any damaged ship rating when you drop anchor."
+    },
+    {
+      "id": "bonesaw-troupe",
+      "name": "Bonesaw Troupe",
+      "category": "gang",
+      "stakes": 2,
+      "description": "Amateur surgeons eager to keep the crew in some semblance of good health.",
+      "ratings": {},
+      "tags": ["medical"],
+      "source": "Core Rules p.183",
+      "special": "A single crewmember can heal a mark from any damaged trait or injury when you drop anchor."
+    },
+    {
+      "id": "tinker-troupe",
+      "name": "Tinker Troupe",
+      "category": "gang",
+      "stakes": 2,
+      "description": "Amateur metalworkers and clothiers, maintaining the crew's possessions as best they can.",
+      "ratings": {},
+      "tags": ["repair"],
+      "source": "Core Rules p.183",
+      "special": "A single crewmember can repair a mark from any gear when you drop anchor."
+    },
+    {
+      "id": "scholars",
+      "name": "Scholars",
+      "category": "gang",
+      "stakes": 2,
+      "description": "Students working on unlocking the mysteries of the sea.",
+      "ratings": {},
+      "tags": ["lore"],
+      "source": "Core Rules p.183",
+      "special": "You learn a secret of the surrounding waves whenever you drop anchor, supplied by the Firefly."
+    },
+    {
+      "id": "marauders",
+      "name": "Marauders",
+      "category": "gang",
+      "stakes": 2,
+      "description": "Rough sorts that take the protection of the ship and the celebrations after a fight extremely seriously.",
+      "ratings": {},
+      "tags": ["combat"],
+      "source": "Core Rules p.183",
+      "special": "Fight in close combat to defend the ship, dealing CQ Blunt, Keen, or Spike damage."
+    },
+    {
+      "id": "picaros",
+      "name": "Picaros",
+      "category": "gang",
+      "stakes": 2,
+      "description": "Adventurous slingers armed with crossbows, pistols, and blunderbusses.",
+      "ratings": {},
+      "tags": ["combat"],
+      "source": "Core Rules p.183",
+      "special": "Fight at range to defend the ship, dealing LR Blunt, Keen, or Spike damage."
+    }
+  ]
+}

@@ -1,0 +1,12 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import ShipGenerator from '../../components/ShipGenerator.astro';
+import manifest from '../../data/manifest.json';
+
+const description =
+  manifest.tools.find((tool) => tool.id === 'ship-generator')?.description ?? '';
+---
+
+<BaseLayout title="Ship Generator | Wildsea Tools" description={description}>
+  <ShipGenerator />
+</BaseLayout>

@@ -1,0 +1,45 @@
+{
+  "$schema": "../../schemas/option-collection.schema.json",
+  "tool": "ship-generator",
+  "collection": "undercrew-officers",
+  "title": "Officers",
+  "description": "Optional undercrew choice. Named NPCs specialising in certain skills, languages, or aspects.",
+  "selection": { "min": 0, "max": 2, "allowMultiple": true },
+  "ratingKeys": [],
+  "order": 11,
+  "options": [
+    {
+      "id": "skillful-officer",
+      "name": "Skillful Officer",
+      "category": "officer",
+      "stakes": 1,
+      "description": "A seasoned wildsailor, likely on the verge of leaving the undercrew for a main crew position.",
+      "ratings": {},
+      "tags": ["skill"],
+      "source": "Core Rules p.182",
+      "special": "Has 2 ranks in any skill and 1 rank in any other skill."
+    },
+    {
+      "id": "well-travelled-officer",
+      "name": "Well-Travelled Officer",
+      "category": "officer",
+      "stakes": 1,
+      "description": "An eager contributor to discussions and a font of lore, wise in the ways of the wider waves.",
+      "ratings": {},
+      "tags": ["language"],
+      "source": "Core Rules p.182",
+      "special": "Has 2 ranks in any language and 1 rank in any other language."
+    },
+    {
+      "id": "experienced-officer",
+      "name": "Experienced Officer",
+      "category": "officer",
+      "stakes": 1,
+      "description": "A seasoned wildsailor with access to a full aspect.",
+      "ratings": {},
+      "tags": ["aspect"],
+      "source": "Core Rules p.182",
+      "special": "Has any one aspect. The officer's track equals the track of that aspect."
+    }
+  ]
+}

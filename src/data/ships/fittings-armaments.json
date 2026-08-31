@@ -1,0 +1,166 @@
+{
+  "$schema": "../../schemas/option-collection.schema.json",
+  "tool": "ship-generator",
+  "collection": "fittings-armaments",
+  "title": "Armaments",
+  "description": "Optional fitting choice. Deck weapons used for defence against the hazards of the Wildsea.",
+  "selection": { "min": 0, "max": 2, "allowMultiple": true },
+  "ratingKeys": [],
+  "order": 9,
+  "options": [
+    {
+      "id": "trebuchet",
+      "name": "Trebuchet",
+      "category": "deck-weapon",
+      "stakes": 2,
+      "description": "Lobs stones, chunks of wood, or salvage clusters.",
+      "ratings": {},
+      "tags": ["ranged"],
+      "source": "Core Rules p.179",
+      "special": "Deals massive LR Blunt damage."
+    },
+    {
+      "id": "harpoon-turret",
+      "name": "Harpoon Turret",
+      "category": "deck-weapon",
+      "stakes": 2,
+      "description": "Fires barbed spears for piercing the hulls of ships and the hides of larger creatures.",
+      "ratings": {},
+      "tags": ["ranged"],
+      "source": "Core Rules p.179",
+      "special": "Deals massive LR Spike damage."
+    },
+    {
+      "id": "shrapnel-cannon",
+      "name": "Shrapnel Cannon",
+      "category": "deck-weapon",
+      "stakes": 2,
+      "description": "Fires clouds of tearing metal, usually just armfuls of scrap offcuts tossed into the barrel.",
+      "ratings": {},
+      "tags": ["ranged"],
+      "source": "Core Rules p.179",
+      "special": "Deals massive LR Serrated damage."
+    },
+    {
+      "id": "vipers-tooth",
+      "name": "Viper's Tooth",
+      "category": "deck-weapon",
+      "stakes": 2,
+      "description": "An unstable weapon that fires corrosive liquid.",
+      "ratings": {},
+      "tags": ["ranged"],
+      "source": "Core Rules p.179",
+      "special": "Deals massive LR Acid damage."
+    },
+    {
+      "id": "grand-blastbow",
+      "name": "Grand Blastbow",
+      "category": "deck-weapon",
+      "stakes": 2,
+      "description": "A crossbow-like emplacement that fires explosive bolts.",
+      "ratings": {},
+      "tags": ["ranged"],
+      "source": "Core Rules p.179",
+      "special": "Deals massive LR Blast damage."
+    },
+    {
+      "id": "storm-rail",
+      "name": "Storm-Rail",
+      "category": "deck-weapon",
+      "stakes": 2,
+      "description": "Two huge brass rods wrapped with poorly shielded cables, attached to a voltaic generator.",
+      "ratings": {},
+      "tags": ["ranged", "electric"],
+      "source": "Core Rules p.179",
+      "special": "Deals massive LR Volt damage."
+    },
+    {
+      "id": "winch-claws",
+      "name": "Winch-Claws",
+      "category": "hull-weapon",
+      "stakes": 1,
+      "description": "A bank of short-range grappling claws on the sides of the ship, used to draw enemy vessels close for boarding.",
+      "ratings": {},
+      "tags": ["boarding"],
+      "source": "Core Rules p.179",
+      "special": "A tool to aid close-range encounters rather than a weapon in its own right."
+    },
+    {
+      "id": "broadside-cannons",
+      "name": "Broadside Cannons",
+      "category": "hull-weapon",
+      "stakes": 1,
+      "description": "A blast from the half-forgotten past, these banks of cannons can only fire at targets to either side.",
+      "ratings": {},
+      "tags": ["ranged"],
+      "source": "Core Rules p.179",
+      "special": "Deals massive LR Blunt or Blast damage."
+    },
+    {
+      "id": "ramming-prow",
+      "name": "Ramming Prow",
+      "category": "hull-weapon",
+      "stakes": 1,
+      "description": "Allows the ship to ram creatures and other ships without danger to its own hull.",
+      "ratings": {},
+      "tags": ["ramming"],
+      "source": "Core Rules p.179",
+      "special": "Deals massive CQ Blunt damage."
+    },
+    {
+      "id": "spearing-prow",
+      "name": "Spearing Prow",
+      "category": "hull-weapon",
+      "stakes": 1,
+      "description": "A set of reinforced spikes jutting from the front of the ship.",
+      "ratings": {},
+      "tags": ["ramming"],
+      "source": "Core Rules p.179",
+      "special": "Deals massive CQ Spike damage."
+    },
+    {
+      "id": "bladed-prow",
+      "name": "Bladed Prow",
+      "category": "hull-weapon",
+      "stakes": 1,
+      "description": "A wedge-like cutting edge for slicing into enemy ships.",
+      "ratings": {},
+      "tags": ["ramming"],
+      "source": "Core Rules p.179",
+      "special": "Deals massive CQ Hewing damage."
+    },
+    {
+      "id": "ripsaw-prow",
+      "name": "Ripsaw Prow",
+      "category": "hull-weapon",
+      "stakes": 1,
+      "description": "A serrated leading edge for cutting through enemy ships.",
+      "ratings": {},
+      "tags": ["ramming"],
+      "source": "Core Rules p.179",
+      "special": "Deals massive CQ Serrated damage."
+    },
+    {
+      "id": "limited-armoury-rack",
+      "name": "Limited Armoury Rack",
+      "category": "boarding",
+      "stakes": 2,
+      "description": "A rack stocked with simple weapons for hand-to-hand fighting on the ship.",
+      "ratings": {},
+      "tags": ["boarding"],
+      "source": "Core Rules p.179",
+      "special": "Crew can take a temporary LR or CQ weapon with a single damage type (Blunt, Keen, or Spike). It comes with a two-track and cannot be repaired."
+    },
+    {
+      "id": "wreckers-armoury-rack",
+      "name": "Wrecker's Armoury Rack",
+      "category": "boarding",
+      "stakes": 2,
+      "description": "A rack stocked with less straightforward weapons for hand-to-hand fighting.",
+      "ratings": {},
+      "tags": ["boarding"],
+      "source": "Core Rules p.179",
+      "special": "Crew can take a temporary LR or CQ weapon with a single damage type (Hewing, Serrated, or Blast). It comes with a two-track and cannot be repaired."
+    }
+  ]
+}

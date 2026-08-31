@@ -1,0 +1,78 @@
+{
+  "$schema": "../../schemas/option-collection.schema.json",
+  "tool": "ship-generator",
+  "collection": "frames",
+  "title": "Ship Frames",
+  "description": "Required design choice. The superstructural skeleton that gives a ship its basic profile.",
+  "selection": { "min": 1, "max": 1, "allowMultiple": false },
+  "ratingKeys": ["armour", "seals", "speed", "saws", "stealth", "tilt"],
+  "order": 2,
+  "options": [
+    {
+      "id": "sturdy",
+      "name": "Sturdy",
+      "category": "common",
+      "stakes": 1,
+      "description": "Built to last in a place of temporary things; helps weather strong assaults.",
+      "ratings": { "armour": 1 },
+      "tags": ["durable"],
+      "source": "Core Rules p.167",
+      "special": null
+    },
+    {
+      "id": "moulded",
+      "name": "Moulded",
+      "category": "common",
+      "stakes": 1,
+      "description": "A single unbroken structure running through the ship, a feat of safety-conscious engineering.",
+      "ratings": { "seals": 1 },
+      "tags": ["sealed"],
+      "source": "Core Rules p.167",
+      "special": null
+    },
+    {
+      "id": "light",
+      "name": "Light",
+      "category": "common",
+      "stakes": 1,
+      "description": "Made with the lightest possible materials in the smallest possible amounts.",
+      "ratings": { "speed": 1 },
+      "tags": ["lightweight"],
+      "source": "Core Rules p.167",
+      "special": null
+    },
+    {
+      "id": "sleek",
+      "name": "Sleek",
+      "category": "common",
+      "stakes": 1,
+      "description": "Runs low to the waves and is hard to spot.",
+      "ratings": { "stealth": 1 },
+      "tags": ["quiet"],
+      "source": "Core Rules p.167",
+      "special": null
+    },
+    {
+      "id": "flexible",
+      "name": "Flexible",
+      "category": "common",
+      "stakes": 1,
+      "description": "Multi-segmented or jointed for adjustability and responsiveness.",
+      "ratings": { "tilt": 1 },
+      "tags": ["agile"],
+      "source": "Core Rules p.167",
+      "special": null
+    },
+    {
+      "id": "scything",
+      "name": "Scything",
+      "category": "common",
+      "stakes": 1,
+      "description": "Often wedge or blade-shaped, constructed to cut as efficiently as possible.",
+      "ratings": { "saws": 1 },
+      "tags": ["bladed"],
+      "source": "Core Rules p.167",
+      "special": null
+    }
+  ]
+}

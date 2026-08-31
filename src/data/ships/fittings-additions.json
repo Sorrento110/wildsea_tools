@@ -1,0 +1,232 @@
+{
+  "$schema": "../../schemas/option-collection.schema.json",
+  "tool": "ship-generator",
+  "collection": "fittings-additions",
+  "title": "Additions",
+  "description": "Optional fitting choice. Useful parts, resource-gathering options, and other oddities that make life on the waves easier.",
+  "selection": { "min": 0, "max": 3, "allowMultiple": true },
+  "ratingKeys": [],
+  "order": 7,
+  "options": [
+    {
+      "id": "anchor-system",
+      "name": "Anchor System",
+      "category": "general",
+      "stakes": 0,
+      "description": "Lengths of chain with heavy curved hooks, used to anchor the ship to branches of the Wildsea.",
+      "ratings": {},
+      "tags": ["standard"],
+      "source": "Core Rules p.176",
+      "special": "Almost every ship comes with this as standard."
+    },
+    {
+      "id": "rig-ropes",
+      "name": "Rig-Ropes",
+      "category": "general",
+      "stakes": 1,
+      "description": "Ropes strung up above the deck for climbing, safety lines, or drying washing.",
+      "ratings": {},
+      "tags": ["rope"],
+      "source": "Core Rules p.176",
+      "special": null
+    },
+    {
+      "id": "firefly-lanterns",
+      "name": "Firefly Lanterns",
+      "category": "general",
+      "stakes": 1,
+      "description": "A network of lanterns whose glowing inhabitants are woken or sent to sleep with a tap on the glass.",
+      "ratings": {},
+      "tags": ["light"],
+      "source": "Core Rules p.176",
+      "special": "Can illuminate any part of the ship."
+    },
+    {
+      "id": "luminous-blooms",
+      "name": "Luminous Blooms",
+      "category": "general",
+      "stakes": 1,
+      "description": "Patches of moss or flowering plants that shed pale light in the darker hours.",
+      "ratings": {},
+      "tags": ["light", "plant"],
+      "source": "Core Rules p.176",
+      "special": null
+    },
+    {
+      "id": "chemical-spotlight",
+      "name": "Chemical Spotlight",
+      "category": "general",
+      "stakes": 1,
+      "description": "A light that illuminates surrounding areas with day-like clarity.",
+      "ratings": {},
+      "tags": ["light"],
+      "source": "Core Rules p.176",
+      "special": null
+    },
+    {
+      "id": "survival-station",
+      "name": "Survival Station",
+      "category": "general",
+      "stakes": 1,
+      "description": "A station containing flares, flags, grapples, wraps, and emergency rations.",
+      "ratings": {},
+      "tags": ["survival"],
+      "source": "Core Rules p.176",
+      "special": null
+    },
+    {
+      "id": "cargo-crane",
+      "name": "Cargo Crane",
+      "category": "general",
+      "stakes": 1,
+      "description": "A sturdy crane for loading and unloading cargo, capable of carrying extremely heavy objects.",
+      "ratings": {},
+      "tags": ["cargo"],
+      "source": "Core Rules p.176",
+      "special": null
+    },
+    {
+      "id": "wreckers-magnet",
+      "name": "Wrecker's Magnet",
+      "category": "general",
+      "stakes": 1,
+      "description": "A curious electromagnetic crane often used by salvagers, with controls for the magnetism.",
+      "ratings": {},
+      "tags": ["salvage", "magnetic"],
+      "source": "Core Rules p.176",
+      "special": null
+    },
+    {
+      "id": "signal-flares",
+      "name": "Signal Flares",
+      "category": "general",
+      "stakes": 1,
+      "description": "Colour-coded flares fired into the heavens to communicate findings, threats, and positioning.",
+      "ratings": {},
+      "tags": ["signalling"],
+      "source": "Core Rules p.176",
+      "special": "Requires at least a smattering of the Signalling language to use effectively."
+    },
+    {
+      "id": "shutter-lamps",
+      "name": "Shutter-Lamps",
+      "category": "general",
+      "stakes": 1,
+      "description": "A bank of lights and shutters for blinking visual signals across vast distances.",
+      "ratings": {},
+      "tags": ["signalling"],
+      "source": "Core Rules p.176",
+      "special": "Requires at least a smattering of the Signalling language to use effectively."
+    },
+    {
+      "id": "steam-whistle",
+      "name": "Steam Whistle",
+      "category": "general",
+      "stakes": 1,
+      "description": "A shrill, piercing whistle used to announce presence or scare skittish denizens of the sea.",
+      "ratings": {},
+      "tags": ["sound"],
+      "source": "Core Rules p.176",
+      "special": null
+    },
+    {
+      "id": "vox-horn",
+      "name": "Vox-Horn",
+      "category": "general",
+      "stakes": 1,
+      "description": "A deep, blaring horn that can also be used as an effective voice amplifier.",
+      "ratings": {},
+      "tags": ["sound"],
+      "source": "Core Rules p.176",
+      "special": null
+    },
+    {
+      "id": "tethered-kitesail",
+      "name": "Tethered Kitesail",
+      "category": "general",
+      "stakes": 1,
+      "description": "A glider tethered to the deck with a long rope, allowing aerial exploration on windy days.",
+      "ratings": {},
+      "tags": ["aerial"],
+      "source": "Core Rules p.176",
+      "special": null
+    },
+    {
+      "id": "trained-messengers",
+      "name": "Trained Messengers",
+      "category": "general",
+      "stakes": 2,
+      "description": "Flying creatures trained to seek out distant landmasses or nearby ships, deliver messages, and return with replies.",
+      "ratings": {},
+      "tags": ["messenger"],
+      "source": "Core Rules p.176",
+      "special": "Specify the type of creature when chosen."
+    },
+    {
+      "id": "fixed-band-radio",
+      "name": "Fixed-Band Radio",
+      "category": "general",
+      "stakes": 2,
+      "description": "A short-range radio system capable of sending and receiving static-laden signals, based on pre-verdant technology.",
+      "ratings": {},
+      "tags": ["pre-verdant", "radio"],
+      "source": "Core Rules p.176",
+      "special": "Relies on fragile antennae affixed to the uppermost part of the ship."
+    },
+    {
+      "id": "fruiting-tree",
+      "name": "Fruiting Tree",
+      "category": "bounteous",
+      "stakes": 1,
+      "description": "An ancient tree rooted to the deck, laden with fast-growing fruit.",
+      "ratings": {},
+      "tags": ["food", "plant"],
+      "source": "Core Rules p.176",
+      "special": "Automatically acquire a fruit-based specimen when you tend to the fruiting tree."
+    },
+    {
+      "id": "night-farm",
+      "name": "Night Farm",
+      "category": "bounteous",
+      "stakes": 1,
+      "description": "A dark, covered soilpit for growing mushrooms.",
+      "ratings": {},
+      "tags": ["food"],
+      "source": "Core Rules p.176",
+      "special": "Automatically acquire a mushroom-based specimen when you tend to the night farm."
+    },
+    {
+      "id": "lightning-rod",
+      "name": "Lightning Rod",
+      "category": "bounteous",
+      "stakes": 1,
+      "description": "A multi-pronged metal array for attracting lightning and storing it in ceramic batteries.",
+      "ratings": {},
+      "tags": ["electric"],
+      "source": "Core Rules p.176",
+      "special": "Automatically acquire a charged ceramic battery when the ship enters a lightning storm."
+    },
+    {
+      "id": "water-purifier",
+      "name": "Water Purifier",
+      "category": "bounteous",
+      "stakes": 2,
+      "description": "A funnel filtration system for producing clean water.",
+      "ratings": {},
+      "tags": ["water"],
+      "source": "Core Rules p.176",
+      "special": "Automatically acquire a barrel of fresh water with the 'Pure' tag when you drop anchor or cut a path in rainy conditions."
+    },
+    {
+      "id": "trawler-nets",
+      "name": "Trawler Nets",
+      "category": "bounteous",
+      "stakes": 2,
+      "description": "Reinforced nets draped over the sides of the ship to catch larger insects and small mammals.",
+      "ratings": {},
+      "tags": ["specimens"],
+      "source": "Core Rules p.176",
+      "special": "Automatically acquire one normal specimen when you cut a path."
+    }
+  ]
+}

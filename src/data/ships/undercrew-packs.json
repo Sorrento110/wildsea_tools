@@ -1,0 +1,232 @@
+{
+  "$schema": "../../schemas/option-collection.schema.json",
+  "tool": "ship-generator",
+  "collection": "undercrew-packs",
+  "title": "Packs",
+  "description": "Optional undercrew choice. Creatures trained to aid, defend, or otherwise benefit the ship in some way.",
+  "selection": { "min": 0, "max": 2, "allowMultiple": true },
+  "ratingKeys": [],
+  "order": 13,
+  "options": [
+    {
+      "id": "lemur-pack",
+      "name": "Lemur Pack",
+      "category": "beast",
+      "stakes": 1,
+      "description": "A 3-track group of nimble helpers that keep the ship clear of smaller insects.",
+      "ratings": {},
+      "tags": ["beast"],
+      "source": "Core Rules p.184",
+      "special": null
+    },
+    {
+      "id": "spring-foxes",
+      "name": "Spring-Foxes",
+      "category": "beast",
+      "stakes": 1,
+      "description": "A 3-track pod of foxes that dance and leap through the waves around the ship as it travels.",
+      "ratings": {},
+      "tags": ["beast"],
+      "source": "Core Rules p.184",
+      "special": "Their behaviour can warn of dangers from the deeper canopy."
+    },
+    {
+      "id": "stretch-of-slinks",
+      "name": "A Stretch of Slinks",
+      "category": "beast",
+      "stakes": 1,
+      "description": "A 3-track group of semi-spectral cats, usually found in dockyards and spit-city alleyways.",
+      "ratings": {},
+      "tags": ["beast"],
+      "source": "Core Rules p.184",
+      "special": "Spend most of their time hunting rats and getting into absurdly awkward spaces."
+    },
+    {
+      "id": "brace-of-hounds",
+      "name": "A Brace of Hounds",
+      "category": "beast",
+      "stakes": 1,
+      "description": "A 3-track pair of dogs, fiercely protective of their ship.",
+      "ratings": {},
+      "tags": ["beast"],
+      "source": "Core Rules p.184",
+      "special": "Offer comfort and the ability to play a great game of fetch."
+    },
+    {
+      "id": "rig-ferrets",
+      "name": "Rig-Ferrets",
+      "category": "beast",
+      "stakes": 1,
+      "description": "A 3-track group of ferrets used to tie and untie knots far above deck.",
+      "ratings": {},
+      "tags": ["beast"],
+      "source": "Core Rules p.184",
+      "special": null
+    },
+    {
+      "id": "whirling-bats",
+      "name": "Whirling Bats",
+      "category": "beast",
+      "stakes": 1,
+      "description": "A 3-track colony that lends an appreciably gothic look to the ship from a distance.",
+      "ratings": {},
+      "tags": ["beast"],
+      "source": "Core Rules p.184",
+      "special": "Unexpectedly friendly up close."
+    },
+    {
+      "id": "frenzy-parrot",
+      "name": "Frenzy-Parrot",
+      "category": "beast",
+      "stakes": 1,
+      "description": "A 3-track parrot with a shrill and annoying squawk.",
+      "ratings": {},
+      "tags": ["beast"],
+      "source": "Core Rules p.184",
+      "special": "Tolerated as an early warning system for dangerous predators roaming nearby."
+    },
+    {
+      "id": "trained-pinwolf",
+      "name": "Trained Pinwolf",
+      "category": "beast",
+      "stakes": 2,
+      "description": "A 3-track predator raised from birth to regard the ship as home and the crew as its pack.",
+      "ratings": {},
+      "tags": ["beast", "combat"],
+      "source": "Core Rules p.184",
+      "special": "Fights in close combat to defend the ship, dealing CQ Blunt, Keen, or Spike damage."
+    },
+    {
+      "id": "squirrel-flingers",
+      "name": "Squirrel Flingers",
+      "category": "beast",
+      "stakes": 2,
+      "description": "A 3-track pack of tiny but ferocious squirrels armed with miniature slings.",
+      "ratings": {},
+      "tags": ["beast", "combat"],
+      "source": "Core Rules p.184",
+      "special": "Fight at range to defend the ship, dealing LR Blunt, Keen, or Spike damage."
+    },
+    {
+      "id": "geist-octopus",
+      "name": "Geist Octopus",
+      "category": "beast",
+      "stakes": 3,
+      "description": "A 5-track cephalopod with a little bit of everything in one cool package.",
+      "ratings": {},
+      "tags": ["beast"],
+      "source": "Core Rules p.185",
+      "special": "Once per journey, a single crewmember can roll 6d6 in place of their usual dice pool on any task it could conceivably help with."
+    },
+    {
+      "id": "dragon-tail-butterflies",
+      "name": "Dragon-Tail Butterflies",
+      "category": "insect",
+      "stakes": 1,
+      "description": "A 5-track group of butterflies with beautiful, elongated wings.",
+      "ratings": {},
+      "tags": ["insect"],
+      "source": "Core Rules p.184",
+      "special": "Regarded by many as a good-luck charm."
+    },
+    {
+      "id": "spider-colony",
+      "name": "Spider Colony",
+      "category": "insect",
+      "stakes": 1,
+      "description": "A 3-track colony, once a tzelicrae, now barely holding it together.",
+      "ratings": {},
+      "tags": ["insect"],
+      "source": "Core Rules p.184",
+      "special": "Keeps insects and rodents away from the ship."
+    },
+    {
+      "id": "glass-shell-snails",
+      "name": "Glass-Shell Snails",
+      "category": "insect",
+      "stakes": 1,
+      "description": "A 3-track group of snails. Crews with glass-shell snails on board learn to tread lightly, especially at night.",
+      "ratings": {},
+      "tags": ["insect"],
+      "source": "Core Rules p.184",
+      "special": null
+    },
+    {
+      "id": "scorpion-set",
+      "name": "Scorpion Set",
+      "category": "insect",
+      "stakes": 1,
+      "description": "A 3-track set of surly, patient, and venomous scorpions.",
+      "ratings": {},
+      "tags": ["insect"],
+      "source": "Core Rules p.184",
+      "special": "Often found sunning themselves on railings or hiding inside boots."
+    },
+    {
+      "id": "medical-mosquitoes",
+      "name": "Medical Mosquitoes",
+      "category": "insect",
+      "stakes": 2,
+      "description": "A 3-track annoyance, but a useful one: they carry a symptomless infection that increases resistance to other infections.",
+      "ratings": {},
+      "tags": ["insect", "medical"],
+      "source": "Core Rules p.184",
+      "special": "Infections and viruses don't naturally transfer from crewmember to crewmember."
+    },
+    {
+      "id": "glowbug-parade",
+      "name": "Glowbug Parade",
+      "category": "insect",
+      "stakes": 2,
+      "description": "A 3-track horde of fireflies that follow crewmembers around decks and corridors.",
+      "ratings": {},
+      "tags": ["insect", "light"],
+      "source": "Core Rules p.184",
+      "special": "Gives all crew members their own dim lantern-like light while on the ship, unless shooed away."
+    },
+    {
+      "id": "mantis-sentries",
+      "name": "Mantis Sentries",
+      "category": "insect",
+      "stakes": 2,
+      "description": "A 3-track group of stone-still sentries that let their prey come to them.",
+      "ratings": {},
+      "tags": ["insect"],
+      "source": "Core Rules p.184",
+      "special": "Automatically acquire one normal specimen when you dock at port."
+    },
+    {
+      "id": "rust-roaches",
+      "name": "Rust-Roaches",
+      "category": "insect",
+      "stakes": 2,
+      "description": "A 3-track group that feeds off rust and metallic impurities.",
+      "ratings": {},
+      "tags": ["insect"],
+      "source": "Core Rules p.185",
+      "special": "Automatically acquire one normal piece of salvage when you dock at port."
+    },
+    {
+      "id": "etterescu",
+      "name": "Etterescu",
+      "category": "insect",
+      "stakes": 2,
+      "description": "A 3-track group of lurking centipedes that prefer darker places.",
+      "ratings": {},
+      "tags": ["insect"],
+      "source": "Core Rules p.185",
+      "special": "Automatically acquire one normal whisper when you dock at port."
+    },
+    {
+      "id": "library-boatmen",
+      "name": "Library Boatmen",
+      "category": "insect",
+      "stakes": 2,
+      "description": "A 3-track group of spider-like creatures that make homes in discarded paper plucked from the waves.",
+      "ratings": {},
+      "tags": ["insect"],
+      "source": "Core Rules p.185",
+      "special": "Automatically acquire one normal chart when you dock at port."
+    }
+  ]
+}

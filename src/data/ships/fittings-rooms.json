@@ -1,0 +1,199 @@
+{
+  "$schema": "../../schemas/option-collection.schema.json",
+  "tool": "ship-generator",
+  "collection": "fittings-rooms",
+  "title": "Rooms",
+  "description": "Optional fitting choice. Subdivisions of the ship outfitted for specialist tasks.",
+  "selection": { "min": 0, "max": 3, "allowMultiple": true },
+  "ratingKeys": [],
+  "order": 8,
+  "options": [
+    {
+      "id": "galley",
+      "name": "Galley",
+      "category": "common",
+      "stakes": 1,
+      "description": "A space for gathering, cooking, and eating, filled with pans, cookware, and usually a chemical stove.",
+      "ratings": {},
+      "tags": ["food"],
+      "source": "Core Rules p.177",
+      "special": null
+    },
+    {
+      "id": "medical-bay",
+      "name": "Medical Bay",
+      "category": "common",
+      "stakes": 1,
+      "description": "A clean space with tables and soft beds for the wounded and their carers.",
+      "ratings": {},
+      "tags": ["medical"],
+      "source": "Core Rules p.177",
+      "special": null
+    },
+    {
+      "id": "workshop",
+      "name": "Workshop",
+      "category": "common",
+      "stakes": 1,
+      "description": "A cluttered room with smithing and repair tools plus a mechanical workbench.",
+      "ratings": {},
+      "tags": ["repair"],
+      "source": "Core Rules p.177",
+      "special": null
+    },
+    {
+      "id": "navigational-suite",
+      "name": "Navigational Suite",
+      "category": "common",
+      "stakes": 1,
+      "description": "A room devoted to the storage and usage of maps, charts, and navigational equipment.",
+      "ratings": {},
+      "tags": ["navigation"],
+      "source": "Core Rules p.177",
+      "special": null
+    },
+    {
+      "id": "butchery",
+      "name": "Butchery",
+      "category": "common",
+      "stakes": 1,
+      "description": "A clean space for rendering and preserving specimens.",
+      "ratings": {},
+      "tags": ["specimens"],
+      "source": "Core Rules p.177",
+      "special": null
+    },
+    {
+      "id": "tap-room",
+      "name": "Tap-Room",
+      "category": "common",
+      "stakes": 1,
+      "description": "For the creation, storage, and consumption of ales, mead, and spirits, usually with comfortable seating.",
+      "ratings": {},
+      "tags": ["social"],
+      "source": "Core Rules p.177",
+      "special": null
+    },
+    {
+      "id": "panic-room",
+      "name": "Panic Room",
+      "category": "common",
+      "stakes": 1,
+      "description": "A small room stocked with salted supplies and bedrolls, able to be triple-locked from the inside.",
+      "ratings": {},
+      "tags": ["safety"],
+      "source": "Core Rules p.177",
+      "special": "Extremely hard to break into."
+    },
+    {
+      "id": "cooling-facility",
+      "name": "Cooling Facility",
+      "category": "common",
+      "stakes": 1,
+      "description": "An insulated room where breath mists in the air, perfect for storing perishables and escaping the sun's glare.",
+      "ratings": {},
+      "tags": ["storage"],
+      "source": "Core Rules p.177",
+      "special": null
+    },
+    {
+      "id": "luxury-quarters",
+      "name": "Luxury Quarters",
+      "category": "common",
+      "stakes": 1,
+      "description": "Individual spaces for each crewmember to sleep, with soft furnishings and tasteful decoration.",
+      "ratings": {},
+      "tags": ["comfort"],
+      "source": "Core Rules p.177",
+      "special": null
+    },
+    {
+      "id": "lens-room",
+      "name": "Lens Room",
+      "category": "common",
+      "stakes": 1,
+      "description": "A room of telescopes and ocular magnifiers offering a commanding view.",
+      "ratings": {},
+      "tags": ["observation"],
+      "source": "Core Rules p.177",
+      "special": null
+    },
+    {
+      "id": "brig",
+      "name": "Brig",
+      "category": "common",
+      "stakes": 1,
+      "description": "A hammock, a bucket, a lockable door, and a set of iron bars.",
+      "ratings": {},
+      "tags": ["security"],
+      "source": "Core Rules p.177",
+      "special": null
+    },
+    {
+      "id": "cargo-bay-extension",
+      "name": "Cargo Bay Extension",
+      "category": "common",
+      "stakes": 1,
+      "description": "A larger cargo space with webbing, wall racks, and reinforced sections for dangerous items.",
+      "ratings": {},
+      "tags": ["cargo"],
+      "source": "Core Rules p.177",
+      "special": null
+    },
+    {
+      "id": "underdeck-gymnasium",
+      "name": "Underdeck Gymnasium",
+      "category": "common",
+      "stakes": 1,
+      "description": "A set of weights, ropes, and fitness equipment for keeping in shape without braving the treetops.",
+      "ratings": {},
+      "tags": ["fitness"],
+      "source": "Core Rules p.177",
+      "special": null
+    },
+    {
+      "id": "loungers-tent",
+      "name": "Lounger's Tent",
+      "category": "external",
+      "stakes": 1,
+      "description": "A rest area on the deck, the canvas providing shade and a break from the wind.",
+      "ratings": {},
+      "tags": ["comfort"],
+      "source": "Core Rules p.177",
+      "special": null
+    },
+    {
+      "id": "observation-platform",
+      "name": "Observation Platform",
+      "category": "external",
+      "stakes": 1,
+      "description": "A strut-like protuberance giving an unparalleled view of the surrounding waves.",
+      "ratings": {},
+      "tags": ["observation"],
+      "source": "Core Rules p.177",
+      "special": "Usually has a line of communication to the pilot's cabin."
+    },
+    {
+      "id": "underthrash-platform",
+      "name": "Underthrash Platform",
+      "category": "external",
+      "stakes": 1,
+      "description": "A sturdy door leading to an open platform at the base of the ship, below the riding-line.",
+      "ratings": {},
+      "tags": ["observation"],
+      "source": "Core Rules p.177",
+      "special": null
+    },
+    {
+      "id": "cupola",
+      "name": "Cupola",
+      "category": "external",
+      "stakes": 1,
+      "description": "A blister of glass or amber at the side or rear of the ship, with a small seat inside.",
+      "ratings": {},
+      "tags": ["observation"],
+      "source": "Core Rules p.177",
+      "special": null
+    }
+  ]
+}

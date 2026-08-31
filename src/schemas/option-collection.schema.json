@@ -1,0 +1,72 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://wildsea-tools.local/schemas/option-collection.schema.json",
+  "title": "Generator option collection",
+  "description": "Schema for a single data-driven generator dataset (one JSON file per collection).",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["tool", "collection", "title", "selection", "options"],
+  "properties": {
+    "$schema": { "type": "string" },
+    "tool": { "type": "string", "minLength": 1 },
+    "collection": {
+      "type": "string",
+      "minLength": 1,
+      "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$"
+    },
+    "title": { "type": "string", "minLength": 1 },
+    "description": { "type": "string" },
+    "order": { "type": "integer", "minimum": 0 },
+    "selection": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["min", "max", "allowMultiple"],
+      "properties": {
+        "min": { "type": "integer", "minimum": 0 },
+        "max": { "type": ["integer", "null"], "minimum": 1 },
+        "allowMultiple": { "type": "boolean" }
+      }
+    },
+    "ratingKeys": {
+      "type": "array",
+      "items": { "type": "string" },
+      "uniqueItems": true
+    },
+    "options": {
+      "type": "array",
+      "items": { "$ref": "#/definitions/option" }
+    }
+  },
+  "definitions": {
+    "option": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["id", "name", "stakes", "description", "source"],
+      "properties": {
+        "id": {
+          "type": "string",
+          "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$"
+        },
+        "name": { "type": "string", "minLength": 1 },
+        "category": { "type": "string", "minLength": 1 },
+        "stakes": { "type": "integer", "minimum": 0 },
+        "description": { "type": "string", "minLength": 1 },
+        "ratings": {
+          "type": "object",
+          "additionalProperties": { "type": "integer" }
+        },
+        "tags": {
+          "type": "array",
+          "items": { "type": "string" },
+          "uniqueItems": true
+        },
+        "source": { "type": "string", "minLength": 1 },
+        "special": { "type": ["string", "null"] },
+        "meta": {
+          "type": "object",
+          "additionalProperties": true
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,53 @@
+---
+import '../styles/global.css';
+import { baseUrl } from '../lib/base-url';
+
+interface Props {
+  title: string;
+  description?: string;
+}
+
+const { title, description = 'Tools for running the Wildsea TTRPG.' } = Astro.props;
+const base = baseUrl();
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/svg+xml" href={`${base}favicon.svg`} />
+    <link rel="icon" href={`${base}favicon.ico`} />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+    <meta name="description" content={description} />
+    <meta name="theme-color" content="#0d1712" />
+    <title>{title}</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="site-header-wrap">
+      <header class="site-header">
+        <a class="site-brand" href={`${base}`}>
+          <span class="site-brand-mark" aria-hidden="true">✦</span>
+          <span>Wildsea Tools</span>
+        </a>
+        <nav class="site-nav" aria-label="Main navigation">
+          <a href={`${base}tools/ships/`}>Ship Generator</a>
+        </nav>
+      </header>
+    </div>
+
+    <main class="site-main">
+      <slot />
+    </main>
+
+    <footer class="site-footer">
+      <p>Fan-made tools for the Wildsea TTRPG. Not affiliated with the game's publisher.</p>
+    </footer>
+  </body>
+</html>

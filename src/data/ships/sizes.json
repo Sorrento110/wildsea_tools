@@ -1,0 +1,87 @@
+{
+  "$schema": "../../schemas/option-collection.schema.json",
+  "tool": "ship-generator",
+  "collection": "sizes",
+  "title": "Ship Sizes",
+  "description": "Required design choice. Determines profile on the waves and how many crew and passengers fit comfortably.",
+  "selection": {
+    "min": 1,
+    "max": 1,
+    "allowMultiple": false
+  },
+  "ratingKeys": [
+    "armour",
+    "seals",
+    "speed",
+    "saws",
+    "stealth",
+    "tilt"
+  ],
+  "options": [
+    {
+      "id": "nano",
+      "name": "Nano",
+      "category": "common",
+      "stakes": 1,
+      "description": "Suited for a single sailor and maybe a passenger or two.",
+      "ratings": {
+        "stealth": 1
+      },
+      "tags": [
+        "solo",
+        "small"
+      ],
+      "source": "Core Rules p.166",
+      "special": null
+    },
+    {
+      "id": "small",
+      "name": "Small",
+      "category": "common",
+      "stakes": 1,
+      "description": "Suited for 2-4 people, cramped but serviceable for double that. Ideal for a first ship.",
+      "ratings": {
+        "speed": 1
+      },
+      "tags": [
+        "small",
+        "starter"
+      ],
+      "source": "Core Rules p.166",
+      "special": null
+    },
+    {
+      "id": "standard",
+      "name": "Standard",
+      "category": "common",
+      "stakes": 1,
+      "description": "Comfortable for 5-10 people, the majority of ships on the Wildsea are this size.",
+      "ratings": {
+        "armour": 1
+      },
+      "tags": [
+        "average"
+      ],
+      "source": "Core Rules p.166",
+      "special": null
+    },
+    {
+      "id": "large",
+      "name": "Large",
+      "category": "common",
+      "stakes": 1,
+      "description": "Can house 10-20 crew with room to spare, but harder to dock and go unnoticed.",
+      "ratings": {
+        "armour": 1,
+        "stealth": -1
+      },
+      "tags": [
+        "large",
+        "cargo"
+      ],
+      "source": "Core Rules p.166",
+      "special": null
+    }
+  ],
+  "order": 1
+}

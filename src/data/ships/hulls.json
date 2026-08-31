@@ -1,0 +1,177 @@
+{
+  "$schema": "../../schemas/option-collection.schema.json",
+  "tool": "ship-generator",
+  "collection": "hulls",
+  "title": "Ship Hulls",
+  "description": "Required design choice. The main material used in a ship's construction. Multiple hulls may be taken.",
+  "selection": { "min": 1, "max": 2, "allowMultiple": true },
+  "ratingKeys": ["armour", "seals", "speed", "saws", "stealth", "tilt"],
+  "order": 3,
+  "options": [
+    {
+      "id": "reef-iron",
+      "name": "Reef-Iron",
+      "category": "common",
+      "stakes": 1,
+      "description": "Metal plating from decommissioned ships, reshaped for the frame. Durable and rust-resistant.",
+      "ratings": { "armour": 1 },
+      "tags": ["metal"],
+      "source": "Core Rules p.169",
+      "special": null
+    },
+    {
+      "id": "leviathan-bone",
+      "name": "Leviathan Bone",
+      "category": "common",
+      "stakes": 1,
+      "description": "Crafted from one or more pieces of leviathan skeleton. Solid, if a little morbid.",
+      "ratings": { "seals": 1 },
+      "tags": ["bone"],
+      "source": "Core Rules p.169",
+      "special": null
+    },
+    {
+      "id": "broadwood",
+      "name": "Broadwood",
+      "category": "common",
+      "stakes": 1,
+      "description": "Wooden planks cut from the more reliable trees of the Wildsea. Strong and flexible.",
+      "ratings": { "tilt": 1 },
+      "tags": ["wood"],
+      "source": "Core Rules p.169",
+      "special": null
+    },
+    {
+      "id": "rough-bark",
+      "name": "Rough Bark",
+      "category": "common",
+      "stakes": 1,
+      "description": "Harvested from the ironroots. Irregular and tough to maintain, but easy to overlook at distance.",
+      "ratings": { "stealth": 1 },
+      "tags": ["wood"],
+      "source": "Core Rules p.169",
+      "special": null
+    },
+    {
+      "id": "chitinous",
+      "name": "Chitinous",
+      "category": "common",
+      "stakes": 1,
+      "description": "Made from collected shells of the Wildsea's larger insects. Smooth, with little friction or snags.",
+      "ratings": { "speed": 1 },
+      "tags": ["insect"],
+      "source": "Core Rules p.169",
+      "special": null
+    },
+    {
+      "id": "razorscale",
+      "name": "Razorscale",
+      "category": "common",
+      "stakes": 1,
+      "description": "An exterior of interlocking scales sloughed or harvested from a wildsea beast, sharpened for effectiveness.",
+      "ratings": { "saws": 1 },
+      "tags": ["beast", "sharp"],
+      "source": "Core Rules p.169",
+      "special": null
+    },
+    {
+      "id": "beastback",
+      "name": "Beastback",
+      "category": "uncommon",
+      "stakes": 2,
+      "description": "A half-living hull of flesh and bone, flexible and unsettlingly warm.",
+      "ratings": { "seals": 1, "tilt": 1 },
+      "tags": ["living"],
+      "source": "Core Rules p.169",
+      "special": null
+    },
+    {
+      "id": "ceramic",
+      "name": "Ceramic",
+      "category": "uncommon",
+      "stakes": 2,
+      "description": "A shell of heavy baked clay. Ostentatious and brittle unless very carefully maintained.",
+      "ratings": { "armour": 1, "seals": 1 },
+      "tags": ["clay"],
+      "source": "Core Rules p.169",
+      "special": null
+    },
+    {
+      "id": "chrysalid",
+      "name": "Chrysalid",
+      "category": "uncommon",
+      "stakes": 2,
+      "description": "A hull adapted from the cast-off chrysalis of a massive insect, excellent against the sea's incursion.",
+      "ratings": { "seals": 1, "stealth": 1 },
+      "tags": ["insect"],
+      "source": "Core Rules p.169",
+      "special": null
+    },
+    {
+      "id": "ghost-oak",
+      "name": "Ghost-Oak",
+      "category": "uncommon",
+      "stakes": 2,
+      "description": "Pale as death and remarkably flexible, rarely found growing outside the lightless depths of the drown.",
+      "ratings": { "armour": 1, "tilt": 1 },
+      "tags": ["wood"],
+      "source": "Core Rules p.169",
+      "special": null
+    },
+    {
+      "id": "arachnesque",
+      "name": "Arachnesque",
+      "category": "uncommon",
+      "stakes": 2,
+      "description": "Less a hull and more a giant insect grown to fit the specifications of the frame, usually something spider-like.",
+      "ratings": { "tilt": 1, "stealth": 1 },
+      "tags": ["insect"],
+      "source": "Core Rules p.169",
+      "special": null
+    },
+    {
+      "id": "exiles-copper",
+      "name": "Exile's Copper",
+      "category": "uncommon",
+      "stakes": 2,
+      "description": "A rare metal that weighs far less than it has any right to, prized for racing-ship hulls.",
+      "ratings": { "armour": 1, "speed": 1 },
+      "tags": ["metal", "fast"],
+      "source": "Core Rules p.169",
+      "special": null
+    },
+    {
+      "id": "junk-strung",
+      "name": "Junk-Strung",
+      "category": "unique",
+      "stakes": 0,
+      "description": "Barely a hull at all; a collection of scavenged metal, driftwood, and animal bones. Unstable, rusting, and leaky.",
+      "ratings": { "armour": 1, "seals": -1 },
+      "tags": ["salvage"],
+      "source": "Core Rules p.169",
+      "special": "Mark your seals or armour rating to pull a piece of useful salvage from the hull."
+    },
+    {
+      "id": "floraflage",
+      "name": "Floraflage",
+      "category": "unique",
+      "stakes": 2,
+      "description": "A hull of living vegetation grown purposefully around the frame. Blends easily into the seascape.",
+      "ratings": { "stealth": 2, "armour": -1 },
+      "tags": ["living", "stealth"],
+      "source": "Core Rules p.169",
+      "special": "A floraflage ship at rest is almost impossible to detect — increase impact when using stealth while motionless."
+    },
+    {
+      "id": "monument",
+      "name": "Monument",
+      "category": "unique",
+      "stakes": 3,
+      "description": "An absurd affectation made of appallingly heavy mountain-stone.",
+      "ratings": { "armour": 2, "seals": 2 },
+      "tags": ["stone", "heavy"],
+      "source": "Core Rules p.169",
+      "special": "A ship with a monument hull cannot Forge Ahead during a journey."
+    }
+  ]
+}

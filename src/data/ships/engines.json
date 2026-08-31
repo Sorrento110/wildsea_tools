@@ -1,0 +1,177 @@
+{
+  "$schema": "../../schemas/option-collection.schema.json",
+  "tool": "ship-generator",
+  "collection": "engines",
+  "title": "Ship Engines",
+  "description": "Required design choice unless the chosen bite declares it needs no engine. The motive force behind the ship's bite.",
+  "selection": { "min": 1, "max": 2, "allowMultiple": true },
+  "ratingKeys": ["armour", "seals", "speed", "saws", "stealth", "tilt"],
+  "order": 5,
+  "options": [
+    {
+      "id": "chemical-compressor",
+      "name": "Chemical Compressor",
+      "category": "common",
+      "stakes": 1,
+      "description": "The most common engine on the rustling waves, reliably unreliable but extremely easy to fuel.",
+      "ratings": { "speed": 1 },
+      "tags": ["common"],
+      "source": "Core Rules p.172",
+      "special": "Fuelled with crushed fruit and insect husks."
+    },
+    {
+      "id": "springwork",
+      "name": "Springwork",
+      "category": "common",
+      "stakes": 1,
+      "description": "Wound exhaustively by hand, storing and releasing kinetic energy with surprising efficiency.",
+      "ratings": { "saws": 1 },
+      "tags": ["clockwork"],
+      "source": "Core Rules p.173",
+      "special": "Fuelled with sweat, labour, and time spent winding."
+    },
+    {
+      "id": "parasite-pitcher",
+      "name": "Parasite Pitcher",
+      "category": "common",
+      "stakes": 1,
+      "description": "A large pitcher plant coaxed into taking root in an engine housing, vines intermingling with the ship's systems.",
+      "ratings": { "stealth": 1 },
+      "tags": ["plant"],
+      "source": "Core Rules p.173",
+      "special": "Fuelled with organic material, preferably living."
+    },
+    {
+      "id": "steam-piping",
+      "name": "Steam Piping",
+      "category": "common",
+      "stakes": 1,
+      "description": "Hellish contraptions of tangled piping, rare chemicals, and scalding steam.",
+      "ratings": { "seals": 1 },
+      "tags": ["steam"],
+      "source": "Core Rules p.173",
+      "special": "Fuelled with water, the cleaner the better."
+    },
+    {
+      "id": "ratwheel-exchange",
+      "name": "Ratwheel Exchange",
+      "category": "common",
+      "stakes": 1,
+      "description": "A pure transfer of kinetic energy from restless rats to wheel to bite.",
+      "ratings": { "tilt": 1 },
+      "tags": ["animal"],
+      "source": "Core Rules p.173",
+      "special": "The rats need feeding every now and then, but they're not fussy."
+    },
+    {
+      "id": "pulsing-cocoon",
+      "name": "Pulsing Cocoon",
+      "category": "common",
+      "stakes": 1,
+      "description": "An unknown insect shifts inside, glutting on dreams and spinning them into an ebb of arconautic force.",
+      "ratings": { "armour": 1 },
+      "tags": ["insect"],
+      "source": "Core Rules p.173",
+      "special": "Fuelled with the dreams of the crew. Crews report intensely vivid dreams."
+    },
+    {
+      "id": "tamed-hive",
+      "name": "Tamed Hive",
+      "category": "unique",
+      "stakes": 2,
+      "description": "A buzzing organic engine of honeycombs and crawling workers, their movements a complex dance.",
+      "ratings": { "speed": 1, "seals": 1 },
+      "tags": ["insect", "living"],
+      "source": "Core Rules p.173",
+      "special": "Fuelled with stolen flowers and unprocessed pollen. Crew can gain 'Fresh Engine-Honey' once per journey."
+    },
+    {
+      "id": "reclaimed-burner",
+      "name": "Reclaimed Burner",
+      "category": "unique",
+      "stakes": 2,
+      "description": "An ancient burner that runs on processed chemical fuel, salvaged from the innards of a pre-verdant ship. Requires excessive ventilation.",
+      "ratings": { "speed": 3, "seals": -1 },
+      "tags": ["pre-verdant"],
+      "source": "Core Rules p.173",
+      "special": "Runs on processed chemical fuel. Liable to explode if seriously damaged."
+    },
+    {
+      "id": "rope-golem",
+      "name": "Rope Golem",
+      "category": "unique",
+      "stakes": 2,
+      "description": "A semi-sentient mass of animated ropes running through the rooms and corridors of the ship.",
+      "ratings": { "speed": 1, "stealth": 1 },
+      "tags": ["living", "rope"],
+      "source": "Core Rules p.173",
+      "special": "Takes no fuel, but the ropes must be replaced when they begin to fray. Rope golems have an unpredictable will."
+    },
+    {
+      "id": "leviathan-heart",
+      "name": "Leviathan Heart",
+      "category": "unique",
+      "stakes": 2,
+      "description": "An actual leviathan heart, still beating reflexively, hooked up to the ship. Pumps viscous black fuel through pipes and valves.",
+      "ratings": { "speed": 1, "tilt": 1 },
+      "tags": ["living", "leviathan"],
+      "source": "Core Rules p.173",
+      "special": "Requires no fuel, but in a particularly ominous way."
+    },
+    {
+      "id": "jawbox",
+      "name": "Jawbox",
+      "category": "unique",
+      "stakes": 1,
+      "description": "Noisy, wood-fuelled engines that create huge clouds of smoke and dust but with minimum chance of flame.",
+      "ratings": { "saws": 1, "speed": 1, "stealth": -1 },
+      "tags": ["wood", "loud"],
+      "source": "Core Rules p.173",
+      "special": "Fuelled with wildsea wood."
+    },
+    {
+      "id": "ceramic-batteries",
+      "name": "Ceramic Batteries",
+      "category": "unique",
+      "stakes": 2,
+      "description": "Volt-storing batteries rigged up to regulate and distribute power. Their crackling hum makes nearby insects uneasy.",
+      "ratings": { "saws": 1, "seals": 1 },
+      "tags": ["electric"],
+      "source": "Core Rules p.173",
+      "special": "Fuelled with lightning strikes."
+    },
+    {
+      "id": "solar-compressor",
+      "name": "Solar Compressor",
+      "category": "unique",
+      "stakes": 2,
+      "description": "Made to store, liquefy, and pressurize sunlight.",
+      "ratings": { "speed": 1, "stealth": 1 },
+      "tags": ["light"],
+      "source": "Core Rules p.173",
+      "special": "Naturally fuelled on sunny days."
+    },
+    {
+      "id": "magnetic-coils",
+      "name": "Magnetic Coils",
+      "category": "unique",
+      "stakes": 2,
+      "description": "Spinning cylinders that, ideally, maintain a state of almost perpetual motion.",
+      "ratings": { "tilt": 1, "stealth": 1 },
+      "tags": ["magnetic"],
+      "source": "Core Rules p.173",
+      "special": "Fuelled with magnetic scrap."
+    },
+    {
+      "id": "acid-maw",
+      "name": "Acid Maw",
+      "category": "unique",
+      "stakes": 2,
+      "description": "An open chemical vat that melts down scrap metal, piping the resulting pressurised slurry around the ship.",
+      "ratings": { "saws": 2 },
+      "tags": ["chemical"],
+      "source": "Core Rules p.173",
+      "special": "Fuelled with salvage and scrap."
+    }
+  ]
+}

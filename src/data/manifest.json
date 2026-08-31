@@ -1,0 +1,15 @@
+{
+  "$schema": "../schemas/manifest.schema.json",
+  "title": "Wildsea Tools",
+  "description": "Useful tools for running the Wildsea TTRPG, served through GitHub Pages.",
+  "tools": [
+    {
+      "id": "ship-generator",
+      "name": "Ship Generator",
+      "route": "/tools/ships/",
+      "description": "Generate a random NPC ship using options from the Wildsea Core Rules shipbuilding section.",
+      "dataDir": "ships",
+      "status": "active"
+    }
+  ]
+}

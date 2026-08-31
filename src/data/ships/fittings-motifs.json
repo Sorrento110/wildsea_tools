@@ -1,0 +1,111 @@
+{
+  "$schema": "../../schemas/option-collection.schema.json",
+  "tool": "ship-generator",
+  "collection": "fittings-motifs",
+  "title": "Motifs",
+  "description": "Optional fitting choice. A theme for the whole vessel that grants equipment and alterations useful for common activities.",
+  "selection": { "min": 0, "max": 1, "allowMultiple": false },
+  "ratingKeys": [],
+  "order": 6,
+  "options": [
+    {
+      "id": "transport",
+      "name": "Transport",
+      "category": "motif",
+      "stakes": 2,
+      "description": "A vessel themed around moving passengers, with built-in passenger quarters and a sturdy panic room.",
+      "ratings": {},
+      "tags": ["passengers"],
+      "source": "Core Rules p.174",
+      "special": "Identified at a glance as a passenger vessel."
+    },
+    {
+      "id": "hauling",
+      "name": "Hauling",
+      "category": "motif",
+      "stakes": 2,
+      "description": "A cargo-moving vessel with gangplanks, winches, bay doors, and a reliable cargo crane.",
+      "ratings": {},
+      "tags": ["cargo"],
+      "source": "Core Rules p.174",
+      "special": "Identified at a glance as a cargo hauler."
+    },
+    {
+      "id": "hunting",
+      "name": "Hunting",
+      "category": "motif",
+      "stakes": 2,
+      "description": "A vessel kitted for the oldest wildsea profession, with trophies, animal pens, and hunting and butchery tools.",
+      "ratings": {},
+      "tags": ["hunting"],
+      "source": "Core Rules p.174",
+      "special": "Crew fighting on or below decks gain easy access to CQ Keen or Spike damage."
+    },
+    {
+      "id": "salvaging",
+      "name": "Salvaging",
+      "category": "motif",
+      "stakes": 2,
+      "description": "A vessel for scrappers, dredgers, and wreck-wranglers, with work benches, tools, and a grappling crane.",
+      "ratings": {},
+      "tags": ["salvage"],
+      "source": "Core Rules p.174",
+      "special": "Can haul large wreckage onto the deck or tow it behind the ship."
+    },
+    {
+      "id": "pathfinding",
+      "name": "Pathfinding",
+      "category": "motif",
+      "stakes": 2,
+      "description": "Built for tenacious exploration, with a reinforced engine room and wilds-clearing tools.",
+      "ratings": {},
+      "tags": ["exploration"],
+      "source": "Core Rules p.175",
+      "special": "Crew fighting on or below decks gain easy access to Hewing or Serrated damage."
+    },
+    {
+      "id": "raiding",
+      "name": "Raiding",
+      "category": "motif",
+      "stakes": 2,
+      "description": "A vessel taking to the waves with violence in mind, with fortified rails, lockable bulkheads, and an armoury lockbox.",
+      "ratings": {},
+      "tags": ["combat"],
+      "source": "Core Rules p.175",
+      "special": "Crew fighting on or below decks gain easy access to Blunt or Blast damage."
+    },
+    {
+      "id": "rescue",
+      "name": "Rescue",
+      "category": "motif",
+      "stakes": 2,
+      "description": "A vessel called on when other ships do not make it back, with emergency medicine, a photoscope, and an isolation room.",
+      "ratings": {},
+      "tags": ["rescue"],
+      "source": "Core Rules p.175",
+      "special": "Slows the progress of illnesses during a journey."
+    },
+    {
+      "id": "research",
+      "name": "Research",
+      "category": "motif",
+      "stakes": 2,
+      "description": "A vessel for cracking the mysteries of the sea, with a library and a deck-mounted snapograph.",
+      "ratings": {},
+      "tags": ["research"],
+      "source": "Core Rules p.175",
+      "special": "Can record findings and delve into secrets and lore."
+    },
+    {
+      "id": "entertainment",
+      "name": "Entertainment",
+      "category": "motif",
+      "stakes": 2,
+      "description": "A vessel for actors, musicians, and performers, with a gaudy appearance, a stage, and costuming supplies.",
+      "ratings": {},
+      "tags": ["performance"],
+      "source": "Core Rules p.175",
+      "special": "Crew can represent various creeds and characters with costuming."
+    }
+  ]
+}

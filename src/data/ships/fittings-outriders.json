@@ -1,0 +1,188 @@
+{
+  "$schema": "../../schemas/option-collection.schema.json",
+  "tool": "ship-generator",
+  "collection": "fittings-outriders",
+  "title": "Outriders",
+  "description": "Optional fitting choice. Smaller single-seater vessels with limited range that can be launched from the main ship. Chassis, fittings, and launch options are grouped here; outrider stats apply to the outrider, not the main ship.",
+  "selection": { "min": 0, "max": 2, "allowMultiple": true },
+  "ratingKeys": [],
+  "order": 10,
+  "options": [
+    {
+      "id": "workhorse",
+      "name": "Workhorse Chassis",
+      "category": "chassis",
+      "stakes": 1,
+      "description": "The main body of a little ship, known for consistent reliability.",
+      "ratings": {},
+      "tags": ["outrider"],
+      "source": "Core Rules p.181",
+      "special": "Outrider base ratings: Armour 2, Seals 1, Speed 2, Saws 1, Stealth 1, Tilt 1. Gain two outrider fitting choices for free."
+    },
+    {
+      "id": "skipper",
+      "name": "Skipper Chassis",
+      "category": "chassis",
+      "stakes": 2,
+      "description": "Sleek and compact, made for speed and stealth above all else.",
+      "ratings": {},
+      "tags": ["outrider"],
+      "source": "Core Rules p.181",
+      "special": "Outrider base ratings: Armour 1, Seals 1, Speed 3, Saws 2, Stealth 3, Tilt 2."
+    },
+    {
+      "id": "chopper",
+      "name": "Chopper Chassis",
+      "category": "chassis",
+      "stakes": 2,
+      "description": "Brutish and noisy, designed to cut through the toughest vegetation.",
+      "ratings": {},
+      "tags": ["outrider"],
+      "source": "Core Rules p.181",
+      "special": "Outrider base ratings: Armour 3, Seals 1, Speed 2, Saws 3, Stealth 1, Tilt 2."
+    },
+    {
+      "id": "sidewinder",
+      "name": "Sidewinder Chassis",
+      "category": "chassis",
+      "stakes": 2,
+      "description": "Mobile and resilient, but lacking in speed.",
+      "ratings": {},
+      "tags": ["outrider"],
+      "source": "Core Rules p.181",
+      "special": "Outrider base ratings: Armour 2, Seals 3, Speed 1, Saws 2, Stealth 1, Tilt 3."
+    },
+    {
+      "id": "windglass",
+      "name": "Windglass",
+      "category": "fitting",
+      "stakes": 1,
+      "description": "A shell of hardened amber or ancient glass affixed to an outrider's steering column.",
+      "ratings": {},
+      "tags": ["outrider"],
+      "source": "Core Rules p.181",
+      "special": "Outrider gains Armour +1 and Seals +1."
+    },
+    {
+      "id": "overburner",
+      "name": "Overburner",
+      "category": "fitting",
+      "stakes": 1,
+      "description": "A chemical battery for adding extra power to the engines, used with great caution.",
+      "ratings": {},
+      "tags": ["outrider"],
+      "source": "Core Rules p.181",
+      "special": "Outrider gains Speed +1 and Saws +1."
+    },
+    {
+      "id": "mucoid-rub",
+      "name": "Mucoid Rub",
+      "category": "fitting",
+      "stakes": 1,
+      "description": "A slimy adhesive coating along the lower hull, muffling engine noise and improving sharp turns.",
+      "ratings": {},
+      "tags": ["outrider"],
+      "source": "Core Rules p.181",
+      "special": "Outrider gains Stealth +1 and Tilt +1."
+    },
+    {
+      "id": "personal-modification",
+      "name": "Personal Modification",
+      "category": "fitting",
+      "stakes": 1,
+      "description": "Whatever you have done to the thing, portside engineers would weep.",
+      "ratings": {},
+      "tags": ["outrider"],
+      "source": "Core Rules p.181",
+      "special": "Increase any three outrider ratings by 1 and decrease any one rating by 1."
+    },
+    {
+      "id": "weapon-housing",
+      "name": "Weapon Housing",
+      "category": "fitting",
+      "stakes": 1,
+      "description": "A mount for a larger deck weapon, with firing controls rigged to the steering column.",
+      "ratings": {},
+      "tags": ["outrider", "weapon"],
+      "source": "Core Rules p.181",
+      "special": "Deal massive LR Blunt, Keen, Spike, or Blast damage (chosen when taken)."
+    },
+    {
+      "id": "flatbed",
+      "name": "Flatbed",
+      "category": "fitting",
+      "stakes": 1,
+      "description": "A truck-style rear portion, affording a bumpy ride.",
+      "ratings": {},
+      "tags": ["outrider"],
+      "source": "Core Rules p.181",
+      "special": "Allows the outrider to carry a small number of crew or pieces of cargo."
+    },
+    {
+      "id": "camouflage",
+      "name": "Camouflage",
+      "category": "fitting",
+      "stakes": 1,
+      "description": "Paint and clever vegetation make the outrider almost impossible to spot at rest.",
+      "ratings": {},
+      "tags": ["outrider", "stealth"],
+      "source": "Core Rules p.181",
+      "special": "Outrider gains Stealth +3 when still or at anchor."
+    },
+    {
+      "id": "tow-line",
+      "name": "Tow-Line",
+      "category": "launch",
+      "stakes": 0,
+      "description": "Thickly-wound ropes or chains for towing an outrider behind the main ship.",
+      "ratings": {},
+      "tags": ["outrider", "launch"],
+      "source": "Core Rules p.180",
+      "special": "The budget option; the outrider may get damaged in the process."
+    },
+    {
+      "id": "docking-crane",
+      "name": "Docking Crane",
+      "category": "launch",
+      "stakes": 1,
+      "description": "A method of launching outriders from the ship's deck and retrieving them from the waves.",
+      "ratings": {},
+      "tags": ["outrider", "launch"],
+      "source": "Core Rules p.180",
+      "special": null
+    },
+    {
+      "id": "wild-bay-doors",
+      "name": "Wild-Bay Doors",
+      "category": "launch",
+      "stakes": 1,
+      "description": "Bay doors built into the hull that open directly to the waves, letting outriders launch and dock on their own.",
+      "ratings": {},
+      "tags": ["outrider", "launch"],
+      "source": "Core Rules p.180",
+      "special": null
+    },
+    {
+      "id": "hull-clamps",
+      "name": "Hull Clamps",
+      "category": "launch",
+      "stakes": 1,
+      "description": "Docking clamps on the outside of the ship to hold an outrider in place.",
+      "ratings": {},
+      "tags": ["outrider", "launch"],
+      "source": "Core Rules p.180",
+      "special": "Most often used for life rafts and small transport skippers."
+    },
+    {
+      "id": "catapult-track",
+      "name": "Catapult Track",
+      "category": "launch",
+      "stakes": 1,
+      "description": "A spring-loaded section of deck used for catapulting outriders onto the waves at speed.",
+      "ratings": {},
+      "tags": ["outrider", "launch"],
+      "source": "Core Rules p.180",
+      "special": "Great for surprise, but getting an outrider back into place is tricky."
+    }
+  ]
+}
