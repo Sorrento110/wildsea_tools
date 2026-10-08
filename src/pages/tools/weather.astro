@@ -1,0 +1,22 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import PromptTool from '../../components/PromptTool.astro';
+import manifest from '../../data/manifest.json';
+import { loadPromptCollections } from '../../lib/prompt-data';
+import { generatePrompt } from '../../lib/prompt-generator';
+
+const description = manifest.tools.find((tool) => tool.id === 'weather-conditions')?.description ?? '';
+const collections = loadPromptCollections('weather-conditions');
+const initial = generatePrompt(collections);
+---
+
+<BaseLayout title="Weather Conditions | Wildsea Tools" description={description}>
+  <PromptTool
+    title="Weather Conditions"
+    description="Roll 1d6 for the crewmember watching the weather. The result shifts the skies for the next leg of the journey — Clear Skies, Continuation, or a Change for the Worse."
+    tool="weather-conditions"
+    collections={collections}
+    outcomeLabel="Weather roll (1d6)"
+    initial={initial}
+  />
+</BaseLayout>

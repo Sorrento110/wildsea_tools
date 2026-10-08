@@ -1,0 +1,17 @@
+{
+  "$schema": "../../schemas/hazard-collection.schema.json",
+  "tool": "hazards",
+  "collection": "marauders",
+  "title": "Marauders",
+  "category": "Marauders",
+  "description": "Piratical crews and fanatics who make their living by force on the rustling waves.",
+  "order": 5,
+  "source": "Core Rules pp.240-241",
+  "inPlay": "Marauders are people, which makes them the most negotiable hazard in this chapter. Give them goals, a ship, and a reason to want something from the crew, and let parley be as viable as a fight.",
+  "hazards": [
+    { "id": "spirit-obsessed-corsairs", "name": "Spirit-Obsessed Corsairs", "size": "Medium", "summary": "A merciless ardent pirate band that roves the rustling waves looking for ships to plunder - pirates in the most classical sense, though their obsession is with spirits." },
+    { "id": "hungry-pirate-cultists", "name": "Hungry Pirate Cultists", "size": "Medium", "summary": "Bloodmaw crews that rely on every source of sustenance the wildsea offers; desperation or cultural practice lies behind their consumption of 'the grim meal'." },
+    { "id": "mothryn-zealots", "name": "Mothryn Zealots", "size": "Medium", "summary": "Sun Seekers: skyship crews trailing iridescent scales, religious zealots convinced that something on the waves has stolen the sun and holds it hostage." },
+    { "id": "tzelicrae-bandit-surgeons", "name": "Tzelicrae Bandit-Surgeons", "size": "Variable", "summary": "The lottery of skin is an ancient tradition in various tzelicrae cultures, but some have grown impatient and take the identities they want by force." }
+  ]
+}

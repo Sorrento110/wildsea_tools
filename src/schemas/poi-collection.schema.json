@@ -1,0 +1,87 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://wildsea-tools/poi-collection.schema.json",
+  "title": "Points of Interest collection",
+  "type": "object",
+  "required": ["tool", "collection", "title"],
+  "properties": {
+    "$schema": { "type": "string" },
+    "tool": { "const": "points-of-interest" },
+    "collection": { "type": "string", "minLength": 1 },
+    "title": { "type": "string", "minLength": 1 },
+    "description": { "type": "string" },
+    "order": { "type": "number" },
+    "source": { "type": "string" },
+    "features": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["id", "name", "description"],
+        "properties": {
+          "id": { "type": "string", "minLength": 1 },
+          "name": { "type": "string", "minLength": 1 },
+          "description": { "type": "string", "minLength": 1 },
+          "source": { "type": "string" }
+        }
+      }
+    },
+    "layers": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["id", "name", "secure", "perilous", "hooks", "encounters"],
+        "properties": {
+          "id": { "type": "string", "minLength": 1 },
+          "name": { "type": "string", "minLength": 1 },
+          "description": { "type": "string" },
+          "source": { "type": "string" },
+          "secure": { "type": "array", "items": { "$ref": "#/definitions/sense" } },
+          "perilous": { "type": "array", "items": { "$ref": "#/definitions/sense" } },
+          "hooks": { "type": "array", "items": { "type": "string", "minLength": 1 } },
+          "encounters": { "type": "array", "items": { "type": "string", "minLength": 1 } }
+        }
+      }
+    },
+    "sites": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["id", "name", "layer", "features", "description"],
+        "properties": {
+          "id": { "type": "string", "minLength": 1 },
+          "name": { "type": "string", "minLength": 1 },
+          "layer": { "type": "string", "minLength": 1 },
+          "features": { "type": "array", "items": { "type": "string" }, "minItems": 1 },
+          "description": { "type": "string", "minLength": 1 },
+          "source": { "type": "string" },
+          "resources": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "salvage": { "type": "array", "items": { "type": "string" } },
+              "specimens": { "type": "array", "items": { "type": "string" } },
+              "whispers": { "type": "array", "items": { "type": "string" } },
+              "charts": { "type": "array", "items": { "type": "string" } },
+              "cargo": { "type": "array", "items": { "type": "string" } }
+            }
+          }
+        }
+      }
+    }
+  },
+  "definitions": {
+    "sense": {
+      "type": "object",
+      "required": ["sense", "text"],
+      "properties": {
+        "sense": { "type": "string", "minLength": 1 },
+        "text": { "type": "string", "minLength": 1 }
+      }
+    }
+  },
+  "anyOf": [
+    { "required": ["features"] },
+    { "required": ["layers"] },
+    { "required": ["sites"] }
+  ]
+}

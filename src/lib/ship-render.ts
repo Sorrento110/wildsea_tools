@@ -1,14 +1,6 @@
+import { escapeHtml } from './html';
 import { SHIP_RATING_KEYS, SHIP_RATING_LABELS } from './ship-generator';
 import type { GeneratedSection, GeneratedShip, GeneratorOption, RatingMap } from './types';
-
-function escapeHtml(value: string): string {
-  return value
-    .replace(/&/g, '&amp;')
-    .replace(/</g, '&lt;')
-    .replace(/>/g, '&gt;')
-    .replace(/"/g, '&quot;')
-    .replace(/'/g, '&#39;');
-}
 
 function ratingDeltas(ratings: RatingMap): string {
   const entries = Object.entries(ratings);

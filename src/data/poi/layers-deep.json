@@ -1,0 +1,93 @@
+{
+  "$schema": "../../schemas/poi-collection.schema.json",
+  "tool": "points-of-interest",
+  "collection": "layers-deep",
+  "title": "The Lower Layers",
+  "description": "Sensory descriptions, potential hooks, and potential encounters for the tangle, the sink, and the drown.",
+  "order": 2,
+  "source": "Core Rules pp.212-215",
+  "layers": [
+    {
+      "id": "tangle",
+      "name": "The Tangle",
+      "description": "A liminal space between the inhabitable and the inhospitable, the deepest most wildsailors ever travel. Branches and vines stretch as far as the eye can see, insects and spores coat every surface, and the leaves and mosses are soaked through with crezzerin.",
+      "source": "Core Rules pp.212-213",
+      "secure": [
+        { "sense": "Sight", "text": "Glimpses of strong, proud boughs below. Swarms of insects glowing in the half-dark. The whipping tails of beasts as they hunt or hide." },
+        { "sense": "Smell", "text": "Fresh crezzerin and tree sap. Pheromones that stuff up the nose, an endless cycle of life. Fruit juice and spices on the breeze, and the sweat of the undercrew as they work in the warmth." },
+        { "sense": "Touch", "text": "Branches and leaves all around the ship, pressing up against the hull and sweeping the deck as you move. Insects crawling over exposed skin. Thick coatings of spores on the portholes." },
+        { "sense": "Taste", "text": "Old wood, wet with warmth. Any fruit you could imagine, and their bitter peels." },
+        { "sense": "Sound", "text": "Navigators calling out course corrections. The whoop and roar of distant beasts. The rustle of the leaves is quieter down here, away from the wind, but omnipresent." },
+        { "sense": "Infravision", "text": "The blanket of leaves traps heat but blocks out sunlight. Some areas are uncomfortably hot, others more chill than expected, but all of them alive with constant movement." }
+      ],
+      "perilous": [
+        { "sense": "Sight", "text": "Areas of murk or shade, unnaturally dark despite your proximity to the surface. Ironwood trunks split by fungal funnels, pumping out spores." },
+        { "sense": "Smell", "text": "Mold, mulch, damp and decay, a humid cocktail of cyclical death. The sweet scent of predatory plants and their digestive juices." },
+        { "sense": "Touch", "text": "A sting of crezzersear, not from every leaf-edge or stray twig, but from any of them. Insect bites and crawling horrors. Hot breath on your neck." },
+        { "sense": "Taste", "text": "Spores clogging the back of your throat. Rancid meat from a stolen kill. Over-ripe fruit that burns the teeth." },
+        { "sense": "Sound", "text": "Of predator and prey, though chases rarely last for long. An engine labouring to drive an over-worked bite. Crew spitting, quiet and tense as they watch the mass of leaves above, beside, and below them." },
+        { "sense": "Hullsight", "text": "Like a constant pressure on the eye, everything in the world pushing up against you from all sides." }
+      ],
+      "hooks": [
+        "Spores drifting across the deck are having an unusual effect on some of the gau crewmembers.",
+        "A work-crew trying frantically to repair their stopped ship as night falls, desperate to regain the surface.",
+        "A marauder checkpoint waves you through without question, their crossbows lowered and smiles on their faces.",
+        "The food in your galley spoils far more quickly than it should - decay, for some reason, runs rampant here.",
+        "You find a tunnel cut into the tangle, leading to the sloping maw of a rift. There are signs that many ships have used it recently.",
+        "An octodew's tendrils wrap around the hull, but it doesn't squeeze - instead, it looks like it might be hitching a ride.",
+        "The throaty roar of an engine gone feral... There's a mawship in the area."
+      ],
+      "encounters": [
+        "A pinwolf pack nesting in a ruined ship's hull",
+        "Lemurs swinging from branch to branch, pausing to watch a ship as it cuts its way by",
+        "A mass of insects in a vaguely humanesque form",
+        "A proto-leviathan, the larval form of some great insect writhing among forked branches",
+        "The corpses of wildsailors, wrapped gently in vines",
+        "Leaf-shawled dancers engaged in a ritual duel",
+        "A mangled kitesail covered in mysterious slime",
+        "Wildcats sleeping on wide branches",
+        "A trader's ship with navapede limbs winding its way through the shadows",
+        "An ancient, moss-covered collection of stones",
+        "A leviathan on the hunt, signalled by the sudden panicked flight of all other endemic creatures"
+      ]
+    },
+    {
+      "id": "sink-drown",
+      "name": "The Sink & the Drown",
+      "description": "The fourth and fifth layers of the wild world, rarely visited by all but the most foolhardy and tenacious wildsailors. They share ecosystems and findings, separated mainly by how much branch-work a ship has to travel through - the sink is easier going, while the drown's sparse sections grow lighter and more brittle the deeper a ship travels.",
+      "source": "Core Rules pp.214-215",
+      "secure": [
+        { "sense": "Sight", "text": "Massive branches criss-crossing, their leaves wan from a lack of light. Holes and empty spaces between those branches, wider and more pronounced the deeper a crew travels. Wrecks untouched by anything but time." },
+        { "sense": "Smell", "text": "Dust, sap, and lush leaves. Pheromones and chemical bursts from unknown creatures, promising novelty and discovery." },
+        { "sense": "Touch", "text": "The rough bark of an ironroot, a safe insulator for the crezzerin running within. A chitinous exoskeleton, shed and ripe for plunder." },
+        { "sense": "Taste", "text": "Preserved supplies from sunken ships. Bark-stewed tea as you huddle in the galley to pass a night. Fruit and spices that few have ever tasted." },
+        { "sense": "Sound", "text": "A peaceful absence of wind and movement - this may be the first time some wildsailors have ever heard true silence." },
+        { "sense": "Infravision", "text": "Huge heat-sources shadowed by cold branches, allowing you to see predators far before they might be able to see you." }
+      ],
+      "perilous": [
+        { "sense": "Sight", "text": "Holes in the canopy that threaten to swallow your ship. The wrecks of other vessels that made it down this far but never managed to head back up. A madly rolling eye caught in your ship's lights - you are noticed." },
+        { "sense": "Smell", "text": "The wafting up of vapours from below, the smell of a place none should ever reach now far closer than it should be. Crezzer-rich blood spilled in some titanic battle." },
+        { "sense": "Touch", "text": "Branches shuddering beneath your ship as they struggle to hold up the hull. Leaves too papery and pale - you are reaching the lowest places." },
+        { "sense": "Taste", "text": "Fruits that have never felt the sun. Bone-broth from less fortunate explorers." },
+        { "sense": "Sound", "text": "Silence, oppressive and overwhelming - the only rustles here are those caused by predators moving in the darkness, there is no wind to stir the waves." },
+        { "sense": "Normal Sight", "text": "Nothing without a light source of your own - what is lurking in the darkness, and how will it sense you?" }
+      ],
+      "hooks": [
+        "The crew were contracted by a wealthy merchant to reclaim the cargo of a lost trading vessel. They've tracked it to here, and opened the hold - amber glints in the lamplight.",
+        "A rift cuts down from the surface to the sink, at an angle that's steep but still just sailable.",
+        "Word reaches the crew of a newly discovered settlement lashed to the trunk of an ironroot, within the drown. What secrets and novelties might be found there?",
+        "A leviathan crow grabs the ship, dragging it down to the sink and depositing it in its nest along with its eggs. They are about to hatch.",
+        "A black-market trade in a mind-numbing spice is tracked to a deep sap-drilling rig."
+      ],
+      "encounters": [
+        "A swarm of insects in the dark, roaches crawling over the railings or fireflies resting on the prow",
+        "A sporecloud dense enough to block out the light from your own lamps",
+        "A sliding glimpse of scales or fur or exposed bone as a leviathan crashes past within spitting distance",
+        "An empty space - no branches, no beasts, no insects to speak of",
+        "A wreck caught in a fork of branches",
+        "A massive mantis hanging still and patient beneath a branch, eyes focused on the ship and its crew",
+        "A single deeps-diver, attached by a long cable to the canopy far, far above"
+      ]
+    }
+  ]
+}

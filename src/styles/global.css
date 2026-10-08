@@ -115,6 +115,10 @@ a:hover {
   padding: 2rem 1.5rem 5rem;
 }
 
+.site-main-wide {
+  max-width: min(1600px, 96vw);
+}
+
 .site-footer {
   max-width: var(--max-width);
   margin: 0 auto;
@@ -439,11 +443,15 @@ a:hover {
 .primary-button,
 .secondary-button,
 .section-reroll {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   font: inherit;
   cursor: pointer;
   border-radius: var(--radius);
   padding: 0.55rem 1rem;
   border: 1px solid var(--color-border-strong);
+  text-decoration: none;
   transition: background-color 0.15s ease, border-color 0.15s ease, color 0.15s ease, box-shadow 0.15s ease;
 }
 
@@ -746,4 +754,468 @@ a:hover {
 .option-card-highlight {
   box-shadow: 0 0 0 2px var(--color-accent), var(--shadow-soft);
   transition: box-shadow 0.2s ease;
+}
+/* Prompt tools (Watch Results, Weather Conditions) */
+.prompt-root {
+  margin-top: 0.25rem;
+}
+
+.prompt-card {
+  border: 1px solid var(--color-border-strong);
+  border-radius: var(--radius-lg);
+  background:
+    linear-gradient(150deg, rgba(240, 179, 91, 0.08), transparent 55%),
+    var(--color-surface);
+  padding: 1.4rem 1.6rem;
+  box-shadow: var(--shadow-soft);
+}
+
+.prompt-rolls {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  flex-wrap: wrap;
+  margin-bottom: 0.9rem;
+}
+
+.prompt-badge {
+  display: inline-flex;
+  align-items: stretch;
+  border: 1px solid var(--color-border-strong);
+  border-radius: 999px;
+  overflow: hidden;
+  font-size: 0.82rem;
+}
+
+.prompt-badge-label {
+  padding: 0.2rem 0.6rem;
+  background-color: var(--color-bg-soft);
+  color: var(--color-text-muted);
+}
+
+.prompt-badge-value {
+  padding: 0.2rem 0.6rem;
+  font-weight: 700;
+  background-color: var(--color-accent);
+  color: #1d1a0f;
+}
+
+.prompt-badge-result .prompt-badge-value {
+  background-color: var(--color-moss);
+  color: #12200f;
+}
+
+.prompt-outcome {
+  font-family: var(--font-display);
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: var(--color-accent-soft);
+  letter-spacing: 0.02em;
+}
+
+.prompt-outcome-description {
+  margin: 0 0 0.75rem;
+  color: var(--color-text-muted);
+  font-size: 0.9rem;
+  font-style: italic;
+}
+
+.prompt-text {
+  margin: 0 0 0.9rem;
+  font-size: 1.18rem;
+  line-height: 1.55;
+  color: var(--color-text);
+}
+
+/* Points of Interest */
+.poi-card .poi-header {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+  margin-bottom: 0.35rem;
+}
+
+.poi-feature {
+  font-family: var(--font-display);
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--color-accent-soft);
+  letter-spacing: 0.02em;
+}
+
+.poi-layer {
+  font-size: 0.82rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--color-text-muted);
+}
+
+.poi-feature-description {
+  margin: 0 0 1rem;
+  color: var(--color-text-muted);
+  font-size: 0.92rem;
+  font-style: italic;
+}
+
+.poi-block {
+  margin-bottom: 0.9rem;
+}
+
+.poi-block h4 {
+  margin: 0 0 0.25rem;
+  font-size: 0.95rem;
+  color: var(--color-accent);
+}
+
+.poi-block p {
+  margin: 0;
+  line-height: 1.5;
+}
+
+.poi-tag {
+  font-weight: 400;
+  font-size: 0.78rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--color-text-muted);
+}
+
+.poi-resources {
+  margin: 1rem 0 0.5rem;
+  padding-top: 0.75rem;
+  border-top: 1px dashed var(--color-border-strong);
+}
+
+.poi-resources h4 {
+  margin: 0 0 0.5rem;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--color-text-muted);
+}
+
+.poi-resource {
+  display: flex;
+  gap: 0.6rem;
+  align-items: baseline;
+  margin-bottom: 0.35rem;
+}
+
+.poi-resource-label {
+  flex: 0 0 6.5rem;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--color-accent);
+}
+
+.poi-resource-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.poi-resource-list li {
+  padding: 0.1rem 0.55rem;
+  border: 1px solid var(--color-border-strong);
+  border-radius: 999px;
+  font-size: 0.82rem;
+  background-color: var(--color-bg-soft);
+}
+
+.poi-source {
+  margin: 0.5rem 0 0;
+  font-size: 0.75rem;
+  color: var(--color-text-muted);
+  text-align: right;
+}
+
+/* Hazards */
+.hazard-card .hazard-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 0.75rem;
+  margin-bottom: 0.6rem;
+}
+
+.hazard-category {
+  font-size: 0.78rem;
+  text-transform: uppercase;
+  letter-spacing: 0.09em;
+  color: var(--color-text-muted);
+}
+
+.hazard-name {
+  margin: 0.1rem 0 0;
+  font-family: var(--font-display);
+  font-size: 1.3rem;
+  color: var(--color-accent-soft);
+}
+
+.hazard-size {
+  flex: 0 0 auto;
+  padding: 0.2rem 0.7rem;
+  border-radius: 999px;
+  border: 1px solid var(--color-border-strong);
+  background-color: var(--color-bg-soft);
+  font-size: 0.78rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--color-accent);
+}
+
+.hazard-summary {
+  margin: 0 0 0.75rem;
+  line-height: 1.5;
+}
+
+.hazard-inplay {
+  margin: 0 0 1rem;
+  font-size: 0.9rem;
+  color: var(--color-text-muted);
+}
+
+.hazard-track {
+  padding: 0.9rem 1rem;
+  border: 1px solid var(--color-border-strong);
+  border-radius: var(--radius);
+  background-color: var(--color-bg-soft);
+}
+
+.hazard-track-head {
+  display: flex;
+  justify-content: space-between;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+  margin-bottom: 0.6rem;
+}
+
+.hazard-tier {
+  font-weight: 700;
+  color: var(--color-accent-soft);
+}
+
+.hazard-limit {
+  font-size: 0.82rem;
+  color: var(--color-text-muted);
+}
+
+.hazard-boxes {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+  margin-bottom: 0.7rem;
+}
+
+.hazard-box {
+  width: 16px;
+  height: 16px;
+  border: 1px solid var(--color-border-strong);
+  border-radius: 3px;
+  background-color: var(--color-surface);
+}
+
+.hazard-damage {
+  margin: 0 0 0.6rem;
+  font-size: 0.9rem;
+}
+
+.hazard-guidance {
+  margin: 0;
+  padding-left: 1.1rem;
+  font-size: 0.88rem;
+  color: var(--color-text-muted);
+}
+
+.hazard-guidance li {
+  margin-bottom: 0.3rem;
+}
+
+.hazard-source {
+  margin: 0.6rem 0 0;
+  font-size: 0.75rem;
+  color: var(--color-text-muted);
+  text-align: right;
+}
+
+.hazard-condition {
+  margin-top: 1rem;
+  padding-top: 0.9rem;
+  border-top: 1px dashed var(--color-border-strong);
+}
+
+.hazard-condition-label {
+  margin: 0 0 0.5rem;
+  font-size: 0.78rem;
+  text-transform: uppercase;
+  letter-spacing: 0.09em;
+  color: var(--color-accent);
+}
+
+.constraint-check {
+  flex-direction: row;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+/* Journey dashboard */
+.journey-controls {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-bottom: 1.25rem;
+}
+
+.journey-hint {
+  margin: 0;
+  color: var(--color-text-muted);
+  font-size: 0.85rem;
+}
+
+.journey-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.1rem;
+  align-items: start;
+}
+
+.journey-panel {
+  display: flex;
+  flex-direction: column;
+  padding: 1.1rem 1.25rem 1.25rem;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  background-color: var(--color-surface);
+}
+
+.journey-panel-body {
+  min-height: 0;
+}
+
+.journey-panel .prompt-card {
+  padding: 1rem 1.1rem;
+}
+
+.journey-panel-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+  margin-bottom: 0.75rem;
+}
+
+.journey-panel-head h2 {
+  margin: 0;
+  font-family: var(--font-display);
+  font-size: 1.15rem;
+  font-weight: 600;
+  color: var(--color-accent-soft);
+}
+
+/* Stack the panel controls so narrow dashboard columns stay tidy. */
+.journey-panel .constraint-bar {
+  flex-direction: column;
+  align-items: stretch;
+  gap: 0.5rem;
+  margin-bottom: 0.9rem;
+}
+
+.journey-panel .constraint-field select {
+  min-width: 0;
+  width: 100%;
+}
+
+.journey-panel .constraint-check {
+  flex-direction: row;
+  align-items: center;
+}
+
+@media (min-width: 640px) {
+  .journey-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+/* Four quarter-width columns, each filling the viewport with its own scroll. */
+@media (min-width: 1200px) {
+  .journey-grid {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+
+  .journey-panel {
+    height: calc(100vh - 22rem);
+    height: calc(100dvh - 22rem);
+    min-height: 24rem;
+    overflow: hidden;
+  }
+
+  .journey-panel-body {
+    flex: 1 1 auto;
+    overflow-y: auto;
+    padding-right: 0.35rem;
+    overscroll-behavior: contain;
+  }
+}
+
+.ghost-button {
+  font: inherit;
+  cursor: pointer;
+  padding: 0.25rem 0.7rem;
+  border: 1px solid var(--color-border-strong);
+  border-radius: 999px;
+  background-color: transparent;
+  color: var(--color-text-muted);
+  font-size: 0.82rem;
+  transition: border-color 0.15s ease, color 0.15s ease;
+}
+
+.ghost-button:hover,
+.ghost-button:focus-visible {
+  border-color: var(--color-accent);
+  color: var(--color-accent);
+  outline: none;
+}
+
+/* Compact journey summary used by the landing page's Quick Sparks. */
+.quick-journey {
+  display: grid;
+  gap: 0.75rem;
+}
+
+.quick-journey-row {
+  display: grid;
+  grid-template-columns: 7.5rem 1fr;
+  gap: 0.75rem;
+  align-items: baseline;
+}
+
+.quick-journey-label {
+  font-size: 0.78rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--color-accent);
+}
+
+.quick-journey-text {
+  margin: 0;
+  color: var(--color-text);
+  line-height: 1.45;
+}
+
+.quick-details-footer {
+  gap: 0.5rem;
+}
+
+@media (max-width: 520px) {
+  .quick-journey-row {
+    grid-template-columns: 1fr;
+    gap: 0.15rem;
+  }
 }

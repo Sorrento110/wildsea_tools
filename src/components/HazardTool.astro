@@ -1,0 +1,104 @@
+---
+import GeneratorShell from './GeneratorShell.astro';
+import { renderHazardHtml } from '../lib/hazard-render';
+import type { GeneratedHazard, HazardCollection } from '../lib/types';
+
+interface Props {
+  title: string;
+  description?: string;
+  tool: string;
+  collections: Record<string, HazardCollection>;
+  initial: GeneratedHazard;
+}
+
+const { title, description, tool, collections, initial } = Astro.props;
+
+const list = Object.values(collections).sort((a, b) => (a.order ?? 0) - (b.order ?? 0));
+const sizes = [...new Set(list.flatMap((collection) => collection.hazards.map((h) => h.size)))].sort();
+const collectionsJson = JSON.stringify(collections);
+const initialHtml = renderHazardHtml(initial);
+---
+
+<GeneratorShell title={title} description={description}>
+  <div class="constraint-bar" aria-label="Hazard options">
+    <label class="constraint-field">
+      <span>Category</span>
+      <select id="hazard-category">
+        <option value="">Any</option>
+        {list.map((collection) => (
+          <option value={collection.collection}>{collection.category}</option>
+        ))}
+      </select>
+    </label>
+
+    <label class="constraint-field">
+      <span>Size</span>
+      <select id="hazard-size">
+        <option value="">Any</option>
+        {sizes.map((size) => (
+          <option value={size}>{size}</option>
+        ))}
+      </select>
+    </label>
+
+    <label class="constraint-field constraint-check">
+      <input type="checkbox" id="hazard-basic" />
+      <span>Include basic hazards</span>
+    </label>
+
+    <label class="constraint-field constraint-check">
+      <input type="checkbox" id="hazard-leviathans" />
+      <span>Include leviathans</span>
+    </label>
+  </div>
+
+  <div class="generator-controls">
+    <button type="button" id="hazard-roll" class="primary-button">Generate again</button>
+    <button type="button" id="hazard-copy" class="secondary-button">Copy result</button>
+  </div>
+
+  <div id="hazard-root" class="prompt-root" aria-live="polite" set:html={initialHtml}></div>
+</GeneratorShell>
+
+<div id="hazard-data" hidden data-tool={tool} data-collections={collectionsJson}></div>
+
+<script>
+  import { generateHazard } from '../lib/hazard-generator';
+  import { renderHazardHtml, formatHazardText } from '../lib/hazard-render';
+  import { copyWithFeedback } from '../lib/clipboard';
+  import type { GeneratedHazard, HazardCollection } from '../lib/types';
+
+  const data = document.getElementById('hazard-data');
+  const collections = JSON.parse(data?.dataset.collections ?? '{}') as Record<string, HazardCollection>;
+
+  const root = document.getElementById('hazard-root');
+  const categorySelect = document.getElementById('hazard-category') as HTMLSelectElement | null;
+  const sizeSelect = document.getElementById('hazard-size') as HTMLSelectElement | null;
+  const basicCheck = document.getElementById('hazard-basic') as HTMLInputElement | null;
+  const leviathanCheck = document.getElementById('hazard-leviathans') as HTMLInputElement | null;
+
+  let latest: GeneratedHazard | null = null;
+
+  function options() {
+    return {
+      collectionId: categorySelect?.value || undefined,
+      size: sizeSelect?.value || undefined,
+      includeBasic: basicCheck?.checked ?? false,
+      includeLeviathans: leviathanCheck?.checked ?? false,
+    };
+  }
+
+  function generate() {
+    latest = generateHazard(collections, options());
+    if (root) root.innerHTML = renderHazardHtml(latest);
+    return latest;
+  }
+
+  document.getElementById('hazard-roll')?.addEventListener('click', generate);
+
+  document.getElementById('hazard-copy')?.addEventListener('click', () => {
+    const hazard = latest ?? generateHazard(collections, options());
+    latest = hazard;
+    void copyWithFeedback(document.getElementById('hazard-copy'), formatHazardText(hazard));
+  });
+</script>

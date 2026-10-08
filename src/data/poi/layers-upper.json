@@ -1,0 +1,102 @@
+{
+  "$schema": "../../schemas/poi-collection.schema.json",
+  "tool": "points-of-interest",
+  "collection": "layers-upper",
+  "title": "The Upper Layers",
+  "description": "Sensory descriptions, potential hooks, and potential encounters for the skies and the thrash.",
+  "order": 1,
+  "source": "Core Rules pp.208-211",
+  "layers": [
+    {
+      "id": "skies",
+      "name": "The Skies",
+      "description": "An open expanse of tearing winds and leafless freedom, most easily reached by airship or a sturdy cliffside and climbing gear. Altitude grants a rare measure of safety, along with a unique view of the leafy topography below.",
+      "source": "Core Rules pp.207-209",
+      "secure": [
+        { "sense": "Sight", "text": "Clouds scudding by, or below. A vast emptiness giving way to untamed waves. Shades of green, striations of leaf and branch. The v-shaped wakes of distant ships." },
+        { "sense": "Smell", "text": "Fresh, clean air, untainted by spores and pollen. A metallic tang if you're high enough. A harsh note of gas from an airship's balloon." },
+        { "sense": "Touch", "text": "The wind grabbing coat-tails, jackets, and scarves. Damp beading on skin from a passing cloud. The warmth of the sun, unhindered by canopy-shade." },
+        { "sense": "Taste", "text": "Blissful nothingness, not a hint of the usual dense flavours of the waves." },
+        { "sense": "Sound", "text": "The cawing of crows and the honking of distant gulls. The whistle and sigh of the wind. The drone of insects brave enough to head this high." },
+        { "sense": "Infravision", "text": "Heat-sight reveals updraughts and zephyrs, turning the open sky into a subtle flow of colour." }
+      ],
+      "perilous": [
+        { "sense": "Sight", "text": "A gathering storm that threatens to engulf you in inky darkness. A terrifying drop to land, or worse, to the untamed sea." },
+        { "sense": "Smell", "text": "Ozone in the air, threatening a lightning-storm. An updraught of choking spores from far below. The fear that comes with a hint of woodsmoke on the breeze." },
+        { "sense": "Touch", "text": "Wind buffeting clothes and bodies, making footing unstable and snatching chaff and fragment away." },
+        { "sense": "Taste", "text": "A sharp metal tang on the air. A dry mouth, the result of vertigo. Vomit, hastily swallowed back." },
+        { "sense": "Sound", "text": "The endless rustle below. The endless howl around you. The endless silence above." },
+        { "sense": "Ferrosight", "text": "A terrifying sense to rely on high above the waves, far from the scrap that usually speckles your vision. Up here it gives you nothing but an absence of sensation." }
+      ],
+      "hooks": [
+        "A kitesailor is miles off course after being dragged by a living storm, and needs help getting home.",
+        "An explosion of bird and insect life streams past the crew, all heading in the same direction - are they rushing toward or away from something?",
+        "A distant flare-burst lights up the clouds in patterns of hope or warning.",
+        "A sudden increase in pressure - stormclouds rush to encircle the crew.",
+        "The crew find a floating wreck, a dirigible with cold engines and a leaking gasbag. The crew are nowhere in sight, but they could hardly just have stepped out.",
+        "The ship's engine begins to whine and groan, ice forming on the pipework. Where did this sudden cold snap come from?",
+        "Rumours of dashing sky-pirates abound, like something from a spectacular pre-verdant storybook.",
+        "A trail of scent and spores on the breeze, the sheddings of some massive airborne leviathan."
+      ],
+      "encounters": [
+        "An ironjaw ray towing a storm in its wake",
+        "A host of flying squirrels acting as a swarm",
+        "Carnivorous vines crawling along a cliffside",
+        "An unmoored lionsmane, drifting on the breeze",
+        "A shrike with a wickedly sharp beak diving toward the crew",
+        "A redfeather strix crawling along the branches of a tallshank",
+        "A dirigible merchant with an honour guard in tow",
+        "A kitesailor strapped with explosives",
+        "A whip-crack of wind that tears at scarves and trinkets, pushing ships off course and making climbing treacherous",
+        "A living storm circling an isolated colony like a hungry animal",
+        "Swift insects and their droning companions",
+        "Castaways pinned to the heavens"
+      ]
+    },
+    {
+      "id": "thrash",
+      "name": "The Thrash",
+      "description": "The most travelled layer of the six-layered sea, sitting light and wind-swept between sky and tangle. Mostly springy wavetops, fields of leaves, and the occasional spit or mountaintop island, it is where the vast majority of settlements sit.",
+      "source": "Core Rules pp.210-211",
+      "secure": [
+        { "sense": "Sight", "text": "An endless field of leaves swaying and rustling in the wind. Ships passing by, their bites churning up plumes of leaf-pulp and splinters. Branches breaking and growing again, new shoots appearing within minutes in the wake of destruction." },
+        { "sense": "Smell", "text": "The warm, leafy smell of nature, as fresh as the first day of a pre-verdant spring. The exhausts of passing ships. A hint of crezzerin when the wind blows just right, sweet and dangerous. Split fruits and the musk of beasts." },
+        { "sense": "Touch", "text": "Dappled shade and bands of warmth as a ship passes under sparse branches. The paper-texture of old leaves. Stings and bites and spore-blisters if a ship idles too long in one place." },
+        { "sense": "Taste", "text": "Fresh air, new fruit, sweat and tar and oil. Sap and freshly-cut wood. Spores." },
+        { "sense": "Sound", "text": "The ever-present rustle of the waves, leaf on leaf and branch on branch. Ship engines and the calls of beasts and insects as they hunt. Chattering crewmates." },
+        { "sense": "Ghostsight", "text": "The waves here are a constant churn of tiny spirits, insects, and mammals snapped up, their ghosts rising from the leaves and dissipating in the sunlight." }
+      ],
+      "perilous": [
+        { "sense": "Sight", "text": "A ship's wake abruptly ended, but no ship in sight. A churning of leaves and branches as beasts fight below. A flicker of light in the darkness that stops your heart - a spark, a candle, a wild flame? Sporeclouds drifting." },
+        { "sense": "Smell", "text": "Overwhelming and potent, all the scents of the underthrash rising up to encircle a ship at anchor. The sickly smell of crezzerin turned to mist as the leaves holding it are threshed. Blood and sweat, the hunter's bouquet." },
+        { "sense": "Touch", "text": "The searing pain of crezzerin on bare skin. Spores clogging the throat, taking root. A sharp pain and uncomfortable numbness as one of the sea's larger insects takes aim with one of a thousand kinds of venom." },
+        { "sense": "Taste", "text": "A wet fullness of spores. Uncooked meat and spoiled fruit. Insect matter." },
+        { "sense": "Sound", "text": "The roar of beasts from deeper below. An engine stalling. Branches breaking." },
+        { "sense": "Tremorsense", "text": "The world is in constant motion here, between ships and beasts and wind and growth - an overwhelming confusion, stretching as far around as can be sensed." }
+      ],
+      "hooks": [
+        "A merchant ship's crew waving flags in greeting, unaware of the threat in their wake.",
+        "The crew stumble upon new channels cut through the thrash, with crowded boats arranged either side of them - are they spectators to some sort of race?",
+        "A nearby ruin shudders as the ship draws near, dust cascading down its flanks.",
+        "The undercrew are fractious and worried - it feels like you've been hunted for days, but there's no sign of any kind of pursuer.",
+        "A signpost out in the wild, miles from any kind of settlement. You'd probably never have noticed it if you hadn't run straight into it.",
+        "An infestation of insects rampaging through the ship, hungry little mandibles latching onto anything they can find.",
+        "A marauder vessel clips your hull as they speed past, without even bothering to fire a warning shot. Where are they going in such a hurry?"
+      ],
+      "encounters": [
+        "A brace of springfoxes leaping from branch to branch, darting in and out of the wavetops like copper-and-gold fish",
+        "A leviathan sunning itself for a moment before retreating beneath",
+        "A pangoska gnawing at a recently broken branch",
+        "Predatory plants hunting squirrels and cicadas",
+        "A shrike with a wickedly sharp beak diving toward the crew",
+        "A crew of sailors marooned on a stout branch",
+        "A colony built onto a slab of wave-trapped stone",
+        "A trading ship greeting you with coloured flares",
+        "A fallen tallshank, now its own unique ecosystem",
+        "A roachriver, black and glistening and right in the path of the ship",
+        "Spirits and fireflies flitting in the halflight",
+        "A marauder's ship bearing down upon you"
+      ]
+    }
+  ]
+}

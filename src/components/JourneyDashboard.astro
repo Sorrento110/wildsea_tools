@@ -1,0 +1,317 @@
+---
+import GeneratorShell from './GeneratorShell.astro';
+import { renderPromptHtml } from '../lib/prompt-render';
+import { renderPoiHtml } from '../lib/poi-render';
+import { renderHazardHtml } from '../lib/hazard-render';
+import { formatRollRange } from '../lib/prompt-generator';
+import type {
+  GeneratedJourneyLeg,
+  HazardCollection,
+  PoiDataset,
+  PromptCollection,
+} from '../lib/types';
+
+interface Props {
+  title: string;
+  description?: string;
+  watch: Record<string, PromptCollection>;
+  weather: Record<string, PromptCollection>;
+  poi: PoiDataset;
+  hazards: Record<string, HazardCollection>;
+  initial: GeneratedJourneyLeg;
+}
+
+const { title, description, watch, weather, poi, hazards, initial } = Astro.props;
+
+const watchList = Object.values(watch).sort((a, b) => (a.order ?? 0) - (b.order ?? 0));
+const hazardList = Object.values(hazards).sort((a, b) => (a.order ?? 0) - (b.order ?? 0));
+const sizes = [...new Set(hazardList.flatMap((collection) => collection.hazards.map((h) => h.size)))].sort();
+const features = [...poi.features].sort((a, b) => a.name.localeCompare(b.name));
+const layers = [...poi.layers];
+
+const weatherCollection = Object.values(weather)[0];
+const weatherOutcomes = weatherCollection?.outcomes ?? [];
+const resultRolls = [1, 2, 3, 4, 5, 6];
+
+const sourcesJson = JSON.stringify({ watch, weather, poi, hazards });
+const initialJson = JSON.stringify(initial);
+---
+
+<GeneratorShell title={title} description={description}>
+  <div class="journey-controls">
+    <button type="button" id="journey-roll" class="primary-button">Roll a journey leg</button>
+    <button type="button" id="journey-copy" class="secondary-button">Copy leg</button>
+    <p class="journey-hint">Every panel rolls on its own, or roll the whole leg for a new set.</p>
+  </div>
+
+  <div class="journey-grid">
+    <section class="journey-panel" aria-labelledby="journey-watch-heading">
+      <header class="journey-panel-head">
+        <h2 id="journey-watch-heading">Watch</h2>
+        <button type="button" class="ghost-button" data-reroll="watch">Re-roll</button>
+      </header>
+      <div class="constraint-bar">
+        <label class="constraint-field">
+          <span>Reach</span>
+          <select id="journey-watch-collection">
+            <option value="">Random</option>
+            {watchList.map((collection) => (
+              <option value={collection.collection}>{collection.title}</option>
+            ))}
+          </select>
+        </label>
+        <label class="constraint-field">
+          <span>Watch roll (1d6)</span>
+          <select id="journey-watch-outcome">
+            <option value="">Any</option>
+          </select>
+        </label>
+        <label class="constraint-field">
+          <span>Prompt (1d6)</span>
+          <select id="journey-watch-result" disabled title="Second d6 on reach tables that number their prompts">
+            <option value="">Any</option>
+            {resultRolls.map((roll) => (
+              <option value={String(roll)}>{roll}</option>
+            ))}
+          </select>
+        </label>
+      </div>
+      <div class="journey-panel-body">
+        <div id="journey-watch" class="prompt-root" aria-live="polite" set:html={renderPromptHtml(initial.watch)} />
+      </div>
+    </section>
+
+    <section class="journey-panel" aria-labelledby="journey-weather-heading">
+      <header class="journey-panel-head">
+        <h2 id="journey-weather-heading">Weather</h2>
+        <button type="button" class="ghost-button" data-reroll="weather">Re-roll</button>
+      </header>
+      <div class="constraint-bar">
+        <label class="constraint-field">
+          <span>Weather roll (1d6)</span>
+          <select id="journey-weather-outcome">
+            <option value="">Any</option>
+            {weatherOutcomes.map((outcome) => (
+              <option value={outcome.id}>{outcome.name} ({formatRollRange(outcome.rolls)})</option>
+            ))}
+          </select>
+        </label>
+      </div>
+      <div class="journey-panel-body">
+        <div id="journey-weather" class="prompt-root" aria-live="polite" set:html={renderPromptHtml(initial.weather)} />
+      </div>
+    </section>
+
+    <section class="journey-panel" aria-labelledby="journey-poi-heading">
+      <header class="journey-panel-head">
+        <h2 id="journey-poi-heading">Point of Interest</h2>
+        <button type="button" class="ghost-button" data-reroll="poi">Re-roll</button>
+      </header>
+      <div class="constraint-bar">
+        <label class="constraint-field">
+          <span>Ground</span>
+          <select id="journey-poi-feature">
+            <option value="">Any</option>
+            {features.map((feature) => (
+              <option value={feature.id}>{feature.name}</option>
+            ))}
+          </select>
+        </label>
+        <label class="constraint-field">
+          <span>Layer</span>
+          <select id="journey-poi-layer">
+            <option value="">Any</option>
+            {layers.map((layer) => (
+              <option value={layer.id}>{layer.name}</option>
+            ))}
+          </select>
+        </label>
+      </div>
+      <div class="journey-panel-body">
+        <div id="journey-poi" class="prompt-root" aria-live="polite" set:html={renderPoiHtml(initial.poi)} />
+      </div>
+    </section>
+
+    <section class="journey-panel" aria-labelledby="journey-hazard-heading">
+      <header class="journey-panel-head">
+        <h2 id="journey-hazard-heading">Hazard</h2>
+        <button type="button" class="ghost-button" data-reroll="hazard">Re-roll</button>
+      </header>
+      <div class="constraint-bar">
+        <label class="constraint-field">
+          <span>Category</span>
+          <select id="journey-hazard-category">
+            <option value="">Any</option>
+            {hazardList.map((collection) => (
+              <option value={collection.collection}>{collection.category}</option>
+            ))}
+          </select>
+        </label>
+        <label class="constraint-field">
+          <span>Size</span>
+          <select id="journey-hazard-size">
+            <option value="">Any</option>
+            {sizes.map((size) => (
+              <option value={size}>{size}</option>
+            ))}
+          </select>
+        </label>
+        <label class="constraint-field constraint-check">
+          <input type="checkbox" id="journey-hazard-basic" />
+          <span>Include basic hazards</span>
+        </label>
+        <label class="constraint-field constraint-check">
+          <input type="checkbox" id="journey-hazard-leviathans" />
+          <span>Include leviathans</span>
+        </label>
+      </div>
+      <div class="journey-panel-body">
+        <div id="journey-hazard" class="prompt-root" aria-live="polite" set:html={renderHazardHtml(initial.hazard)} />
+      </div>
+    </section>
+  </div>
+</GeneratorShell>
+
+<div id="journey-data" hidden data-sources={sourcesJson} data-initial={initialJson}></div>
+
+<script>
+  import { generatePrompt, formatRollRange, outcomeHasNumberedPrompts } from '../lib/prompt-generator';
+  import { generatePoi } from '../lib/poi-generator';
+  import { generateHazard } from '../lib/hazard-generator';
+  import { generateJourneyLeg } from '../lib/journey-generator';
+  import { renderPromptHtml } from '../lib/prompt-render';
+  import { renderPoiHtml } from '../lib/poi-render';
+  import { renderHazardHtml } from '../lib/hazard-render';
+  import { formatJourneyText } from '../lib/journey-render';
+  import { copyWithFeedback } from '../lib/clipboard';
+  import type {
+    GeneratedJourneyLeg,
+    JourneyOptions,
+    JourneySources,
+  } from '../lib/types';
+
+  const dataEl = document.getElementById('journey-data');
+  const sources = JSON.parse(dataEl?.dataset.sources ?? '{}') as JourneySources;
+  const initial = JSON.parse(dataEl?.dataset.initial ?? 'null') as GeneratedJourneyLeg | null;
+
+  const watchRoot = document.getElementById('journey-watch');
+  const weatherRoot = document.getElementById('journey-weather');
+  const poiRoot = document.getElementById('journey-poi');
+  const hazardRoot = document.getElementById('journey-hazard');
+
+  const watchCollectionSelect = document.getElementById('journey-watch-collection') as HTMLSelectElement | null;
+  const watchOutcomeSelect = document.getElementById('journey-watch-outcome') as HTMLSelectElement | null;
+  const watchResultSelect = document.getElementById('journey-watch-result') as HTMLSelectElement | null;
+  const weatherOutcomeSelect = document.getElementById('journey-weather-outcome') as HTMLSelectElement | null;
+  const poiFeatureSelect = document.getElementById('journey-poi-feature') as HTMLSelectElement | null;
+  const poiLayerSelect = document.getElementById('journey-poi-layer') as HTMLSelectElement | null;
+  const hazardCategorySelect = document.getElementById('journey-hazard-category') as HTMLSelectElement | null;
+  const hazardSizeSelect = document.getElementById('journey-hazard-size') as HTMLSelectElement | null;
+  const hazardBasicCheck = document.getElementById('journey-hazard-basic') as HTMLInputElement | null;
+  const hazardLeviathanCheck = document.getElementById('journey-hazard-leviathans') as HTMLInputElement | null;
+
+  let latest: GeneratedJourneyLeg | null = initial;
+
+  function journeyOptions(): JourneyOptions {
+    return {
+      watchCollectionId: watchCollectionSelect?.value || undefined,
+      watchOutcomeId: watchOutcomeSelect?.value || undefined,
+      watchResultRoll: watchResultSelect?.value ? Number(watchResultSelect.value) : undefined,
+      weatherOutcomeId: weatherOutcomeSelect?.value || undefined,
+      poiFeatureId: poiFeatureSelect?.value || undefined,
+      poiLayerId: poiLayerSelect?.value || undefined,
+      hazardCollectionId: hazardCategorySelect?.value || undefined,
+      hazardSize: hazardSizeSelect?.value || undefined,
+      includeBasic: hazardBasicCheck?.checked ?? false,
+      includeLeviathans: hazardLeviathanCheck?.checked ?? false,
+    };
+  }
+
+  function currentWatchCollection() {
+    const chosen = watchCollectionSelect?.value;
+    if (chosen && sources.watch[chosen]) return sources.watch[chosen];
+    return Object.values(sources.watch)[0];
+  }
+
+  /** The watch result dice only apply to the reach tables that number their prompts. */
+  function syncWatchResult() {
+    if (!watchResultSelect) return;
+    const collection = currentWatchCollection();
+    const numbered = (collection?.outcomes ?? []).some(outcomeHasNumberedPrompts);
+    watchResultSelect.disabled = !numbered;
+    if (!numbered) watchResultSelect.value = '';
+  }
+
+  function syncWatchOutcomes() {
+    if (!watchOutcomeSelect) return;
+    const collection = currentWatchCollection();
+    const previous = watchOutcomeSelect.value;
+
+    watchOutcomeSelect.innerHTML = '<option value="">Any</option>';
+    for (const outcome of collection?.outcomes ?? []) {
+      const option = document.createElement('option');
+      option.value = outcome.id;
+      option.textContent = `${outcome.name} (${formatRollRange(outcome.rolls)})`;
+      watchOutcomeSelect.append(option);
+    }
+    watchOutcomeSelect.value =
+      previous && collection?.outcomes.some((outcome) => outcome.id === previous) ? previous : '';
+    syncWatchResult();
+  }
+
+  function setLeg(leg: GeneratedJourneyLeg) {
+    latest = leg;
+    if (watchRoot) watchRoot.innerHTML = renderPromptHtml(leg.watch);
+    if (weatherRoot) weatherRoot.innerHTML = renderPromptHtml(leg.weather);
+    if (poiRoot) poiRoot.innerHTML = renderPoiHtml(leg.poi);
+    if (hazardRoot) hazardRoot.innerHTML = renderHazardHtml(leg.hazard);
+  }
+
+  function rollAll() {
+    setLeg(generateJourneyLeg(sources, journeyOptions()));
+  }
+
+  function reroll(part: string) {
+    const options = journeyOptions();
+    const base = latest ?? generateJourneyLeg(sources, options);
+
+    if (part === 'watch') {
+      base.watch = generatePrompt(sources.watch, {
+        collectionId: options.watchCollectionId,
+        outcomeId: options.watchOutcomeId,
+        resultRoll: options.watchResultRoll,
+      });
+    } else if (part === 'weather') {
+      base.weather = generatePrompt(sources.weather, { outcomeId: options.weatherOutcomeId });
+    } else if (part === 'poi') {
+      base.poi = generatePoi(sources.poi, {
+        featureId: options.poiFeatureId,
+        layerId: options.poiLayerId,
+      });
+    } else if (part === 'hazard') {
+      base.hazard = generateHazard(sources.hazards, {
+        collectionId: options.hazardCollectionId,
+        size: options.hazardSize,
+        includeBasic: options.includeBasic,
+        includeLeviathans: options.includeLeviathans,
+      });
+    }
+
+    setLeg(base);
+  }
+
+  watchCollectionSelect?.addEventListener('change', syncWatchOutcomes);
+  syncWatchOutcomes();
+
+  for (const button of document.querySelectorAll('button[data-reroll]')) {
+    button.addEventListener('click', () => reroll(button.getAttribute('data-reroll') ?? ''));
+  }
+
+  document.getElementById('journey-roll')?.addEventListener('click', rollAll);
+
+  document.getElementById('journey-copy')?.addEventListener('click', () => {
+    const leg = latest ?? generateJourneyLeg(sources, journeyOptions());
+    latest = leg;
+    void copyWithFeedback(document.getElementById('journey-copy'), formatJourneyText(leg));
+  });
+</script>

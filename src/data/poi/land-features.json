@@ -1,0 +1,35 @@
+{
+  "$schema": "../../schemas/poi-collection.schema.json",
+  "tool": "points-of-interest",
+  "collection": "land-features",
+  "title": "Land Features",
+  "description": "The kinds of solid ground that a point of interest can be built on, drawn from the Important Terminology section of the core rules.",
+  "order": 0,
+  "source": "Core Rules p.9",
+  "features": [
+    {
+      "id": "spit",
+      "name": "Spit",
+      "description": "A temporary landmass riding on the surface of the canopy, impermanent but sturdy enough to colonize. Spits take many forms, from the picked-clean bones of a leviathan to chunks of old-world material raised up by shifting roots. Some last only days, others stand for decades, but all spits fall eventually.",
+      "source": "Core Rules p.9"
+    },
+    {
+      "id": "tallshank",
+      "name": "Tallshank",
+      "description": "A massive tree that dwarfs even the ironroots, sometimes spearing miles above the rest of the canopy. Its trunk and upper branches are settled by those with no healthy fear of heights, often far enough from the waves that climbing routes, airships, or elevators are needed to reach them.",
+      "source": "Core Rules p.9"
+    },
+    {
+      "id": "island",
+      "name": "Island",
+      "description": "A larger landmass in no danger of being swallowed by the sea. Most islands are the tips of mountains or the upper reaches of still-standing monuments. Nearly all discovered islands are colonized as quickly as possible, especially those with arable land or useful resources.",
+      "source": "Core Rules p.9"
+    },
+    {
+      "id": "reef",
+      "name": "Reef",
+      "description": "A collection of junk, usually mechanical in nature, sitting on top of or just below the leafy waves. Reefs are hazardous to ship hulls but extremely salvage-rich, and the unique life that grows around them can be especially dangerous to explore.",
+      "source": "Core Rules p.9"
+    }
+  ]
+}

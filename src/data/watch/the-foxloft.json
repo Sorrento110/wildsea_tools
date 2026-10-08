@@ -1,0 +1,51 @@
+{
+  "$schema": "../../schemas/prompt-collection.schema.json",
+  "tool": "watch-results",
+  "collection": "the-foxloft",
+  "title": "The Foxloft",
+  "description": "Watch results for the Foxloft — a reach of hybrid oaks, devoted hunters, and wildly varied fox-like beasts.",
+  "source": "Core Rules p.284",
+  "order": 1,
+  "rollLabel": "Watch Roll (1d6)",
+  "outcomes": [
+    {
+      "id": "peace",
+      "name": "Peace",
+      "rolls": [6],
+      "prompts": [
+        { "id": "bone-spit-map", "roll": 6, "text": "A bone-spit daubed with a rudimentary map of the surrounding waves." },
+        { "id": "spring-foxes-playing", "roll": 5, "text": "A distant pack of spring-foxes playing in the thrash." },
+        { "id": "arconautic-swell", "roll": 4, "text": "An arconautic swell from somewhere below, letting the crew hear perfectly for a short time." },
+        { "id": "companions-play-fighting", "roll": 3, "text": "Two companions play-fighting on deck." },
+        { "id": "bottom-dollar-tale", "roll": 2, "text": "One of the undercrew shares a tale of the salvagers sent to find the Bottom Dollar, and what they found instead." },
+        { "id": "seven-walls-view", "roll": 1, "text": "An excellent view of one of the Seven Walls from a peak of the wavetops." }
+      ]
+    },
+    {
+      "id": "order",
+      "name": "Order",
+      "rolls": [5, 4],
+      "prompts": [
+        { "id": "hunting-family-vessel", "roll": 6, "text": "A Hunting Family vessel pulls alongside, with fresh meat and strong drink to share and nothing to ask for in return." },
+        { "id": "hunters-poem", "roll": 5, "text": "A tallshank marked with Raka Spit script, a hunter's poem for prey long-lost." },
+        { "id": "refugee-archipelago", "roll": 4, "text": "A bone-spit archipelago settled by refugees from a distant reach." },
+        { "id": "writling-pleasure-barge", "roll": 3, "text": "A brace of trained foxes pulling a Writling pleasure-barge." },
+        { "id": "bravest-few", "roll": 2, "text": "An encounter with one of the Bravest Few, atoning for the crime of trophy-theft." },
+        { "id": "damaged-hunting-ship", "roll": 1, "text": "A heavily damaged Hunting Family ship fleeing a leviathan." }
+      ]
+    },
+    {
+      "id": "nature",
+      "name": "Nature",
+      "rolls": [3, 2, 1],
+      "prompts": [
+        { "id": "spring-fox-wake", "roll": 6, "text": "A coterie of spring-foxes dancing in the wake of your ship, a decidedly good omen." },
+        { "id": "vengeful-storm", "roll": 5, "text": "A vengeful storm, its lightning striking an insulated Writling dredging-vessel again and again." },
+        { "id": "pocketfox-swarm", "roll": 4, "text": "A swarm of tiny pocket-foxes spilling up and over the railings, looking to nab any small items they can." },
+        { "id": "rain-of-teeth", "roll": 3, "text": "A rain of teeth." },
+        { "id": "recent-leviathan", "roll": 2, "text": "The split banyan-branches and scarred trunks that point to a recently surfaced leviathan." },
+        { "id": "woke-bone-puppet", "roll": 1, "text": "A Woke-Bone puppet pulling itself onto the deck, screaming for help as it is forced to attack." }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,51 @@
+{
+  "$schema": "../../schemas/prompt-collection.schema.json",
+  "tool": "watch-results",
+  "collection": "the-icterine",
+  "title": "The Icterine",
+  "description": "Watch results for the Icterine — a reach of spined waves, drilling rigs, and temple-stone.",
+  "source": "Core Rules p.293",
+  "order": 2,
+  "rollLabel": "Watch Roll (1d6)",
+  "outcomes": [
+    {
+      "id": "peace",
+      "name": "Peace",
+      "rolls": [6],
+      "prompts": [
+        { "id": "purple-blooms", "roll": 6, "text": "A field of deep purple blooms, soft on the hull and smelling of honeysuckle." },
+        { "id": "tame-catekora", "roll": 5, "text": "Tame catekora nose at the hull, their old racing-collars faded and torn." },
+        { "id": "workers-cry", "roll": 4, "text": "A rousing worker's cry carries across the spined waves from a nearby drilling rig." },
+        { "id": "crushing-heat", "roll": 3, "text": "A day of crushing heat, sapping strength and sending the undercrew belowdecks to relax." },
+        { "id": "pinned-sailor", "roll": 2, "text": "The skeleton of a pinned sailor, fixed to the ironspine waves even now." },
+        { "id": "stone-ship-shadow", "roll": 1, "text": "The shadow of a stone ship passes over you, far larger than your own vessel." }
+      ]
+    },
+    {
+      "id": "order",
+      "name": "Order",
+      "rolls": [5, 4],
+      "prompts": [
+        { "id": "idle-rig", "roll": 6, "text": "A cactus-drilling rig in the midst of a shutdown; the workers play dice and relax in the shade." },
+        { "id": "tent-colony", "roll": 5, "text": "A tent colony staked to the carved walls of a slumping temple, barely above the upper tangle." },
+        { "id": "mothryn-blades", "roll": 4, "text": "A silken airship of mothryn marauders, blades-for-hire currently between jobs." },
+        { "id": "failed-rig", "roll": 3, "text": "A failed rig, skeletal and rusting." },
+        { "id": "temple-stone-traders", "roll": 2, "text": "Temple-stone traders in a ceramic barge, on the run from the Tricenturi." },
+        { "id": "rig-defence-vessel", "roll": 1, "text": "A rig-defence vessel that has identified you as a potential threat to the Consortium." }
+      ]
+    },
+    {
+      "id": "nature",
+      "name": "Nature",
+      "rolls": [3, 2, 1],
+      "prompts": [
+        { "id": "sand-river", "roll": 6, "text": "A winding river of sand defies the accepted laws of nature, drifting past the ship like a golden ribbon." },
+        { "id": "ironspine-growth", "roll": 5, "text": "A burst of growth from the ironspines cages the ship within a spiked, fibrous barrier." },
+        { "id": "beetle-crate", "roll": 4, "text": "Scarabs and rainbow-bodied beetles crawl over an abandoned crate stamped with faded Consortium markings." },
+        { "id": "sandstorm", "roll": 3, "text": "A sandstorm spins itself into existence far to the east, heading your way and changing course to match yours." },
+        { "id": "hidden-rift", "roll": 2, "text": "A scatter of blooms hiding a yawning rift." },
+        { "id": "temple-worm", "roll": 1, "text": "A temple-worm rears beneath the ship, wounded by the prow and looking for revenge." }
+      ]
+    }
+  ]
+}

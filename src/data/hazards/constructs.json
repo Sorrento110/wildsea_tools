@@ -1,0 +1,17 @@
+{
+  "$schema": "../../schemas/hazard-collection.schema.json",
+  "tool": "hazards",
+  "collection": "constructs",
+  "title": "Constructs",
+  "category": "Constructs",
+  "description": "Artificial things built in the pre-verdant age or the earliest days of new sailing, still performing tasks nobody remembers assigning them.",
+  "order": 4,
+  "source": "Core Rules pp.238-239",
+  "inPlay": "Constructs are predictable in a way beasts are not - they follow programming, however corrupted. Let the crew work out what a construct was built to do; exploiting that purpose is usually the key to surviving it.",
+  "hazards": [
+    { "id": "keepers-of-secrets-long-dead", "name": "Keepers of Secrets Long-Dead", "size": "Huge", "summary": "Towerspiders: not really spiders, but close enough in design, these large constructs perform now-useless maintenance within pre-verdant ruins, bent on protecting something." },
+    { "id": "punchcard-pioneers-made-for-the-wavecutting-age", "name": "Punchcard Pioneers made for the Wavecutting Age", "size": "Medium", "summary": "Bellows-garl: wheezing seafaring constructs built in the earliest days of new sailing to crew ships through spore-filled areas, driven by concertina-like contraptions operating on air throughflow." },
+    { "id": "ships-gone-feral-on-the-open-waves", "name": "Ships Gone Feral on the Open Waves", "size": "Huge", "summary": "Mawships: wildsea vessels gone truly wild - abandoned, never quite claimed by the waves, and refusing to sink, with bites mutated into something hungry." },
+    { "id": "mindless-mechanical-menace", "name": "Mindless Mechanical Menace", "size": "Huge", "summary": "The mad woodcutter: its programming corrupted, it lurches through the canopy on pistoned legs, cutting branches in a mindless echo of its old task." }
+  ]
+}

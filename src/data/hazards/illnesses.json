@@ -1,0 +1,26 @@
+{
+  "$schema": "../../schemas/hazard-collection.schema.json",
+  "tool": "hazards",
+  "collection": "illnesses",
+  "title": "Illnesses",
+  "category": "Illnesses",
+  "description": "Sicknesses of the rustling waves, from the commonplace to the uncanny - conditions that limit a character rather than a ship.",
+  "order": 6,
+  "source": "Core Rules pp.242-243",
+  "inPlay": "Be careful when making an illness the focus of an arc. Most illnesses are best inflicted on an important or well-liked NPC, a passenger, or a member of the undercrew, so the players deal with the fallout without their own characters being sidelined.",
+  "hazards": [
+    { "id": "insulia", "name": "Insulia", "size": "Illness", "summary": "An affectation of wrappings, most often found in mothryn but transmittable to anyone: sufferers compulsively wrap themselves in layer after layer of material, and deaths from overheating and self-crushing are common." },
+    { "id": "oskatars-bones", "name": "Oskatar's Bones", "size": "Illness", "summary": "The bones stop growing while the body continues to grow physically larger, leaving sufferers burdened and strengthened by their new weight; Oskatar is said to have cured his own case." },
+    { "id": "taraks-lung", "name": "Tarak's Lung", "size": "Illness", "summary": "Probably the most common condition on the wildsea, named after the very first sailor of the rustling waves: breathe in too much of the bad air and you end up with it. Symptoms vary wildly, but a wracking cough is common to all cases." },
+    { "id": "gilli", "name": "Gilli", "size": "Illness", "summary": "A particularly cruel lung condition in which the lungs labour without clean air and unnatural vapours; sufferers often rely on masks and tanks to live a normal life." },
+    { "id": "polypoid-tendrils", "name": "Polypoid Tendrils", "size": "Illness", "summary": "A salt-borne contagion, a throwback to the old pre-verdant seas, that causes suckered tentacles to sprout from exposed skin; the process is slow, excruciating, and begins internally." },
+    { "id": "amberblight", "name": "Amberblight", "size": "Illness", "summary": "A localized infection that takes hold in a wound or cut and slowly spreads through the host's body, hardening the afflicted flesh as it goes." },
+    { "id": "the-roving", "name": "The Roving", "size": "Illness", "summary": "A yearning for the open waves that overcomes all else and shreds logic, sense, and responsibility; easily cured by bedrest and manacles if caught early enough." },
+    { "id": "unscrewing", "name": "Unscrewing", "size": "Illness", "summary": "A syndrome of uncontrollable displays of intense magnetic force, caused not by arconautic power but by a gut bacteria picked up from eating rust-tainted food." },
+    { "id": "woke-bone-sickness", "name": "Woke-Bone Sickness", "size": "Illness", "summary": "The result of spending too long around the unearthed bones of Toothen Grove: sufferers become skeletal golems still clothed in the unwilling flesh of their erstwhile owners, screaming through jaws no longer under their control." },
+    { "id": "glyphers-curse", "name": "Glypher's Curse", "size": "Illness", "summary": "A spore-borne illness picked up by dredgers that grows in the brain, giving its host the ability to read and speak Highvin while robbing them of all other languages." },
+    { "id": "ration-mold", "name": "Ration-Mold", "size": "Illness", "summary": "A fungal mycosis from spoiled food whose spores progressively infect and overtake a host's faculties, turning them into a prisoner in their own body." },
+    { "id": "the-pyre", "name": "The Pyre", "size": "Illness", "summary": "A condition in which sufferers spontaneously burn from within, with fire behind their eyes; whether infection, side-effect, or curse, most simply call it the Pyre." },
+    { "id": "whispering-lung", "name": "Whispering Lung", "size": "Illness", "summary": "A whisper-based affliction in which a whisper refuses to be driven out of the mind and takes refuge deeper in the body, stealing the sufferer's ability to speak." }
+  ]
+}

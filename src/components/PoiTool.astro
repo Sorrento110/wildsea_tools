@@ -1,0 +1,112 @@
+---
+import GeneratorShell from './GeneratorShell.astro';
+import { renderPoiHtml } from '../lib/poi-render';
+import type { GeneratedPoi, PoiDataset } from '../lib/types';
+
+interface Props {
+  title: string;
+  description?: string;
+  tool: string;
+  dataset: PoiDataset;
+  initial: GeneratedPoi;
+}
+
+const { title, description, tool, dataset, initial } = Astro.props;
+
+const features = [...dataset.features].sort((a, b) => a.name.localeCompare(b.name));
+const layers = [...dataset.layers];
+const datasetJson = JSON.stringify(dataset);
+const initialHtml = renderPoiHtml(initial);
+---
+
+<GeneratorShell title={title} description={description}>
+  <div class="constraint-bar" aria-label="Generation options">
+    <label class="constraint-field">
+      <span>Ground</span>
+      <select id="poi-feature">
+        <option value="">Any</option>
+        {features.map((feature) => (
+          <option value={feature.id}>{feature.name}</option>
+        ))}
+      </select>
+    </label>
+
+    <label class="constraint-field">
+      <span>Layer</span>
+      <select id="poi-layer">
+        <option value="">Any</option>
+        {layers.map((layer) => (
+          <option value={layer.id}>{layer.name}</option>
+        ))}
+      </select>
+    </label>
+
+    <label class="constraint-field">
+      <span>Position</span>
+      <select id="poi-sense">
+        <option value="">Either</option>
+        <option value="secure">Secure</option>
+        <option value="perilous">Perilous</option>
+      </select>
+    </label>
+
+    <label class="constraint-field">
+      <span>Prompt</span>
+      <select id="poi-prompt">
+        <option value="">Either</option>
+        <option value="hook">Hook</option>
+        <option value="encounter">Encounter</option>
+      </select>
+    </label>
+  </div>
+
+  <div class="generator-controls">
+    <button type="button" id="poi-roll" class="primary-button">Generate again</button>
+    <button type="button" id="poi-copy" class="secondary-button">Copy result</button>
+  </div>
+
+  <div id="poi-root" class="prompt-root" aria-live="polite" set:html={initialHtml}></div>
+</GeneratorShell>
+
+<div id="poi-data" hidden data-tool={tool} data-dataset={datasetJson}></div>
+
+<script>
+  import { generatePoi } from '../lib/poi-generator';
+  import { renderPoiHtml, formatPoiText } from '../lib/poi-render';
+  import { copyWithFeedback } from '../lib/clipboard';
+  import type { GeneratedPoi, PoiDataset } from '../lib/types';
+
+  const data = document.getElementById('poi-data');
+  const dataset = JSON.parse(data?.dataset.dataset ?? '{}') as PoiDataset;
+
+  const root = document.getElementById('poi-root');
+  const featureSelect = document.getElementById('poi-feature') as HTMLSelectElement | null;
+  const layerSelect = document.getElementById('poi-layer') as HTMLSelectElement | null;
+  const senseSelect = document.getElementById('poi-sense') as HTMLSelectElement | null;
+  const promptSelect = document.getElementById('poi-prompt') as HTMLSelectElement | null;
+
+  let latest: GeneratedPoi | null = null;
+
+  function options() {
+    return {
+      featureId: featureSelect?.value || undefined,
+      layerId: layerSelect?.value || undefined,
+      senseKind: (senseSelect?.value || undefined) as 'secure' | 'perilous' | undefined,
+      promptKind: (promptSelect?.value || undefined) as 'hook' | 'encounter' | undefined,
+    };
+  }
+
+  function generate() {
+    latest = generatePoi(dataset, options());
+    if (root) root.innerHTML = renderPoiHtml(latest);
+    return latest;
+  }
+
+  document.getElementById('poi-roll')?.addEventListener('click', generate);
+
+  document.getElementById('poi-copy')?.addEventListener('click', () => {
+    const poi = latest ?? generatePoi(dataset, options());
+    latest = poi;
+    void copyWithFeedback(document.getElementById('poi-copy'), formatPoiText(poi));
+  });
+</script>

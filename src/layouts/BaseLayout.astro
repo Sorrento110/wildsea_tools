@@ -5,9 +5,11 @@ import { baseUrl } from '../lib/base-url';
 interface Props {
   title: string;
   description?: string;
+  /** Let a data-dense page (the Journey dashboard) use more of the viewport. */
+  wide?: boolean;
 }
 
-const { title, description = 'Tools for running the Wildsea TTRPG.' } = Astro.props;
+const { title, description = 'Tools for running the Wildsea TTRPG.', wide = false } = Astro.props;
 const base = baseUrl();
 ---
 
@@ -37,12 +39,13 @@ const base = baseUrl();
           <span>Wildsea Tools</span>
         </a>
         <nav class="site-nav" aria-label="Main navigation">
+          <a href={`${base}tools/journey/`}>Journey</a>
           <a href={`${base}tools/ships/`}>Ship Generator</a>
         </nav>
       </header>
     </div>
 
-    <main class="site-main">
+    <main class={`site-main${wide ? ' site-main-wide' : ''}`}>
       <slot />
     </main>
 

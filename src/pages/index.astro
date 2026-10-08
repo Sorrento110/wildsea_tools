@@ -3,6 +3,9 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 import manifest from '../data/manifest.json';
 import { baseUrl } from '../lib/base-url';
 import { loadShipCollections } from '../lib/ship-data';
+import { loadPromptCollections } from '../lib/prompt-data';
+import { loadPoiDataset } from '../lib/poi-data';
+import { loadHazardCollections } from '../lib/hazard-data';
 import type { ToolManifest } from '../lib/types';
 
 const data = manifest as ToolManifest;
@@ -10,6 +13,14 @@ const base = baseUrl();
 
 const shipCollections = loadShipCollections();
 const shipCollectionsJson = JSON.stringify(shipCollections);
+
+const journeySources = {
+  watch: loadPromptCollections('watch-results'),
+  weather: loadPromptCollections('weather-conditions'),
+  poi: loadPoiDataset(),
+  hazards: loadHazardCollections(),
+};
+const journeySourcesJson = JSON.stringify(journeySources);
 ---
 
 <BaseLayout title={data.title} description={data.description}>
@@ -26,6 +37,13 @@ const shipCollectionsJson = JSON.stringify(shipCollections);
     </header>
 
     <div class="quick-actions">
+      <button type="button" id="quick-generate-journey" class="quick-tile">
+        <span class="quick-tile-glyph" aria-hidden="true">🧭</span>
+        <span class="quick-tile-text">
+          <span class="quick-tile-title">Roll a Journey Leg</span>
+          <span class="quick-tile-hint">Watch, weather, landing, and hazard at once</span>
+        </span>
+      </button>
       <button type="button" id="quick-generate-ship" class="quick-tile">
         <span class="quick-tile-glyph" aria-hidden="true">⚓</span>
         <span class="quick-tile-text">
@@ -36,6 +54,7 @@ const shipCollectionsJson = JSON.stringify(shipCollections);
     </div>
 
     <div id="quick-result" class="quick-result" aria-live="polite"></div>
+    <div id="quick-journey-result" class="quick-result" aria-live="polite"></div>
   </section>
 
   <section class="tools" aria-labelledby="tools-heading">
@@ -59,10 +78,12 @@ const shipCollectionsJson = JSON.stringify(shipCollections);
 </BaseLayout>
 
 <div id="quick-ship-data" hidden data-collections={shipCollectionsJson} data-base={base}></div>
+<div id="quick-journey-data" hidden data-sources={journeySourcesJson} data-base={base}></div>
 
 <script>
   import { generateShip } from '../lib/ship-generator';
   import { renderShipQuickHtml, formatShipText } from '../lib/ship-render';
+  import { copyWithFeedback } from '../lib/clipboard';
   import type { GeneratedShip } from '../lib/types';
 
   const dataEl = document.getElementById('quick-ship-data');
@@ -105,15 +126,51 @@ const shipCollectionsJson = JSON.stringify(shipCollections);
     if (!(target instanceof Element)) return;
     const copyButton = target.closest('button[data-copy-quick]');
     if (!copyButton || !latestShip) return;
+    void copyWithFeedback(copyButton, formatShipText(latestShip));
+  });
+</script>
 
-    navigator.clipboard.writeText(formatShipText(latestShip)).catch(() => {
-      // Clipboard is unavailable; ignore.
-    });
+<script>
+  import { generateJourneyLeg } from '../lib/journey-generator';
+  import { renderJourneyQuickHtml, formatJourneyText } from '../lib/journey-render';
+  import { copyWithFeedback } from '../lib/clipboard';
+  import type { GeneratedJourneyLeg, JourneySources } from '../lib/types';
 
-    const original = copyButton.textContent;
-    copyButton.textContent = 'Copied!';
-    setTimeout(() => {
-      copyButton.textContent = original;
-    }, 1200);
+  const journeyDataEl = document.getElementById('quick-journey-data');
+  const journeySources = JSON.parse(journeyDataEl?.dataset.sources ?? '{}') as JourneySources;
+  const journeyBaseUrl = `${journeyDataEl?.dataset.base ?? '/'}tools/journey/`;
+
+  const journeyButton = document.getElementById('quick-generate-journey');
+  const journeyResult = document.getElementById('quick-journey-result');
+
+  let latestLeg: GeneratedJourneyLeg | null = null;
+  let journeyCount = 0;
+
+  journeyButton?.addEventListener('click', () => {
+    latestLeg = generateJourneyLeg(journeySources);
+    journeyCount += 1;
+    if (!journeyResult) return;
+
+    journeyResult.innerHTML = `
+      <details class="quick-details" open>
+        <summary>
+          <span class="quick-details-title">Journey leg ${journeyCount}</span>
+          <span class="quick-details-chevron" aria-hidden="true">▾</span>
+        </summary>
+        <div class="quick-details-body">${renderJourneyQuickHtml(latestLeg)}</div>
+        <div class="quick-details-footer">
+          <a class="secondary-button" href="${journeyBaseUrl}">Open dashboard</a>
+          <button type="button" class="secondary-button" data-copy-journey>Copy</button>
+        </div>
+      </details>
+    `;
+  });
+
+  journeyResult?.addEventListener('click', (event) => {
+    const target = event.target;
+    if (!(target instanceof Element)) return;
+    const copyButton = target.closest('button[data-copy-journey]');
+    if (!copyButton || !latestLeg) return;
+    void copyWithFeedback(copyButton, formatJourneyText(latestLeg));
   });
 </script>

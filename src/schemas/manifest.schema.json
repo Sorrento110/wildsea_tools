@@ -20,7 +20,7 @@
     "tool": {
       "type": "object",
       "additionalProperties": false,
-      "required": ["id", "name", "route", "description", "dataDir", "status"],
+      "required": ["id", "name", "route", "description", "status"],
       "properties": {
         "id": {
           "type": "string",

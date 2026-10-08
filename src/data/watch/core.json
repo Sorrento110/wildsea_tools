@@ -1,0 +1,54 @@
+{
+  "$schema": "../../schemas/prompt-collection.schema.json",
+  "tool": "watch-results",
+  "collection": "core",
+  "title": "Watch Roll Results",
+  "description": "The generic watch table. Roll 1d6: 6 is Peace, 5-4 is Order, 3-1 is Nature.",
+  "source": "Core Rules p.73",
+  "order": 0,
+  "rollLabel": "Watch Roll (1d6)",
+  "outcomes": [
+    {
+      "id": "peace",
+      "name": "Peace",
+      "rolls": [6],
+      "description": "A watch passing without a sighting of anything out of the ordinary.",
+      "prompts": [
+        { "id": "montage", "text": "An uneventful watch with time enough for a montage — useful for healing and repairs." },
+        { "id": "meeting", "text": "A meeting called by a crewmate or one of the undercrew, a chance to exchange information and make plans." },
+        { "id": "tall-tale", "text": "Time for a crewmember to spin a tall tale, letting another crewmate gain a whisper." },
+        { "id": "tree-shanty", "text": "A stretch of calm worth breaking — strike up a tree-shanty to lift spirits and learn about the world." },
+        { "id": "undercrew-issue", "text": "Trouble among the undercrew: a fight, a sickness, or a personal discovery." },
+        { "id": "reflection", "text": "A quiet moment for reflection, confronting past actions and coming to terms with them. Usually heals mire." }
+      ]
+    },
+    {
+      "id": "order",
+      "name": "Order",
+      "rolls": [5, 4],
+      "description": "An encounter with one of the cultures living across the wildsea.",
+      "prompts": [
+        { "id": "nearby-ship", "text": "A ship passes within hailing distance — anything from a trading vessel to bug-fishers to pirates." },
+        { "id": "outpost", "text": "An outpost is discovered, likely supplying a nearby port: a drilling rig, farm, or refinery." },
+        { "id": "survivor", "text": "A survivor of some terrible disaster, stranded and waiting to be rescued." },
+        { "id": "wreck-or-ruin", "text": "A wreck or ruin, a remnant of past expansion, now abandoned and ripe for salvaging." },
+        { "id": "cache", "text": "A cache of cargo or supplies, left by those trying to make the sea a little safer — or by smugglers." },
+        { "id": "conspiracy", "text": "A sign of conspiracy, hinting at an impressive secret or a shadowed truth." }
+      ]
+    },
+    {
+      "id": "nature",
+      "name": "Nature",
+      "rolls": [3, 2, 1],
+      "description": "An encounter with something born of the wild unknown, or a feature of the sea.",
+      "prompts": [
+        { "id": "weather-change", "text": "A change in the weather, affecting the sky above, the branches below, or both." },
+        { "id": "natural-feature", "text": "A natural feature of the rustling waves — useful for orientation when pathfinding and mapmaking." },
+        { "id": "wonder", "text": "A wonder of the waves, a sight that fills the crew with hope. Heals mire." },
+        { "id": "horror", "text": "A horror of the wilds, an experience that leaves a lasting scar. Marks mire." },
+        { "id": "landfall", "text": "An unsettled place sturdy enough to moor your ship — landfall, and useful for finding resources." },
+        { "id": "true-wilds", "text": "A sighting of (or tussle with) the true wilds: a plant, a creature, or a force of nature." }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,21 @@
+{
+  "$schema": "../../schemas/hazard-collection.schema.json",
+  "tool": "hazards",
+  "collection": "plants",
+  "title": "Plants",
+  "category": "Plants",
+  "description": "The wildsea's plant life is as predatory as its beasts - vines that hunt, blooms that root in flesh, and lures that beguile the senses.",
+  "order": 3,
+  "source": "Core Rules pp.234-237",
+  "inPlay": "Plant hazards often cannot be simply fought. They are rooted, patient, and territorial, so the interesting question is usually how the crew avoids, prunes, or redirects them rather than how much damage they can take.",
+  "hazards": [
+    { "id": "voracious-ballistic-husks", "name": "Voracious Ballistic Husks", "size": "Large", "summary": "Jawthorn seeds: sentient husks driven to search for nutrients to consume before they take root, resembling truncated alligators wrapped in plant matter." },
+    { "id": "brachiative-vestiges-of-an-old-salt-sea", "name": "Brachiative Vestiges of an Old Salt Sea", "size": "Medium", "summary": "Fungal squids: rarely larger than the wolves they hunt, they swing dextrously from branch to branch, grappling prey tight enough to break bones." },
+    { "id": "spreading-plant-swarm", "name": "Spreading Plant Swarm", "size": "Variable", "summary": "Vipervines: a twisting mass of vines that snake through the canopy, tangling their prey before revealing fangs and beginning to feast." },
+    { "id": "hijacked-fungal-network-nodes", "name": "Hijacked Fungal Network Nodes", "size": "Variable", "summary": "Haska: long-stemmed mushrooms that form a mucoid network through the thrash, hijacked into something far more dangerous than a simple fungus." },
+    { "id": "petalled-apex-predator", "name": "Petalled Apex Predator", "size": "Large", "summary": "The lion's mane: a burst of golden petals sitting atop four spread limbs, a hunting plant with a taste for blood that usually moves in pairs." },
+    { "id": "bizarre-pseudoreligious-horror", "name": "Bizarre Pseudoreligious Horror", "size": "Various", "summary": "Manticore blooms: virulent, quick-rooting blooms that favour flesh as a flowerbed, turning infested creatures into servants of a greater purpose." },
+    { "id": "playful-sensory-swarm", "name": "Playful Sensory Swarm", "size": "Small", "summary": "Tiricks: a confusing little mass of bark, tendrils, and sensory vines about the size of a day-old kitten, never found alone - packs run from twenty to several hundred." },
+    { "id": "sense-beguiling-plant", "name": "Sense-Beguiling Plant", "size": "Huge", "summary": "The octodew: green and red, glistening and ravenous - technically a plant, it sits just beneath the surface of the tangle and uses octopus-style limbs as a lure." }
+  ]
+}

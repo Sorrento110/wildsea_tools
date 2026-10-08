@@ -1,0 +1,272 @@
+{
+  "$schema": "../../schemas/poi-collection.schema.json",
+  "tool": "points-of-interest",
+  "collection": "sites-deep",
+  "title": "Sites of the Tangle, Sink, and Drown",
+  "description": "Named kinds of location found in the lower layers, each with sample resources.",
+  "order": 4,
+  "source": "Core Rules pp.212-215",
+  "sites": [
+    {
+      "id": "ruin",
+      "name": "Ruin",
+      "layer": "tangle",
+      "features": [
+        "island",
+        "tallshank"
+      ],
+      "description": "Dredged up by a rootquake or by the natural growth of the ironroots, ruins are most often fragments of pre-verdant architecture solid enough to survive its ascension in roughly one piece. A lot are settled by beasts or insects as soon as they're deposited in the tangle. They're valuable sources of pre-Verdant material, especially stone, but rarely easy to find or access reliably.",
+      "source": "Core Rules p.212",
+      "resources": {
+        "salvage": [
+          "Ancient Machine Parts",
+          "Broken Sculpture"
+        ],
+        "specimens": [
+          "Snapperpillar Eggs",
+          "Nest Fragments",
+          "Stone-Grown Mold",
+          "Eyeless Spider"
+        ],
+        "whispers": [
+          "A Risen Darkness",
+          "Unearthed Memories"
+        ],
+        "charts": [
+          "A Pictographic Slab",
+          "A Book in Highvin"
+        ],
+        "cargo": [
+          "A Shipment of Old Stone",
+          "Reclaimed Glass",
+          "A Captured Snapperpillar"
+        ]
+      }
+    },
+    {
+      "id": "old-wreck",
+      "name": "Old Wreck",
+      "layer": "tangle",
+      "features": [
+        "reef",
+        "spit"
+      ],
+      "description": "Most wildsea ships that leave port reach their destination, but most is not all. When a ship is overcome - by pirates, beasts, disease, or mire - it's slowly swallowed by the waves, sinking to rest in the cradle of the tangle. Old wrecks are unlikely to contain survivors, but many bear signs of the last crew trapped aboard as the ship was consumed.",
+      "source": "Core Rules p.212",
+      "resources": {
+        "salvage": [
+          "Empty Firefly Lantern",
+          "Engine Parts"
+        ],
+        "specimens": [
+          "Pemmican Biscuits",
+          "Companion's Skull"
+        ],
+        "whispers": [
+          "Echoes of Past Journeys",
+          "Stopped for Good"
+        ],
+        "charts": [
+          "An Annotated Chart",
+          "A Torn Logbook"
+        ],
+        "cargo": [
+          "Abandoned Crates",
+          "Rotten Cargo of Rare Fruits",
+          "Barrels of Spice and Honey"
+        ]
+      }
+    },
+    {
+      "id": "reef",
+      "name": "Reef",
+      "layer": "tangle",
+      "features": [
+        "reef"
+      ],
+      "description": "Though the wildsea has no traditional tides, there are areas of directed growth and prevailing winds, odd pockets and stretches that tear at ships with uncommon viciousness. These are the likeliest places to find a reef, an agglomeration of ship-parts and salvage crushed and tangled together. Reefs tend to have their own miniature ecosystems, the tight spaces among the salvage making excellent hiding spots from larger predators.",
+      "source": "Core Rules p.212",
+      "resources": {
+        "salvage": [
+          "Unrecognisable Part",
+          "Rusted Cog",
+          "Broken Mast",
+          "Drained Ceramic Battery"
+        ],
+        "specimens": [
+          "Unique Reef-Beetle",
+          "Rust-Coloured Slug"
+        ],
+        "whispers": [
+          "Pulling Together",
+          "Treacherous Waves"
+        ],
+        "charts": [
+          "Undertow Exploration Sketches",
+          "Half-Plotted Reef Map"
+        ],
+        "cargo": [
+          "Unique Insect Terrarium",
+          "Crate of Reef-Metal",
+          "Ancient Engine"
+        ]
+      }
+    },
+    {
+      "id": "low-port",
+      "name": "Low-Port",
+      "layer": "tangle",
+      "features": [
+        "island"
+      ],
+      "description": "A rarity on the waves due to the inherent danger, a low-port is an area of habitation only accessible from the tangle. Most are built around the remains of a leviathan or a solidly held ruin, but a few are constructed from scratch to take advantage of a particular natural resource. Typical wildsea ships can usually access a low-port, but it's much easier for vessels kitted out with submersible shells.",
+      "source": "Core Rules p.213",
+      "resources": {
+        "salvage": [
+          "Ventilator Tubing",
+          "Thick Sporescarf"
+        ],
+        "specimens": [
+          "Jar of Fireflies",
+          "Whiteberry Sprig"
+        ],
+        "whispers": [
+          "Just Beneath the Surface"
+        ],
+        "charts": [
+          "Rift Documentation",
+          "Luminous Street-Map"
+        ],
+        "cargo": [
+          "Crate of Surface Trinkets",
+          "Massive Ceramic Battery"
+        ]
+      }
+    },
+    {
+      "id": "teetering-wreckage",
+      "name": "Teetering Wreckage",
+      "layer": "sink-drown",
+      "features": [
+        "reef",
+        "island"
+      ],
+      "description": "The sink is thick enough to sail or cut through without a problem, as long as you're careful, but the drown takes hold of ships and rarely lets them return skyward. Uncountable vessels meet their ends there, wrecked above and sifted down through the layers until they teeter, unstable, at the precipice of the last long fall. Teetering wrecks are unstable by nature - like spits, they will all fall eventually, and movement on their decks makes them fall much faster.",
+      "source": "Core Rules p.214",
+      "resources": {
+        "salvage": [
+          "Preserved Wreckage"
+        ],
+        "specimens": [
+          "Salted Meats",
+          "Mummified Crew Parts"
+        ],
+        "whispers": [
+          "We All Fall Eventually",
+          "No Way Back"
+        ],
+        "charts": [
+          "Chart From the Earliest Days",
+          "Illegible Map"
+        ],
+        "cargo": [
+          "Abandoned Sail",
+          "Moss-Furred Crates"
+        ]
+      }
+    },
+    {
+      "id": "nest",
+      "name": "Nest",
+      "layer": "sink-drown",
+      "features": [
+        "tallshank",
+        "island"
+      ],
+      "description": "There are few small birds down in the drown, but the sink is alive with them - huge amounts of insect life come with a commensurate increase in the creatures that thrive on them. Even the smallest birds band together when building homes, fortified nests to keep predators at bay. Some are the size of a wagon, others more like fortresses, built from broken branches and salvage stolen from wrecks.",
+      "source": "Core Rules p.214",
+      "resources": {
+        "salvage": [
+          "Old Rigging",
+          "Canvas Scraps",
+          "Ship's Bell"
+        ],
+        "specimens": [
+          "Hand-Sized Egg",
+          "Woven Branches"
+        ],
+        "whispers": [
+          "Life Finds Space"
+        ],
+        "charts": [
+          "A Shredded Logbook"
+        ],
+        "cargo": [
+          "Clutch of Enormous Eggs"
+        ]
+      }
+    },
+    {
+      "id": "hollow-trunk",
+      "name": "Hollow Trunk",
+      "layer": "sink-drown",
+      "features": [
+        "tallshank"
+      ],
+      "description": "Safer by far than dwellings built onto the branches this deep, the few individuals that choose to make their settlements in the sink or drown bore into the interior of an ironroot and hollow out a protected space. It comes with a threat of crezzerin contamination, which is stronger and more hazardous the lower down the depths the dwelling sits. The most prepared trunk-dwellers line their hollows with protective material and pump clean air down from the canopy far above.",
+      "source": "Core Rules p.214",
+      "resources": {
+        "salvage": [
+          "Carven Idol",
+          "Leaf-Rubber Seals",
+          "Rusted Diver's Helmet"
+        ],
+        "specimens": [
+          "Heartswood Pulp"
+        ],
+        "whispers": [
+          "Dark and Safe",
+          "Hollow Home"
+        ],
+        "charts": [
+          "Intertrunk Transit Map"
+        ],
+        "cargo": [
+          "Bundle of Tubing"
+        ]
+      }
+    },
+    {
+      "id": "leviathan-skeleton",
+      "name": "Leviathan Skeleton",
+      "layer": "sink-drown",
+      "features": [
+        "spit",
+        "island"
+      ],
+      "description": "The sink and drown are where leviathans live, but they're also where leviathans tend to die. Perhaps of age, perhaps predation, a leviathan corpse fuels the ecosystem of the lower waves with meat and shelter for weeks, sometimes months. When the carrion-creatures are done, the bones are left strung throughout the branches as an eerie reminder that even the deadliest foes lack immortality.",
+      "source": "Core Rules p.215",
+      "resources": {
+        "salvage": [
+          "Broken Weapon",
+          "Bent Harpoon"
+        ],
+        "specimens": [
+          "Leviathan Tooth",
+          "Marrow Segment"
+        ],
+        "whispers": [
+          "Never Forgotten",
+          "Inside the Belly"
+        ],
+        "charts": [
+          "Ribcage Manifest",
+          "Deeps-Diver's Log"
+        ],
+        "cargo": [
+          "An Intact Leviathan Bone"
+        ]
+      }
+    }
+  ]
+}

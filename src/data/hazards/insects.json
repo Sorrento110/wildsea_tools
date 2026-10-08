@@ -1,0 +1,20 @@
+{
+  "$schema": "../../schemas/hazard-collection.schema.json",
+  "tool": "hazards",
+  "collection": "insects",
+  "title": "Insects",
+  "category": "Insects",
+  "description": "Insects are not mindless, but they are far more willing to sacrifice themselves for the good of a greater hive or colony.",
+  "order": 2,
+  "source": "Core Rules pp.233-235",
+  "inPlay": "Insects reward crews that think about the colony rather than the individual creature. Cutting off a nest, disrupting a trail, or removing a lure is often more effective than simply killing whatever is in front of them.",
+  "hazards": [
+    { "id": "bizarre-hybrid-ship-chasers", "name": "Bizarre Hybrid Ship-Chasers", "size": "Huge", "summary": "An uncanny blend of praying mantis and dragonfly - aggressive hunters confident and hungry enough to ambush and tackle ships." },
+    { "id": "legs-teeth-and-chitinous-scales", "name": "Legs, Teeth & Chitinous Scales", "size": "Huge", "summary": "Snapperpillars: fierce territorial creatures somewhere between crocodile and giant centipede, lairing in risen ruins." },
+    { "id": "sly-arachnid-hunters", "name": "Sly Arachnid Hunters", "size": "Variable", "summary": "Ambush scorpions: sometimes as large as a trading vessel, lone predators that dwell in the thickest parts of the tangle." },
+    { "id": "swift-vessels-of-spreading-slime", "name": "Swift Vessels of Spreading Slime", "size": "Small", "summary": "Manta slugs: dog-sized slugs with wide, manta ray-like front sections that 'swim' in fast-exuded slime, scaling walls and ceilings alike." },
+    { "id": "fungal-insect", "name": "Fungal Insect", "size": "Medium", "summary": "Rotipedes: large, many-legged arthropods in symbiosis with fungus on their bodies, able to consume almost anything between the two hungers." },
+    { "id": "slipwise-spectralities", "name": "Slipwise Spectralities", "size": "Large", "summary": "A voracious insect capable of jaunting between the material and spectral realms; dangerous, but often hunted for what it can do." },
+    { "id": "freezing-insect-gardeners", "name": "Freezing Insect Gardeners", "size": "Medium", "summary": "Insects that build constructions of hardened nectar and bring the true sting of winter to the warmer reaches of the waves." }
+  ]
+}

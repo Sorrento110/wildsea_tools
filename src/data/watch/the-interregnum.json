@@ -1,0 +1,51 @@
+{
+  "$schema": "../../schemas/prompt-collection.schema.json",
+  "tool": "watch-results",
+  "collection": "the-interregnum",
+  "title": "The Interregnum",
+  "description": "Watch results for the Interregnum — a reach of endless snows, bitter cold, and ancient brass.",
+  "source": "Core Rules p.302",
+  "order": 3,
+  "rollLabel": "Watch Roll (1d6)",
+  "outcomes": [
+    {
+      "id": "peace",
+      "name": "Peace",
+      "rolls": [6],
+      "prompts": [
+        { "id": "warmth-below", "roll": 6, "text": "An appreciation of the warmth below decks before you head back out into the cold." },
+        { "id": "twinhorn-joke", "roll": 5, "text": "A quick joke by one of the undercrew about the Twinhorn prince (who doesn't exist) and the three bulls of the Schism (that similarly don't exist)." },
+        { "id": "lull-in-wind", "roll": 4, "text": "A break in the snow and a lull in the wind." },
+        { "id": "overwhelming-peace", "roll": 3, "text": "A sense of overwhelming peace, and the sudden realisation that everything in the Interregnum is on the verge of collapse — but that it probably isn't really your problem." },
+        { "id": "steaming-stone", "roll": 2, "text": "A chunk of volcanic stone lodged in a treetop snowdrift, gently steaming." },
+        { "id": "crisp-snow", "roll": 1, "text": "Nothing but crisp white snow." }
+      ]
+    },
+    {
+      "id": "order",
+      "name": "Order",
+      "rolls": [5, 4],
+      "prompts": [
+        { "id": "striding-schism-ship", "roll": 6, "text": "A ship of the Striding Schism, gleaming brass and with heat to spare." },
+        { "id": "obelisk-cache", "roll": 5, "text": "An obelisk pine-cone hollowed out and used as a resource cache." },
+        { "id": "taurobol-brass", "roll": 4, "text": "A chunk of ancient brass from the Taurobol Tower itself, inscribed with text in an ancient Chthonic dialect." },
+        { "id": "battle-remains", "roll": 3, "text": "The remains of a battle at sea, a story told in snow-furrows and scattered ship parts." },
+        { "id": "rusty-searchlight", "roll": 2, "text": "A mechanical searchlight swings back and forth across the waves, though it's likely not connected to any alarm or warning system. Sounds rusty." },
+        { "id": "stagger-saint", "roll": 1, "text": "A rampaging stagger-saint." }
+      ]
+    },
+    {
+      "id": "nature",
+      "name": "Nature",
+      "rolls": [3, 2, 1],
+      "prompts": [
+        { "id": "diamond-stone", "roll": 6, "text": "An untouched, spit-sized chunk of cooling volcanic stone, its insides crusted with glittering diamond." },
+        { "id": "lone-tallshank-icicles", "roll": 5, "text": "Icicles hang from the bare branches of a lone tallshank that somehow made it above the tree-line." },
+        { "id": "seed-tray-herbs", "roll": 4, "text": "Rare herbs grow in a discarded seed-tray wedged in the branches below you." },
+        { "id": "hares", "roll": 3, "text": "Hares scamper into branch-burrows as you pass." },
+        { "id": "serrofly-larvae", "roll": 2, "text": "A writhing mass of serrofly larvae swarms your ship after your passage disturbs their haunt." },
+        { "id": "hundred-horns", "roll": 1, "text": "A gap in the soul — Hundred Horns stirs beneath you." }
+      ]
+    }
+  ]
+}

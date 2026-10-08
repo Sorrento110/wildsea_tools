@@ -1,0 +1,28 @@
+{
+  "$schema": "../../schemas/hazard-collection.schema.json",
+  "tool": "hazards",
+  "collection": "beasts",
+  "title": "Beasts",
+  "category": "Beasts",
+  "description": "Tooth, claw, scale, and horn - the creatures of the wildsea that hunt, scavenge, and defend their territory.",
+  "order": 1,
+  "source": "Core Rules pp.225-231",
+  "inPlay": "Beasts work well as the centrepiece of an encounter, but they are rarely mindless. Give them drives, territory, and a reason to be where they are, and let the crew's approach to those drives shape the fight.",
+  "hazards": [
+    { "id": "bastions-of-plant-and-plate", "name": "Bastions of Plant and Plate", "size": "Large", "summary": "Pangoska: larger, ape-like cousins of the humble pangolin, with a physiology uniquely adapted to the vibrant and ever-changing ecosystem." },
+    { "id": "swift-staccato-predators", "name": "Swift Staccato Predators", "size": "Medium", "summary": "Pinwolves: vicious pack hunters with stiletto limbs that can climb any surface, closing off escape routes and setting ambushes." },
+    { "id": "living-drilling-rigs", "name": "Living Drilling-Rigs", "size": "Large", "summary": "Thrummingbirds: large birds that pulverise the wood of tallshanks in search of sap, leaving destruction behind them." },
+    { "id": "the-hangmans-living-lash", "name": "The Hangman's Living Lash", "size": "Large", "summary": "Jikari: frog-like lizards with wide mouths and long, dextrous tongues that spear unprepared prey from the high thrash." },
+    { "id": "inquisitive-engineers", "name": "Inquisitive Engineers", "size": "Small", "summary": "Tinker-monkeys: clever scavengers of wreck-reefs and newly risen spits, as likely to be lemurs or apes, with a hankering for disassembly." },
+    { "id": "rodent-replacement-system", "name": "Rodent Replacement System", "size": "Swarm", "summary": "Ratwork clusters: an unnatural collection of omnivorous rats driven to strip ship-parts and replace them with their own bodies." },
+    { "id": "mutative-avian-horrors", "name": "Mutative Avian Horrors", "size": "Variable", "summary": "Manticrows: the undisputed kings of carrion, ranging from cat- to horse-sized, their feathers edged like blades." },
+    { "id": "living-relics-of-pre-verdant-elegance", "name": "Living Relics of Pre-Verdant Elegance", "size": "Large", "summary": "Tryphoradon: a beast whose true origins are unknown, speculated to be a living relic of the pre-verdant world." },
+    { "id": "vulture-maned-scavengers", "name": "Vulture-Maned Scavengers", "size": "Medium", "summary": "Hideous half-bird creatures that prey on the dead and dying, agile climbers known to circle above the waves." },
+    { "id": "slumbering-fruit-eaters", "name": "Slumbering Fruit-Eaters", "size": "Huge", "summary": "Axehead sloths: slow herbivores found hanging asleep in the tangle, hungry for fruit and nutritious bark when they wake." },
+    { "id": "spine-scale-and-grease", "name": "Spine, Scale and Grease", "size": "Large", "summary": "Spireback lenku: low, scaled beasts named for the mane of horny growths covering their shoulders and backs." },
+    { "id": "many-limbs-many-eyes", "name": "Many Limbs, Many Eyes", "size": "Medium", "summary": "Basilisks: multi-eyed lizards that nest near statuary and feast on stone, their chalk-like blood and soporific gaze both dangerous." },
+    { "id": "avatars-of-seething-simian-violence", "name": "Avatars of Seething Simian Violence", "size": "Medium", "summary": "Makadrills: mask-wearing monkeys obsessed with mechanisms and machinery, willing to descend in a horde to steal a single piece of technology." },
+    { "id": "enigmatic-reptilian-mimics", "name": "Enigmatic Reptilian Mimics", "size": "Variable", "summary": "Zenta: an oddity even by wildsea standards, a reptilian cuckoo that lays its eggs in another creature, the young growing into its shape." },
+    { "id": "heralds-of-the-storm", "name": "Heralds of the Storm", "size": "Huge", "summary": "Ironjaw rays: huge, graceful, aloof creatures spotted sailing slowly through the skies before major storms." }
+  ]
+}

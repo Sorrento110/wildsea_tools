@@ -4,11 +4,50 @@
   "description": "Useful tools for running the Wildsea TTRPG, served through GitHub Pages.",
   "tools": [
     {
+      "id": "journey",
+      "name": "Journey Dashboard",
+      "route": "/tools/journey/",
+      "description": "Run a leg of the journey from one screen: watch results, weather, a point of interest, and a hazard, with each panel re-rollable on its own.",
+      "status": "active"
+    },
+    {
       "id": "ship-generator",
       "name": "Ship Generator",
       "route": "/tools/ships/",
       "description": "Generate a random NPC ship using options from the Wildsea Core Rules shipbuilding section.",
       "dataDir": "ships",
+      "status": "active"
+    },
+    {
+      "id": "watch-results",
+      "name": "Watch Results",
+      "route": "/tools/watch/",
+      "description": "Roll watch results for the crewmember on watch, using the core table or any of the six Reaches' own tables.",
+      "dataDir": "watch",
+      "status": "active"
+    },
+    {
+      "id": "weather-conditions",
+      "name": "Weather Conditions",
+      "route": "/tools/weather/",
+      "description": "Roll weather-watching results to shift the skies for the next leg of a journey.",
+      "dataDir": "weather",
+      "status": "active"
+    },
+    {
+      "id": "points-of-interest",
+      "name": "Points of Interest",
+      "route": "/tools/points-of-interest/",
+      "description": "Generate a place to drop onto a spit, tallshank, or island, with a site, sensory detail, hook, and sample resources.",
+      "dataDir": "poi",
+      "status": "active"
+    },
+    {
+      "id": "hazards",
+      "name": "Hazards",
+      "route": "/tools/hazards/",
+      "description": "Draw a hazard from the eight core categories and get a ready-to-run encounter track sized to it. Leviathans are opt-in; forces of nature arrive as backdrop conditions.",
+      "dataDir": "hazards",
       "status": "active"
     }
   ]

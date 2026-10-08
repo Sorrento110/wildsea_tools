@@ -1,0 +1,24 @@
+{
+  "$schema": "../../schemas/hazard-collection.schema.json",
+  "tool": "hazards",
+  "collection": "forces-of-nature",
+  "title": "Forces of Nature",
+  "category": "Forces of Nature",
+  "description": "Weather, wind, and the untamed growth of the wildsea - elemental hazards that reshape a scene or interrupt a journey.",
+  "order": 0,
+  "source": "Core Rules pp.222-224",
+  "inPlay": "Most forces of nature work best as a condition layered onto another scene, or as a brief interruption to a journey. Their value is the change they force in behaviour - what tasks and actions become harder, and how the NPCs around them react.",
+  "basic": [
+    { "id": "branch-sway", "name": "Branch-Sway", "summary": "The ceaseless shifting of branches driven by high winds and the excess life in the ironroots; in the wrong moment it can turn a simple wavewalk into disaster." },
+    { "id": "high-altitude-winds", "name": "High-Altitude Winds", "summary": "The surface air is rarely still, and when winds gather force they make traversal treacherous, especially for anyone moving outside a ship." },
+    { "id": "rapid-growth", "name": "Rapid Growth", "summary": "Crezzerin instability sends trees into flurries of hyper-accelerated growth, choking clear spaces with new branches and vines within minutes." }
+  ],
+  "hazards": [
+    { "id": "a-surge-of-burst-and-bloom", "name": "A Surge of Burst and Bloom", "size": "Variable", "summary": "A rolling explosion of flower and blossom across the waves, strong enough to catch ships and creatures and carry them along - use it to move the crew from place to place at speed." },
+    { "id": "lung-rooting-danger", "name": "Lung-Rooting Danger", "size": "Variable", "summary": "A thick cloud of fungal spores drifting across the surface or through the branches beneath, rewarding clever survival and urgent decisions over open combat." },
+    { "id": "rotten-pale-expanses", "name": "Rotten, Pale Expanses", "size": "Variable", "summary": "A wood-rot that strips the great trees of their structural integrity and bleaches whole forests white; traversing blanched waves without care is a recipe for destruction." },
+    { "id": "a-spreading-suffusion-of-growth", "name": "A Spreading Suffusion of Growth", "size": "Variable", "summary": "Crezzerin, the chemical that drives the wildsea's titanic and endless growth, found in dangerous concentration wherever it courses through sap, rain, and mutated flesh." },
+    { "id": "the-wrong-kind-of-wild", "name": "The Wrong Kind of Wild", "size": "Variable", "summary": "Flame in a world that is overwhelmingly vegetative, high in oxygen, and primed to burn - unkept fire can destroy anything and everything in its path." },
+    { "id": "tunnels-to-the-under-eaves", "name": "Tunnels to the Under-Eaves", "size": "Variable", "summary": "A rift in the waves, a yawning chasm that can lead all the way down to the Under-Eaves. Most animals avoid them, and crews would do well to follow their lead." }
+  ]
+}

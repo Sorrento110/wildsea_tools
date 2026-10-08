@@ -1,0 +1,51 @@
+{
+  "$schema": "../../schemas/prompt-collection.schema.json",
+  "tool": "watch-results",
+  "collection": "kremich-surge",
+  "title": "Kremich Surge",
+  "description": "Watch results for the Kremich Surge — a reach of wrecker clans, crimson banners, and hungry rifts.",
+  "source": "Core Rules p.322",
+  "order": 5,
+  "rollLabel": "Watch Roll (1d6)",
+  "outcomes": [
+    {
+      "id": "peace",
+      "name": "Peace",
+      "rolls": [6],
+      "prompts": [
+        { "id": "soothing-surge", "roll": 6, "text": "The waves surge, but the sound is soothing." },
+        { "id": "branches-rake", "roll": 5, "text": "Branches rake the hull, insects spiral into the air." },
+        { "id": "distant-chants", "roll": 4, "text": "Distant chants echo from passing ships, mournful and haunting." },
+        { "id": "scarlet-ribbons", "roll": 3, "text": "A series of poles rise from the thrash, hung with scarlet ribbons trailing in the wind." },
+        { "id": "ancient-wreck", "roll": 2, "text": "You pass an ancient wreck wreathed in vines and long picked clean." },
+        { "id": "carved-reefs", "roll": 1, "text": "Reefs here are carved with leering faces and ancient prayers." }
+      ]
+    },
+    {
+      "id": "order",
+      "name": "Order",
+      "rolls": [5, 4],
+      "prompts": [
+        { "id": "wrecker-skiff", "roll": 6, "text": "A skiff of wreckers pulls alongside, offering salvage and stories for trade." },
+        { "id": "suspicious-trade-ship", "roll": 5, "text": "A trade ship travelling between colonies with supplies, suspicious of outsiders." },
+        { "id": "exhorting-priest", "roll": 4, "text": "A priest stands on a small outcropping of stone, exhorting loudly." },
+        { "id": "wrecker-bickering", "roll": 3, "text": "Several wrecker clans bicker over a newly emerged reef." },
+        { "id": "red-bannered-cannibals", "roll": 2, "text": "An encounter with a red-bannered ship crewed by voracious cannibals." },
+        { "id": "crossed-out-marauders", "roll": 1, "text": "A ship crewed by Crossed Out marauders howls across the waves." }
+      ]
+    },
+    {
+      "id": "nature",
+      "name": "Nature",
+      "rolls": [3, 2, 1],
+      "prompts": [
+        { "id": "surfacing-wreck", "roll": 6, "text": "A wreck surfaces from the thrash just ahead of the ship, its deck littered with bones." },
+        { "id": "rootquake", "roll": 5, "text": "A rootquake drives the waves into chaos." },
+        { "id": "vast-beneath", "roll": 4, "text": "Something vast travels beneath the ship, leaving the waves heaving in its wake." },
+        { "id": "sudden-storm", "roll": 3, "text": "A sudden storm descends on the ship, almost seeming alive in its fury." },
+        { "id": "that-which-hungers", "roll": 2, "text": "The crushing scrutiny of That Which Hungers bears down on the ship." },
+        { "id": "hungering-rift", "roll": 1, "text": "A Hungering Rift opens in the waves, sucking down everything it can." }
+      ]
+    }
+  ]
+}

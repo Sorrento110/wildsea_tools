@@ -1,0 +1,45 @@
+{
+  "$schema": "../../schemas/prompt-collection.schema.json",
+  "tool": "weather-conditions",
+  "collection": "weather-watching",
+  "title": "Weather-Watching Results",
+  "description": "Roll 1d6 when watching the weather: 6 is Clear Skies, 5-4 is Continuation, 3-1 is A Change for the Worse. A chart of the area makes travel safer, but does not change this table.",
+  "source": "Core Rules p.75",
+  "order": 0,
+  "rollLabel": "Weather-Watching (1d6)",
+  "outcomes": [
+    {
+      "id": "clear-skies",
+      "name": "Clear Skies",
+      "rolls": [6],
+      "description": "Whatever the weather was doing before, it clears.",
+      "prompts": [
+        { "id": "sunshine", "text": "A period of comfortable sunshine that brings easy-to-hunt creatures to the surface." },
+        { "id": "light-rain", "text": "A light rain, followed by a blossoming of flowers and ripening of fruits." },
+        { "id": "clearing-wind", "text": "A strong but pleasant wind that clears away sporeclouds and mists and increases visibility." }
+      ]
+    },
+    {
+      "id": "continuation",
+      "name": "Continuation",
+      "rolls": [5, 4],
+      "description": "The weather continues as it is, for good or ill.",
+      "prompts": [
+        { "id": "storms-rage", "text": "The storms rage on, unchanging." },
+        { "id": "uncomfortable-warmth", "text": "A period of uncomfortable warmth drags on." },
+        { "id": "perfect-sailing", "text": "If you are lucky, perfect sailing conditions persist." }
+      ]
+    },
+    {
+      "id": "change-for-the-worse",
+      "name": "A Change for the Worse",
+      "rolls": [3, 2, 1],
+      "description": "The weather is about to turn against you.",
+      "prompts": [
+        { "id": "driving-rain", "text": "Driving rain or hail that lowers visibility and makes it harder to perform actions out on deck." },
+        { "id": "blazing-sun", "text": "Blazing sunshine that threatens heatstroke, evaporates liquids, and brings out hordes of stinging insects." },
+        { "id": "living-storm", "text": "A living storm or other bizarre weather phenomenon bearing down on you, hateful and hankering." }
+      ]
+    }
+  ]
+}

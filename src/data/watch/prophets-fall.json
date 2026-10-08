@@ -1,0 +1,51 @@
+{
+  "$schema": "../../schemas/prompt-collection.schema.json",
+  "tool": "watch-results",
+  "collection": "prophets-fall",
+  "title": "Prophet's Fall",
+  "description": "Watch results for Prophet's Fall — a reach of pilgrim sages, the Crisp, and the tomb of the prophet.",
+  "source": "Core Rules p.332",
+  "order": 6,
+  "rollLabel": "Watch Roll (1d6)",
+  "outcomes": [
+    {
+      "id": "peace",
+      "name": "Peace",
+      "rolls": [6],
+      "prompts": [
+        { "id": "sung-prayer", "roll": 6, "text": "A sung prayer to the prophet sounds up from below deck." },
+        { "id": "floating-shrine", "roll": 5, "text": "A small floating shrine of exquisite beauty drifts by." },
+        { "id": "incense", "roll": 4, "text": "The calming smell of incense wafts over the ship." },
+        { "id": "tear-in-crisp", "roll": 3, "text": "A fresh tear in the Crisp; the green below steams and attracts insects and birds." },
+        { "id": "colourful-birds", "roll": 2, "text": "A colourful swarm of birds circles the ship for a while." },
+        { "id": "signal-trap-lights", "roll": 1, "text": "The lights of a Signal Trap pulsate gently in the distance." }
+      ]
+    },
+    {
+      "id": "order",
+      "name": "Order",
+      "rolls": [5, 4],
+      "prompts": [
+        { "id": "ascetic-sages", "roll": 6, "text": "A group of ascetic sages on a ship offering guidance and blessings." },
+        { "id": "ridge-trading-ship", "roll": 5, "text": "A trading ship on its lap around the ridge, eager to sell produce and other goods." },
+        { "id": "farmer-raft", "roll": 4, "text": "A farmer and his farmhands transport their produce on an improvised raft." },
+        { "id": "children-play-acting", "roll": 3, "text": "A gaggle of children play-acting the prophet's victory over the Leviathan Snake Naghee." },
+        { "id": "young-hunters", "roll": 2, "text": "A group of young hunters carry their haul: a large beetle dripping thick indigo-coloured blood." },
+        { "id": "ritual-tattoo", "roll": 1, "text": "A prisoner is ritually tattooed with the black beetle before being chased away with stones." }
+      ]
+    },
+    {
+      "id": "nature",
+      "name": "Nature",
+      "rolls": [3, 2, 1],
+      "prompts": [
+        { "id": "razorteak", "roll": 6, "text": "A young razorteak with still-supple leaves, perfect for harvesting." },
+        { "id": "blackbeak-parrot", "roll": 5, "text": "An old, ornery blackbeak parrot insults and harasses the crew." },
+        { "id": "drone-contraption", "roll": 4, "text": "A contraption of drones and moss has attached to the ship, slowly growing." },
+        { "id": "heatwave", "roll": 3, "text": "A crushing heatwave makes sleep impossible." },
+        { "id": "shard-gale", "roll": 2, "text": "A shard gale whistles close by, tearing open the canopy of the Crisp." },
+        { "id": "distress-call", "roll": 1, "text": "A distress call from beneath the waves. The sender? A newly awakened and very confused Corron." }
+      ]
+    }
+  ]
+}

@@ -10,6 +10,11 @@ export function randomInt(min: number, max: number): number {
   return Math.floor(Math.random() * (hi - lo + 1)) + lo;
 }
 
+/** Return true with the given probability (0–1). */
+export function chance(probability: number): boolean {
+  return Math.random() < probability;
+}
+
 export function pick<T>(items: readonly T[]): T {
   if (items.length === 0) {
     throw new Error('pick() called on an empty list');

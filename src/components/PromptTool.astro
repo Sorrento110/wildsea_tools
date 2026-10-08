@@ -1,0 +1,151 @@
+---
+import GeneratorShell from './GeneratorShell.astro';
+import { renderPromptHtml } from '../lib/prompt-render';
+import type { GeneratedPrompt, PromptCollection } from '../lib/types';
+
+interface Props {
+  title: string;
+  description?: string;
+  tool: string;
+  collections: Record<string, PromptCollection>;
+  collectionLabel?: string;
+  outcomeLabel?: string;
+  initial: GeneratedPrompt;
+}
+
+const {
+  title,
+  description,
+  tool,
+  collections,
+  collectionLabel = 'Table',
+  outcomeLabel = 'Outcome',
+  initial,
+} = Astro.props;
+
+const list = Object.values(collections).sort((a, b) => (a.order ?? 0) - (b.order ?? 0));
+const showCollectionPicker = list.length > 1;
+const collectionsJson = JSON.stringify(collections);
+const initialHtml = renderPromptHtml(initial);
+const resultRolls = [1, 2, 3, 4, 5, 6];
+---
+
+<GeneratorShell title={title} description={description}>
+  <div class="constraint-bar" aria-label="Roll options">
+    {
+      showCollectionPicker && (
+        <label class="constraint-field">
+          <span>{collectionLabel}</span>
+          <select id="prompt-collection">
+            <option value="">Random</option>
+            {list.map((collection) => (
+              <option value={collection.collection}>{collection.title}</option>
+            ))}
+          </select>
+        </label>
+      )
+    }
+
+    <label class="constraint-field">
+      <span>{outcomeLabel}</span>
+      <select id="prompt-outcome">
+        <option value="">Any</option>
+      </select>
+    </label>
+
+    <label class="constraint-field">
+      <span>Prompt (1d6)</span>
+      <select id="prompt-result" disabled title="Second d6 on tables that number their prompts">
+        <option value="">Any</option>
+        {resultRolls.map((roll) => (
+          <option value={String(roll)}>{roll}</option>
+        ))}
+      </select>
+    </label>
+  </div>
+
+  <div class="generator-controls">
+    <button type="button" id="prompt-roll" class="primary-button">Roll again</button>
+    <button type="button" id="prompt-copy" class="secondary-button">Copy result</button>
+  </div>
+
+  <div id="prompt-root" class="prompt-root" aria-live="polite" set:html={initialHtml}></div>
+</GeneratorShell>
+
+<div id="prompt-data" hidden data-tool={tool} data-collections={collectionsJson}></div>
+
+<script>
+  import { generatePrompt, formatRollRange, outcomeHasNumberedPrompts } from '../lib/prompt-generator';
+  import { renderPromptHtml, formatPromptText } from '../lib/prompt-render';
+  import { copyWithFeedback } from '../lib/clipboard';
+  import type { GeneratedPrompt, PromptCollection } from '../lib/types';
+
+  const data = document.getElementById('prompt-data');
+  const collections = JSON.parse(data?.dataset.collections ?? '{}') as Record<string, PromptCollection>;
+
+  const root = document.getElementById('prompt-root');
+  const collectionSelect = document.getElementById('prompt-collection') as HTMLSelectElement | null;
+  const outcomeSelect = document.getElementById('prompt-outcome') as HTMLSelectElement | null;
+  const resultSelect = document.getElementById('prompt-result') as HTMLSelectElement | null;
+
+  let latest: GeneratedPrompt | null = null;
+
+  function currentCollection(): PromptCollection | undefined {
+    const chosen = collectionSelect?.value;
+    if (chosen && collections[chosen]) return collections[chosen];
+    return Object.values(collections)[0];
+  }
+
+  function promptOptions() {
+    return {
+      collectionId: collectionSelect?.value || undefined,
+      outcomeId: outcomeSelect?.value || undefined,
+      resultRoll: resultSelect?.value ? Number(resultSelect.value) : undefined,
+    };
+  }
+
+  /** The result dice only apply to tables that number their prompts (the reaches). */
+  function syncResult() {
+    if (!resultSelect) return;
+    const collection = currentCollection();
+    const numbered = (collection?.outcomes ?? []).some(outcomeHasNumberedPrompts);
+    resultSelect.disabled = !numbered;
+    if (!numbered) resultSelect.value = '';
+  }
+
+  function syncOutcomes() {
+    if (!outcomeSelect) return;
+    const collection = currentCollection();
+    const previous = outcomeSelect.value;
+    outcomeSelect.innerHTML = '<option value="">Any</option>';
+    for (const outcome of collection?.outcomes ?? []) {
+      const option = document.createElement('option');
+      option.value = outcome.id;
+      option.textContent = `${outcome.name} (${formatRollRange(outcome.rolls)})`;
+      outcomeSelect.append(option);
+    }
+    outcomeSelect.value = previous && collection?.outcomes.some((o) => o.id === previous) ? previous : '';
+    syncResult();
+  }
+
+  function roll() {
+    latest = generatePrompt(collections, promptOptions());
+    if (root) root.innerHTML = renderPromptHtml(latest);
+    return latest;
+  }
+
+  // Reset to the random collection and keep the outcome list in sync with it.
+  if (collectionSelect) {
+    collectionSelect.value = '';
+    collectionSelect.addEventListener('change', syncOutcomes);
+  }
+  syncOutcomes();
+
+  document.getElementById('prompt-roll')?.addEventListener('click', roll);
+
+  document.getElementById('prompt-copy')?.addEventListener('click', () => {
+    const prompt = latest ?? generatePrompt(collections, promptOptions());
+    latest = prompt;
+    void copyWithFeedback(document.getElementById('prompt-copy'), formatPromptText(prompt));
+  });
+</script>

@@ -1,0 +1,21 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import PoiTool from '../../components/PoiTool.astro';
+import manifest from '../../data/manifest.json';
+import { loadPoiDataset } from '../../lib/poi-data';
+import { generatePoi } from '../../lib/poi-generator';
+
+const description = manifest.tools.find((tool) => tool.id === 'points-of-interest')?.description ?? '';
+const dataset = loadPoiDataset();
+const initial = generatePoi(dataset);
+---
+
+<BaseLayout title="Points of Interest | Wildsea Tools" description={description}>
+  <PoiTool
+    title="Points of Interest"
+    description="Generate a place to drop onto a spit, tallshank, or island. Each result pairs a kind of ground with a site, a sensory detail, a hook or encounter, and sample resources drawn from the core rules."
+    tool="points-of-interest"
+    dataset={dataset}
+    initial={initial}
+  />
+</BaseLayout>

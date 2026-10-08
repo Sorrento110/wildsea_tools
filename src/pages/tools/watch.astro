@@ -1,0 +1,23 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import PromptTool from '../../components/PromptTool.astro';
+import manifest from '../../data/manifest.json';
+import { loadPromptCollections } from '../../lib/prompt-data';
+import { generatePrompt } from '../../lib/prompt-generator';
+
+const description = manifest.tools.find((tool) => tool.id === 'watch-results')?.description ?? '';
+const collections = loadPromptCollections('watch-results');
+const initial = generatePrompt(collections, { collectionId: 'core' });
+---
+
+<BaseLayout title="Watch Results | Wildsea Tools" description={description}>
+  <PromptTool
+    title="Watch Results"
+    description="Roll a watch result for the crewmember on watch. The d6 sets the category — 6 Peace, 5-4 Order, 3-1 Nature — then pick a prompt. Filter by one of the six Reaches for table-specific results."
+    tool="watch-results"
+    collections={collections}
+    collectionLabel="Reach"
+    outcomeLabel="Watch roll (1d6)"
+    initial={initial}
+  />
+</BaseLayout>

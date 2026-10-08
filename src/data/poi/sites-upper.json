@@ -1,0 +1,278 @@
+{
+  "$schema": "../../schemas/poi-collection.schema.json",
+  "tool": "points-of-interest",
+  "collection": "sites-upper",
+  "title": "Sites of the Skies and the Thrash",
+  "description": "Named kinds of location found in the upper layers, each with sample resources.",
+  "order": 3,
+  "source": "Core Rules pp.207-211",
+  "sites": [
+    {
+      "id": "tallshank-branches",
+      "name": "Tallshank Branches",
+      "layer": "skies",
+      "features": [
+        "tallshank"
+      ],
+      "description": "Sturdy, widespread branches ringing the upper portions of a tallshank. When colonized they become winding, haphazardly-roped streets bristling with buildings, near-permanently shaded by the surrounding leaves. Uncolonized, the unique ecosystem of each tallshank ensures a steady flow of avian, mammal, and insect life.",
+      "source": "Core Rules p.208",
+      "resources": {
+        "salvage": [
+          "Canvas Scraps",
+          "Dirigible Wreckage"
+        ],
+        "specimens": [
+          "Shank Bark/Leaves",
+          "Unusual Bird"
+        ],
+        "whispers": [
+          "Crowned and Proud",
+          "Taller than Average"
+        ],
+        "charts": [
+          "Scraped Bark Map",
+          "Long-Sight Sketches"
+        ],
+        "cargo": [
+          "Crates of Shank-Fruit",
+          "Airship Components"
+        ]
+      }
+    },
+    {
+      "id": "cliffside-colony",
+      "name": "Cliffside Colony",
+      "layer": "skies",
+      "features": [
+        "island",
+        "tallshank"
+      ],
+      "description": "Sprawling networks of creaking wood with little difference between street and bridge. With stable horizontal areas limited, houses and stores are built vertically, clinging to the cliffside and linked by manual elevators and ropeways swinging in the wind. More ambitious settlers tunnel into the cliff itself, and clifftops are often used for animal grazing and breeding.",
+      "source": "Core Rules p.208",
+      "resources": {
+        "salvage": [
+          "Frayed Bridge-Ropes",
+          "Mountain Fragments"
+        ],
+        "specimens": [
+          "Mutton",
+          "Cave Fungus"
+        ],
+        "whispers": [
+          "Tunnels and Crawlways",
+          "Long Way Down"
+        ],
+        "charts": [
+          "Observation Tower Notes",
+          "A Clifftop Sketch"
+        ],
+        "cargo": [
+          "Unworked Stone",
+          "Mountain Rams",
+          "Barrels of Aged Ale"
+        ]
+      }
+    },
+    {
+      "id": "airship",
+      "name": "Airship",
+      "layer": "skies",
+      "features": [
+        "tallshank",
+        "island"
+      ],
+      "description": "Nowhere near as common as wavebound ships, airships are expensive to create and difficult to run in the harsh winds of the open sky. They act as safe, mobile platforms for observing the world below or raining hell down upon it. Airship crews rarely land as much as they'd like, and are often eager to trade for wave-level news or carry letters to distant friends.",
+      "source": "Core Rules p.208",
+      "resources": {
+        "salvage": [
+          "Gasbag Stitching",
+          "Empty Canister",
+          "Quadruple-Wound Ropes"
+        ],
+        "specimens": [
+          "Vertiform Rat",
+          "Old Salted Meat"
+        ],
+        "whispers": [
+          "Clouds as Waves",
+          "Shadow Passing Over"
+        ],
+        "charts": [
+          "An Opened Letter",
+          "A Telescopic Reckoning"
+        ],
+        "cargo": [
+          "Gas Cylinders",
+          "A Folded Gasbag"
+        ]
+      }
+    },
+    {
+      "id": "unbounded-stone",
+      "name": "Unbounded Stone",
+      "layer": "skies",
+      "features": [
+        "island",
+        "reef"
+      ],
+      "description": "A thematic cousin of sailing stones, these are chunks of rock or ruin that move slowly through the thrash or tangle. Unbounded stones usually float due to the magnetic ores they contain, or curiously buoyant plantlife growing through and around them. They are just as likely to be settled as any other solid ground, though rarely by sensible sorts.",
+      "source": "Core Rules p.208",
+      "resources": {
+        "salvage": [
+          "Abandoned Grapple",
+          "Magnetic Ore"
+        ],
+        "specimens": [
+          "Gas-Filled Bulb",
+          "Sailing Moss"
+        ],
+        "whispers": [
+          "Limitless Rising",
+          "Slow Like a Storm"
+        ],
+        "charts": [
+          "A Stone-Top Snapograph"
+        ],
+        "cargo": [
+          "Ore-Riddled Stone"
+        ]
+      }
+    },
+    {
+      "id": "ship",
+      "name": "Ship",
+      "layer": "thrash",
+      "features": [
+        "spit",
+        "island"
+      ],
+      "description": "It's nearly impossible to accurately describe a notional wildsea ship, but most vessels share similarities of function and design: controls, an exposed deck, a bite, a hull, and an engine. Crews are as varied as the ships, coming to raid, trade, salvage, or simply explore. Meeting another ship at sea is always a gamble, based on the mood of the crew and their situation.",
+      "source": "Core Rules p.211",
+      "resources": {
+        "salvage": [
+          "Engine Parts",
+          "Metal Fragments",
+          "Broadwood Timber",
+          "Pressed Oilfruit"
+        ],
+        "specimens": [
+          "Ship-Roaches",
+          "Hull-Side Fungus"
+        ],
+        "whispers": [
+          "Out on the Waves",
+          "A Chance Meeting"
+        ],
+        "charts": [
+          "A Ship-Captain's Log",
+          "A Carefully Annotated Chart"
+        ],
+        "cargo": [
+          "Packaged Munitions",
+          "Salted Meat in Barrels",
+          "Crates of Pure Fruit",
+          "Piles of Wreckage"
+        ]
+      }
+    },
+    {
+      "id": "spit",
+      "name": "Spit",
+      "layer": "thrash",
+      "features": [
+        "spit"
+      ],
+      "description": "Close-packed and ramshackle, most spits are a bundle of contradiction and paradox. Their known temporary nature means few set down roots that can't be quickly torn up, but their lack of space encourages complex networks of street and dwelling. Some are little more than a cluster of tents on old stone, others wooden buildings and cobbled streets sunk in earthen foundations, yet others clusters of rusting wrecks shackled to a fallen ironroot's trunk.",
+      "source": "Core Rules p.211",
+      "resources": {
+        "salvage": [
+          "Rough Cobblestone",
+          "Newspaper Ink"
+        ],
+        "specimens": [
+          "Gutter-Roach",
+          "Roof-Corner Weeds",
+          "A Slink's Treasure"
+        ],
+        "whispers": [
+          "Permanently Impermanent"
+        ],
+        "charts": [
+          "A Scratched-Out Map",
+          "A Child's First Chart"
+        ],
+        "cargo": [
+          "Thoroughbred Longhorns",
+          "A Crate of Scaffolding Pipes",
+          "Bricks and Mortar"
+        ]
+      }
+    },
+    {
+      "id": "mesa-mountaintop",
+      "name": "Mesa or Mountaintop",
+      "layer": "thrash",
+      "features": [
+        "island"
+      ],
+      "description": "Representing the only large areas of solid stone found above the canopy, these once-towering geographical features are now reduced to mere islands in the thrash. Ownership comes with an impressive amount of social power, their permanent nature making them perfect ports for weathering even the strongest rootquakes. Ridgebacks, the owners of the first-colonized mesas, tend to live sparsely and brutally; more recently claimed stone serves as the basis for heirloom farm networks or sprawling smoke-wreathed cityports.",
+      "source": "Core Rules p.211",
+      "resources": {
+        "salvage": [
+          "Mountain-Shard",
+          "Raw Iron"
+        ],
+        "specimens": [
+          "Animal Horn",
+          "Goat Pelt",
+          "Heirloom Seeds"
+        ],
+        "whispers": [
+          "Flame Without Fear",
+          "A Commanding View"
+        ],
+        "charts": [
+          "A Pre-Verdant Text"
+        ],
+        "cargo": [
+          "Thoroughbred Longhorns",
+          "Chiselled Stone Blocks",
+          "Ore for Smelting"
+        ]
+      }
+    },
+    {
+      "id": "parasite-farm",
+      "name": "Parasite Farm",
+      "layer": "thrash",
+      "features": [
+        "spit",
+        "tallshank"
+      ],
+      "description": "Built around small solid areas amid verdant waves, parasite farms use alchemically-treated produce that can root itself in the branches of the ironroots nearest the surface. Harvests are perilous, and parasite farmers often use small raft-like outriders or long-legged stilts and hooks to collect produce once it's ready. Driving a ship through a parasite farm is considered extremely rude, even if accidental.",
+      "source": "Core Rules p.211",
+      "resources": {
+        "salvage": [
+          "Broken Trellis",
+          "Clouded Amber-Glass Pane"
+        ],
+        "specimens": [
+          "Oka Berries",
+          "Wormapple",
+          "Fist-Sized Aphid"
+        ],
+        "whispers": [
+          "Order from Chaos"
+        ],
+        "charts": [
+          "A Scrawled Almanac",
+          "A Growing-Zone Map"
+        ],
+        "cargo": [
+          "Parasite Sapling",
+          "Crates of Fresh Produce"
+        ]
+      }
+    }
+  ]
+}

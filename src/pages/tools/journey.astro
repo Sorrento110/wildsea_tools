@@ -1,0 +1,29 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import JourneyDashboard from '../../components/JourneyDashboard.astro';
+import manifest from '../../data/manifest.json';
+import { loadPromptCollections } from '../../lib/prompt-data';
+import { loadPoiDataset } from '../../lib/poi-data';
+import { loadHazardCollections } from '../../lib/hazard-data';
+import { generateJourneyLeg } from '../../lib/journey-generator';
+
+const description = manifest.tools.find((tool) => tool.id === 'journey')?.description ?? '';
+const watch = loadPromptCollections('watch-results');
+const weather = loadPromptCollections('weather-conditions');
+const poi = loadPoiDataset();
+const hazards = loadHazardCollections();
+
+const initial = generateJourneyLeg({ watch, weather, poi, hazards });
+---
+
+<BaseLayout title="Journey Dashboard | Wildsea Tools" description={description} wide>
+  <JourneyDashboard
+    title="Journey Dashboard"
+    description="Everything the Firefly needs to run one leg of a journey in a single view: what the watch sees, the sky's turn, where the crew lands, and what threatens them. Roll the whole leg, then re-roll any panel on its own."
+    watch={watch}
+    weather={weather}
+    poi={poi}
+    hazards={hazards}
+    initial={initial}
+  />
+</BaseLayout>

@@ -1,0 +1,51 @@
+{
+  "$schema": "../../schemas/prompt-collection.schema.json",
+  "tool": "watch-results",
+  "collection": "the-ambered-irons",
+  "title": "The Ambered Irons",
+  "description": "Watch results for the Ambered Irons — a reach of golden amber, deep drowns, and the DaWheh-Whe.",
+  "source": "Core Rules p.312",
+  "order": 4,
+  "rollLabel": "Watch Roll (1d6)",
+  "outcomes": [
+    {
+      "id": "peace",
+      "name": "Peace",
+      "rolls": [6],
+      "prompts": [
+        { "id": "rope-braiding", "roll": 6, "text": "A group of Wheh-Whe sit and braid rope for an upcoming rite of passage." },
+        { "id": "honey-rocks", "roll": 5, "text": "A maternal DaWheh-Whe approaches one of the crew and teaches them how to make honey rocks." },
+        { "id": "gummed-gears", "roll": 4, "text": "Prismatic webbing has gummed up the engine gears; some chrysalises must have hatched." },
+        { "id": "golden-mother", "roll": 3, "text": "The call of the Golden Mother is heard through your sails and soul, making a request." },
+        { "id": "sunbeam-bats", "roll": 2, "text": "Beams of sunlight cast from a swarm of sunbeam bats as they hunt bioluminescent moths." },
+        { "id": "nectar-falls", "roll": 1, "text": "The smell of Nectar Falls brings you to the railings to watch as you fly over its golden thunder." }
+      ]
+    },
+    {
+      "id": "order",
+      "name": "Order",
+      "rolls": [5, 4],
+      "prompts": [
+        { "id": "soulful-tigers", "roll": 6, "text": "A Soulful Tigers ship floats by on its way to mine gemstones, prompting a cheerful exchange." },
+        { "id": "rooted-watchers", "roll": 5, "text": "A grove of Rooted stand and watch you silently before something gains their attention." },
+        { "id": "utako-game", "roll": 4, "text": "You see DaWheh-Whe painted in bright colours for an upcoming Utaka game — a contest of sport and endurance against another team." },
+        { "id": "silent-bloom-ship", "roll": 3, "text": "The Silent Bloom overtakes a ship in the darkness; now spots of bloom show up underneath you." },
+        { "id": "burial-procession", "roll": 2, "text": "The ship is asked to stop by a Wilted, to allow right of way for a burial procession." },
+        { "id": "reanimated-skeleton", "roll": 1, "text": "You watch as a group of Wilted reanimate a large skeleton into a Rooted beast of burden." }
+      ]
+    },
+    {
+      "id": "nature",
+      "name": "Nature",
+      "rolls": [3, 2, 1],
+      "prompts": [
+        { "id": "dredge-thermals", "roll": 6, "text": "Thermals from the Dredge carry up salt-laden winds and begin coating the ship." },
+        { "id": "shadow-beyond-strata", "roll": 5, "text": "A shadow beyond opaque strata seems to follow the ship before crashing outwards towards you." },
+        { "id": "amber-rain", "roll": 4, "text": "Amber rain begins to fall; everything is golden glue." },
+        { "id": "sunlight-cargo", "roll": 3, "text": "Cargo labelled 'in sunlight only' gets some shade, and it begins blooming." },
+        { "id": "sheltering-bats", "roll": 2, "text": "Some sunbeam bats find shelter in the ship's eaves, casting a warm glow like lanterns upon the deck." },
+        { "id": "silent-bloom-pollen", "roll": 1, "text": "The pollen of the Silent Bloom brings the crew comfort and rest, closure on the warm winds." }
+      ]
+    }
+  ]
+}

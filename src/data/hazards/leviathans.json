@@ -1,0 +1,22 @@
+{
+  "$schema": "../../schemas/hazard-collection.schema.json",
+  "tool": "hazards",
+  "collection": "leviathans",
+  "title": "Leviathans",
+  "category": "Leviathans",
+  "description": "Very real, but still sources of myth and legend to most of the wildsea's inhabitants - the titanic creatures whose movements shape the waves themselves.",
+  "order": 7,
+  "source": "Core Rules pp.244-249",
+  "inPlay": "Leviathans are not fights to be won - they are events. Give them a limit of 21 boxes or more, make their aspects change as tracks fill, and treat encounters with them as multi-stage, re-occurring set pieces.",
+  "hazards": [
+    { "id": "perpetual-flowering-leviathan", "name": "Perpetual Flowering Leviathan", "size": "Leviathan", "summary": "The Orchid Scar: reputed to be the first leviathan ever conquered, and the second, and the third. Half-mile petals unfurl impossibly from a fist-sized bud, and as one instance dies another is already budding nearby." },
+    { "id": "brutish-leviathan-beast", "name": "Brutish Leviathan Beast", "size": "Leviathan", "summary": "Old Ornail, the squirrel to end all squirrels: it crawls up from the depths every autumn, stomach growling as it prepares for winter, and any sufficiently large food source is fair game." },
+    { "id": "wingless-avian-leviathan", "name": "Wingless Avian Leviathan", "size": "Leviathan", "summary": "The Oilcrow: a rolling slick of filth, feathers, and sickness, a bird large enough to catch a ship, with crezzerin run rampant through its body." },
+    { "id": "spectral-leviathan-phenomenon", "name": "Spectral Leviathan Phenomenon", "size": "Leviathan", "summary": "The Spirit of Industry: a belief and an ancestral memory given almost-form - the bite of chainsaws, the chopping of axes, the sound of sawmills. It has no shape or physicality, no limbs to shackle or gears to clog." },
+    { "id": "leviathan-force-of-nature", "name": "Leviathan Force of Nature", "size": "Leviathan", "summary": "Living storms: leviathan-sized weather systems with a volt-bound consciousness, though the extent of their intelligence is very much up for debate." },
+    { "id": "tentacular-insect-leviathan", "name": "Tentacular Insect Leviathan", "size": "Leviathan", "summary": "The Isogast: a shelled insect leviathan whose slime-trail network and many tentacles serve multiple functions, sensing the world and dealing damage alike." },
+    { "id": "ancient-salvage-shelled-behemoth", "name": "Ancient Salvage-Shelled Behemoth", "size": "Leviathan", "summary": "The Terrapex: once a decade or so the tangle shifts and ironroots topple as this miles-long beast, its shell built of pre-verdant architecture, struggles its way to the surface." },
+    { "id": "mesmeric-leviathan-fox-beast", "name": "Mesmeric Leviathan Fox Beast", "size": "Leviathan", "summary": "The Snare: a leviathan so beautiful that it hurts to hunt - at least, that's how the rumours go. Leviathaneers return with wild stories and injuries inflicted by their own crewmates." },
+    { "id": "scaled-leviathan-beast", "name": "Scaled Leviathan Beast", "size": "Leviathan", "summary": "The Queen Beneath: an archive collector of wealth to such a degree that even a rage Writling would be taken aback, but slow and smouldering, tempered with patience." }
+  ]
+}

@@ -1,0 +1,21 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import HazardTool from '../../components/HazardTool.astro';
+import manifest from '../../data/manifest.json';
+import { loadHazardCollections } from '../../lib/hazard-data';
+import { generateHazard } from '../../lib/hazard-generator';
+
+const description = manifest.tools.find((tool) => tool.id === 'hazards')?.description ?? '';
+const collections = loadHazardCollections();
+const initial = generateHazard(collections);
+---
+
+<BaseLayout title="Hazards | Wildsea Tools" description={description}>
+  <HazardTool
+    title="Hazards"
+    description="Draw a hazard from any of the eight categories in the core rules, then get a ready-to-run encounter: a limit and track length suited to its size, damage guidance, and notes on how to use it at the table. Leviathans are opt-in, and forces of nature arrive as a backdrop condition to another hazard."
+    tool="hazards"
+    collections={collections}
+    initial={initial}
+  />
+</BaseLayout>
